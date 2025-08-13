@@ -62,15 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Debug.cs" />
-    <Compile Include="LavaPathAvoidance\LavaPathAvoidanceUtility.cs" />
-    <Compile Include="LavaPathAvoidance\Patch_DangerUtility.cs" />
-    <Compile Include="LavaPathAvoidance\Patch_MemoryUtility.cs" />
-    <Compile Include="LavaPathAvoidance\Patch_PathFinderCostTuning.cs" />
-    <Compile Include="LavaPathAvoidance\Patch_PathFinderMapData.cs" />
-    <Compile Include="LavaPathAvoidance\Patch_Pawn_PathFollower.cs" />
-    <Compile Include="LavaPathAvoidance\Patch_PersistentDangerSource.cs" />
-    <Compile Include="LavaPathAvoidance\Patch_TerrainGrid.cs" />
-    <Compile Include="LavaPathAvoidance\PotentialDangerSource.cs" />
     <Compile Include="OdysseyPatchSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="OdysseyPatchMod.cs" />

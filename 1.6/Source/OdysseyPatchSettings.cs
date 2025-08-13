@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace OdysseyPatch
 {
     public class OdysseyPatchSettings : ModSettings
     {
-        public static bool LavaPathAvoidance = true;
+        public static bool TreesInFrontOfDiagonalWalls = true;
 
         private static Vector2 scrollPosition;
         private static float y;
@@ -19,7 +20,7 @@ namespace OdysseyPatch
             listing.Begin(viewRect);
 
             DoHeader(listing, "OdysseyPatch_Misc");
-            listing.CheckboxLabeled("OdysseyPatch_LavaPathAvoidance".Translate(), ref LavaPathAvoidance);
+            listing.CheckboxLabeled("OdysseyPatch_TreesInFrontOfDiagonalWalls".Translate(), ref TreesInFrontOfDiagonalWalls);
 
             listing.Gap();
 
@@ -43,7 +44,7 @@ namespace OdysseyPatch
 
         public override void ExposeData()
         {
-            Scribe_Values.Look(ref LavaPathAvoidance, "LavaPathAvoidance", true);
+            Scribe_Values.Look(ref TreesInFrontOfDiagonalWalls, "TreesInFrontOfDiagonalWalls", true);
         }
     }
 }
