@@ -6,7 +6,8 @@ namespace OdysseyPatch
 {
     public class OdysseyPatchSettings : ModSettings
     {
-        public static bool TreesInFrontOfDiagonalWalls = true;
+        public static bool OutfitStandGroupsInBills = true;
+        public static bool OutfitStandBodyType = true;
 
         private static Vector2 scrollPosition;
         private static float y;
@@ -20,7 +21,8 @@ namespace OdysseyPatch
             listing.Begin(viewRect);
 
             DoHeader(listing, "OdysseyPatch_Misc");
-            listing.CheckboxLabeled("OdysseyPatch_TreesInFrontOfDiagonalWalls".Translate(), ref TreesInFrontOfDiagonalWalls);
+            DoSetting(listing, "OdysseyPatch_OutfitStandGroupsInBills", ref OutfitStandGroupsInBills, true);
+            DoSetting(listing, "OdysseyPatch_OutfitStandBodyType", ref OutfitStandBodyType);
 
             listing.Gap();
 
@@ -42,9 +44,15 @@ namespace OdysseyPatch
             listing.GapLine();
         }
 
+        private static void DoSetting(Listing_Standard listing, string key, ref bool setting, bool restartRequired = false)
+        {
+            listing.CheckboxLabeled(key.Translate() + (restartRequired ? " " + "OdysseyPatch_RestartRequired".Translate() : TaggedString.Empty), ref setting);
+        }
+
         public override void ExposeData()
         {
-            Scribe_Values.Look(ref TreesInFrontOfDiagonalWalls, "TreesInFrontOfDiagonalWalls", true);
+            Scribe_Values.Look(ref OutfitStandGroupsInBills, "OutfitStandGroupsInBills", true);
+            Scribe_Values.Look(ref OutfitStandBodyType, "OutfitStandBodyType", true);
         }
     }
 }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<OdysseyPatch_Misc>Miscellaneous</OdysseyPatch_Misc>
+	<OdysseyPatch_OutfitStandGroupsInBills>Allow looking in or hauling to groups of outfit stands in bills</OdysseyPatch_OutfitStandGroupsInBills>
+	<OdysseyPatch_OutfitStandBodyType>Outfit stand body type is configurable</OdysseyPatch_OutfitStandBodyType>
+	<OdysseyPatch_RestartRequired>(requires restart)</OdysseyPatch_RestartRequired>
+	<OdysseyPatch_BodyType>Body type: {0}</OdysseyPatch_BodyType>
+	<OdysseyPatch_BodyTypeDesc>Click to change this outfit stand's model to a different body type.</OdysseyPatch_BodyTypeDesc>
+</LanguageData>
