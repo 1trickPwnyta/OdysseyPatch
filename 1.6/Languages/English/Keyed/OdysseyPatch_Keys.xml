@@ -3,7 +3,12 @@
 	<OdysseyPatch_Misc>Miscellaneous</OdysseyPatch_Misc>
 	<OdysseyPatch_OutfitStandGroupsInBills>Allow looking in or hauling to groups of outfit stands in bills</OdysseyPatch_OutfitStandGroupsInBills>
 	<OdysseyPatch_OutfitStandBodyType>Outfit stand body type is configurable</OdysseyPatch_OutfitStandBodyType>
+	<OdysseyPatch_FishingZoneCopy>Fishing zone settings can be copy/pasted</OdysseyPatch_FishingZoneCopy>
+	<OdysseyPatch_AllowRemovingItemsFromOutfitStand>Allow removing items from outfit stands by default</OdysseyPatch_AllowRemovingItemsFromOutfitStand>
+	<OdysseyPatch_WorldSearchEmptyTiles>World search widget searches all world tiles</OdysseyPatch_WorldSearchEmptyTiles>
 	<OdysseyPatch_RestartRequired>(requires restart)</OdysseyPatch_RestartRequired>
 	<OdysseyPatch_BodyType>Body type: {0}</OdysseyPatch_BodyType>
 	<OdysseyPatch_BodyTypeDesc>Click to change this outfit stand's model to a different body type.</OdysseyPatch_BodyTypeDesc>
+	<OdysseyPatch_FishingZoneCopyDesc>Copy this fishing zone's settings to the clipboard so you can paste them onto another fishing zone.</OdysseyPatch_FishingZoneCopyDesc>
+	<OdysseyPatch_FishingZonePasteDesc>Overwrite this fishing zone's settings with those previously copied to the clipboard.</OdysseyPatch_FishingZonePasteDesc>
 </LanguageData>

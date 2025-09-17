@@ -14,10 +14,10 @@ namespace OdysseyPatch
         public OdysseyPatchMod(ModContentPack content) : base(content)
         {
             Settings = GetSettings<OdysseyPatchSettings>();
-
+            
             var harmony = new Harmony(PACKAGE_ID);
             harmony.PatchAll();
-
+            
             Log.Message($"[{PACKAGE_NAME}] Loaded.");
         }
 

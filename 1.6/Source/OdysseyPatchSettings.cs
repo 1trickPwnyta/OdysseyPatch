@@ -8,6 +8,9 @@ namespace OdysseyPatch
     {
         public static bool OutfitStandGroupsInBills = true;
         public static bool OutfitStandBodyType = true;
+        public static bool FishingZoneCopy = true;
+        public static bool AllowRemovingItemsFromOutfitStand = true;
+        public static bool WorldSearchEmptyTiles = true;
 
         private static Vector2 scrollPosition;
         private static float y;
@@ -23,6 +26,9 @@ namespace OdysseyPatch
             DoHeader(listing, "OdysseyPatch_Misc");
             DoSetting(listing, "OdysseyPatch_OutfitStandGroupsInBills", ref OutfitStandGroupsInBills, true);
             DoSetting(listing, "OdysseyPatch_OutfitStandBodyType", ref OutfitStandBodyType);
+            DoSetting(listing, "OdysseyPatch_FishingZoneCopy", ref FishingZoneCopy);
+            DoSetting(listing, "OdysseyPatch_AllowRemovingItemsFromOutfitStand", ref AllowRemovingItemsFromOutfitStand);
+            DoSetting(listing, "OdysseyPatch_WorldSearchEmptyTiles", ref WorldSearchEmptyTiles);
 
             listing.Gap();
 
@@ -53,6 +59,9 @@ namespace OdysseyPatch
         {
             Scribe_Values.Look(ref OutfitStandGroupsInBills, "OutfitStandGroupsInBills", true);
             Scribe_Values.Look(ref OutfitStandBodyType, "OutfitStandBodyType", true);
+            Scribe_Values.Look(ref FishingZoneCopy, "FishingZoneCopy", true);
+            Scribe_Values.Look(ref AllowRemovingItemsFromOutfitStand, "AllowRemovingItemsFromOutfitStand", true);
+            Scribe_Values.Look(ref WorldSearchEmptyTiles, "WorldSearchEmptyTiles", true);
         }
     }
 }
