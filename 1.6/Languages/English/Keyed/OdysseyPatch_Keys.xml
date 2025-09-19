@@ -5,10 +5,20 @@
 	<OdysseyPatch_OutfitStandBodyType>Outfit stand body type is configurable</OdysseyPatch_OutfitStandBodyType>
 	<OdysseyPatch_FishingZoneCopy>Fishing zone settings can be copy/pasted</OdysseyPatch_FishingZoneCopy>
 	<OdysseyPatch_AllowRemovingItemsFromOutfitStand>Allow removing items from outfit stands by default</OdysseyPatch_AllowRemovingItemsFromOutfitStand>
-	<OdysseyPatch_WorldSearchEmptyTiles>World search widget searches all world tiles</OdysseyPatch_WorldSearchEmptyTiles>
+	<OdysseyPatch_WorldSearchEmptyTiles>Allow full world search which searches all world tiles</OdysseyPatch_WorldSearchEmptyTiles>
+	<OdysseyPatch_SubstructureOverlayOptions>Allow always showing substructure overlay</OdysseyPatch_SubstructureOverlayOptions>
+	<OdysseyPatch_FloorsBlockedByHulls>Floors can erroneously be built under gravship hulls</OdysseyPatch_FloorsBlockedByHulls>
+	<OdysseyPatch_FishingInterruptions>Prevent pawns from fishing to starvation/exhaustion</OdysseyPatch_FishingInterruptions>
+	<OdysseyPatch_SilhouettesHiddenByGravshipLanding>Pawn dot highlights are erroneously visible during gravship cutscenes</OdysseyPatch_SilhouettesHiddenByGravshipLanding>
+	<OdysseyPatch_BugFix>Bug fix</OdysseyPatch_BugFix>
 	<OdysseyPatch_RestartRequired>(requires restart)</OdysseyPatch_RestartRequired>
 	<OdysseyPatch_BodyType>Body type: {0}</OdysseyPatch_BodyType>
 	<OdysseyPatch_BodyTypeDesc>Click to change this outfit stand's model to a different body type.</OdysseyPatch_BodyTypeDesc>
 	<OdysseyPatch_FishingZoneCopyDesc>Copy this fishing zone's settings to the clipboard so you can paste them onto another fishing zone.</OdysseyPatch_FishingZoneCopyDesc>
 	<OdysseyPatch_FishingZonePasteDesc>Overwrite this fishing zone's settings with those previously copied to the clipboard.</OdysseyPatch_FishingZonePasteDesc>
+	<OdysseyPatch_FullSearch>Full search</OdysseyPatch_FullSearch>
+	<OdysseyPatch_InitializingSearchSet>Initializing search set</OdysseyPatch_InitializingSearchSet>
+	<OdysseyPatch_Always>Always</OdysseyPatch_Always>
+	<OdysseyPatch_WhenSelected>When selected</OdysseyPatch_WhenSelected>
+	<OdysseyPatch_Never>Never</OdysseyPatch_Never>
 </LanguageData>

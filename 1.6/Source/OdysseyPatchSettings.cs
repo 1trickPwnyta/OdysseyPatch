@@ -11,10 +11,14 @@ namespace OdysseyPatch
         public static bool FishingZoneCopy = true;
         public static bool AllowRemovingItemsFromOutfitStand = true;
         public static bool WorldSearchEmptyTiles = true;
+        public static bool SubstructureOverlayOptions = true;
+        public static bool FloorsBlockedByHulls = true;
+        public static bool FishingInterruptions = true;
+        public static bool SilhouettesHiddenByGravshipLanding = true;
 
         private static Vector2 scrollPosition;
         private static float y;
-
+        
         public static void DoSettingsWindowContents(Rect inRect)
         {
             Rect viewRect = new Rect(0f, 0f, inRect.width - 20f, y);
@@ -24,11 +28,15 @@ namespace OdysseyPatch
             listing.Begin(viewRect);
 
             DoHeader(listing, "OdysseyPatch_Misc");
-            DoSetting(listing, "OdysseyPatch_OutfitStandGroupsInBills", ref OutfitStandGroupsInBills, true);
+            DoSetting(listing, "OdysseyPatch_OutfitStandGroupsInBills", ref OutfitStandGroupsInBills, restartRequired: true);
             DoSetting(listing, "OdysseyPatch_OutfitStandBodyType", ref OutfitStandBodyType);
             DoSetting(listing, "OdysseyPatch_FishingZoneCopy", ref FishingZoneCopy);
             DoSetting(listing, "OdysseyPatch_AllowRemovingItemsFromOutfitStand", ref AllowRemovingItemsFromOutfitStand);
             DoSetting(listing, "OdysseyPatch_WorldSearchEmptyTiles", ref WorldSearchEmptyTiles);
+            DoSetting(listing, "OdysseyPatch_SubstructureOverlayOptions", ref SubstructureOverlayOptions);
+            DoSetting(listing, "OdysseyPatch_FloorsBlockedByHulls", ref FloorsBlockedByHulls, bugFix: true);
+            DoSetting(listing, "OdysseyPatch_FishingInterruptions", ref FishingInterruptions);
+            DoSetting(listing, "OdysseyPatch_SilhouettesHiddenByGravshipLanding", ref SilhouettesHiddenByGravshipLanding, bugFix: true);
 
             listing.Gap();
 
@@ -50,9 +58,9 @@ namespace OdysseyPatch
             listing.GapLine();
         }
 
-        private static void DoSetting(Listing_Standard listing, string key, ref bool setting, bool restartRequired = false)
+        private static void DoSetting(Listing_Standard listing, string key, ref bool setting, bool restartRequired = false, bool bugFix = false)
         {
-            listing.CheckboxLabeled(key.Translate() + (restartRequired ? " " + "OdysseyPatch_RestartRequired".Translate() : TaggedString.Empty), ref setting);
+            listing.CheckboxLabeled((bugFix ? "OdysseyPatch_BugFix".Translate() + ": " : TaggedString.Empty) + key.Translate() + (restartRequired ? " " + "OdysseyPatch_RestartRequired".Translate() : TaggedString.Empty), ref setting);
         }
 
         public override void ExposeData()
@@ -62,6 +70,10 @@ namespace OdysseyPatch
             Scribe_Values.Look(ref FishingZoneCopy, "FishingZoneCopy", true);
             Scribe_Values.Look(ref AllowRemovingItemsFromOutfitStand, "AllowRemovingItemsFromOutfitStand", true);
             Scribe_Values.Look(ref WorldSearchEmptyTiles, "WorldSearchEmptyTiles", true);
+            Scribe_Values.Look(ref SubstructureOverlayOptions, "SubstructureOverlayOptions", true);
+            Scribe_Values.Look(ref FloorsBlockedByHulls, "FloorsBlockedByHulls", true);
+            Scribe_Values.Look(ref FishingInterruptions, "FishingInterruptions", true);
+            Scribe_Values.Look(ref SilhouettesHiddenByGravshipLanding, "SilhouettesHiddenByGravshipLanding", true);
         }
     }
 }

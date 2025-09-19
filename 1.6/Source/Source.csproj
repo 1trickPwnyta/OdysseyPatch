@@ -59,6 +59,10 @@
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="UnityEngine.TextRenderingModule">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
       <Private>False</Private>
@@ -67,7 +71,9 @@
   <ItemGroup>
     <Compile Include="AllowRemovingItemsFromOutfitStand\Patch_Building_OutfitStand.cs" />
     <Compile Include="Debug.cs" />
+    <Compile Include="FishingInterruptions\Patch_JobDriver_Fish.cs" />
     <Compile Include="FishingZoneCopy\Patch_Zone_Fishing.cs" />
+    <Compile Include="FloorsBlockedByHulls\Patch_GenConstruct.cs" />
     <Compile Include="OdysseyPatchSettings.cs" />
     <Compile Include="OutfitStandBodyType\CompProperties_OutfitStandBodyType.cs" />
     <Compile Include="OutfitStandBodyType\Comp_OutfitStandBodyType.cs" />
@@ -82,6 +88,12 @@
     <Compile Include="PatchOperationReplaceIf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="OdysseyPatchMod.cs" />
+    <Compile Include="SilhouettesHiddenByGravshipLanding\Patch_SilhouetteUtility.cs" />
+    <Compile Include="SubstructureOverlayOptions\Command_Dropdown.cs" />
+    <Compile Include="SubstructureOverlayOptions\Patch_CompSubstructureFootprint.cs" />
+    <Compile Include="SubstructureOverlayOptions\Patch_GravshipUtility.cs" />
+    <Compile Include="SubstructureOverlayOptions\Patch_MemoryUtility.cs" />
+    <Compile Include="WorldSearchEmptyTiles\Patch_Dialog_Search.cs" />
     <Compile Include="WorldSearchEmptyTiles\Patch_Dialog_WorldSearch.cs" />
     <Compile Include="WorldSearchEmptyTiles\Patch_ExpandableLandmarksUtility.cs" />
     <Compile Include="WorldSearchEmptyTiles\Patch_WorldSearchElement.cs" />
