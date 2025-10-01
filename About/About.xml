@@ -8,13 +8,39 @@
 		<li>1.6</li>
 	</supportedVersions>
 	<description>
+This mod makes a handful of small tweaks to the Odyssey DLC that are intended to make the game a bit more enjoyable without changing the gameplay too much. Each tweak can be toggled on or off in the mod settings.
 
+=Space Travel=
+- Pawns can grab food, medicine, and drugs from a parked shuttle, just as they can from a pack animal. This can be toggled via shuttle gizmo.
+- Gravship substructure can be set to shown always, never, or only while the grav engine is selected (setting to always makes planning easier). This can be set via grav engine or field extender gizmo.
+- Bug fix: When placing floors, it is erroneously possible to place them under gravship hulls, which has no benefit.
+- Bug fix: With pawn dot silhouettes enabled, they are erroneously shown during gravship cutscenes.
+
+=Fishing=
+- You can copy settings between fishing zones.
+- Pawns can stop fishing if their basic needs are unmet instead of literally fishing until they catch something or collapse.
+
+=Outfit Stands=
+- You can change the body type of outfit stands to other vanilla body types, such as female or hulk. This can be set via outfit stand gizmo.
+- Grouped outfit stands can be the target of bills (you can look for ingredients only in such a group, or you can take product specifically to such a group).
+- Pawns are allowed to remove items from outfit stands by default. You don't need to toggle it each time.
+- Removing items from outfit stands is no longer automatically disabled when a pawn is ordered to equip the outfit.
+
+=Miscellaneous=
+- Searches in the world view can now search all world tiles for map features instead of only occupied ones. This must be toggled specifically in each search box due to the performance impact.
+
+=== Updates ===
+Coming soon!
 
 === Credits ===
 Mod icon: twitter.com/mouse_draws
 	</description>
 	<url>https://github.com/1trickPwnyta/OdysseyPatch</url>
 	<modDependencies>
+		<li>
+			<packageId>ludeon.rimworld.odyssey</packageId>
+			<displayName>Odyssey</displayName>
+		</li>
 		<li>
 			<packageId>brrainz.harmony</packageId>
 			<displayName>Harmony</displayName>

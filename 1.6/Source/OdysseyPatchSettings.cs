@@ -15,6 +15,8 @@ namespace OdysseyPatch
         public static bool FloorsBlockedByHulls = true;
         public static bool FishingInterruptions = true;
         public static bool SilhouettesHiddenByGravshipLanding = true;
+        public static bool AllowRemovingItemsFromOutfitStandAfterEquipping = true;
+        public static bool ShuttleFood = true;
 
         private static Vector2 scrollPosition;
         private static float y;
@@ -27,21 +29,30 @@ namespace OdysseyPatch
             Listing_Standard listing = new Listing_Standard() { maxOneColumn = true };
             listing.Begin(viewRect);
 
-            DoHeader(listing, "OdysseyPatch_Misc");
-            DoSetting(listing, "OdysseyPatch_OutfitStandGroupsInBills", ref OutfitStandGroupsInBills, restartRequired: true);
-            DoSetting(listing, "OdysseyPatch_OutfitStandBodyType", ref OutfitStandBodyType);
-            DoSetting(listing, "OdysseyPatch_FishingZoneCopy", ref FishingZoneCopy);
-            DoSetting(listing, "OdysseyPatch_AllowRemovingItemsFromOutfitStand", ref AllowRemovingItemsFromOutfitStand);
-            DoSetting(listing, "OdysseyPatch_WorldSearchEmptyTiles", ref WorldSearchEmptyTiles);
+            DoHeader(listing, "OdysseyPatch_SpaceTravel");
+            DoSetting(listing, "OdysseyPatch_ShuttleFood", ref ShuttleFood);
             DoSetting(listing, "OdysseyPatch_SubstructureOverlayOptions", ref SubstructureOverlayOptions);
             DoSetting(listing, "OdysseyPatch_FloorsBlockedByHulls", ref FloorsBlockedByHulls, bugFix: true);
-            DoSetting(listing, "OdysseyPatch_FishingInterruptions", ref FishingInterruptions);
             DoSetting(listing, "OdysseyPatch_SilhouettesHiddenByGravshipLanding", ref SilhouettesHiddenByGravshipLanding, bugFix: true);
 
             listing.Gap();
 
+            DoHeader(listing, "OdysseyPatch_Fishing");
+            DoSetting(listing, "OdysseyPatch_FishingZoneCopy", ref FishingZoneCopy);
+            DoSetting(listing, "OdysseyPatch_FishingInterruptions", ref FishingInterruptions);
+
+            listing.Gap();
+
+            DoHeader(listing, "OdysseyPatch_OutfitStands");
+            DoSetting(listing, "OdysseyPatch_OutfitStandBodyType", ref OutfitStandBodyType);
+            DoSetting(listing, "OdysseyPatch_OutfitStandGroupsInBills", ref OutfitStandGroupsInBills, restartRequired: true);
+            DoSetting(listing, "OdysseyPatch_AllowRemovingItemsFromOutfitStand", ref AllowRemovingItemsFromOutfitStand);
+            DoSetting(listing, "OdysseyPatch_AllowRemovingItemsFromOutfitStandAfterEquipping", ref AllowRemovingItemsFromOutfitStandAfterEquipping);
+
+            listing.Gap();
+
             DoHeader(listing, "OdysseyPatch_Misc");
-            
+            DoSetting(listing, "OdysseyPatch_WorldSearchEmptyTiles", ref WorldSearchEmptyTiles);
 
             y = listing.CurHeight;
             listing.End();
@@ -74,6 +85,8 @@ namespace OdysseyPatch
             Scribe_Values.Look(ref FloorsBlockedByHulls, "FloorsBlockedByHulls", true);
             Scribe_Values.Look(ref FishingInterruptions, "FishingInterruptions", true);
             Scribe_Values.Look(ref SilhouettesHiddenByGravshipLanding, "SilhouettesHiddenByGravshipLanding", true);
+            Scribe_Values.Look(ref AllowRemovingItemsFromOutfitStandAfterEquipping, "AllowRemovingItemsFromOutfitStandAfterEquipping", true);
+            Scribe_Values.Look(ref ShuttleFood, "ShuttleFood", true);
         }
     }
 }

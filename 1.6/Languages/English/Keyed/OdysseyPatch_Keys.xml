@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
+	<OdysseyPatch_SpaceTravel>Space Travel</OdysseyPatch_SpaceTravel>
+	<OdysseyPatch_Fishing>Fishing</OdysseyPatch_Fishing>
+	<OdysseyPatch_OutfitStands>Outfit Stands</OdysseyPatch_OutfitStands>
 	<OdysseyPatch_Misc>Miscellaneous</OdysseyPatch_Misc>
 	<OdysseyPatch_OutfitStandGroupsInBills>Allow looking in or hauling to groups of outfit stands in bills</OdysseyPatch_OutfitStandGroupsInBills>
 	<OdysseyPatch_OutfitStandBodyType>Outfit stand body type is configurable</OdysseyPatch_OutfitStandBodyType>
@@ -10,6 +13,8 @@
 	<OdysseyPatch_FloorsBlockedByHulls>Floors can erroneously be built under gravship hulls</OdysseyPatch_FloorsBlockedByHulls>
 	<OdysseyPatch_FishingInterruptions>Prevent pawns from fishing to starvation/exhaustion</OdysseyPatch_FishingInterruptions>
 	<OdysseyPatch_SilhouettesHiddenByGravshipLanding>Pawn dot highlights are erroneously visible during gravship cutscenes</OdysseyPatch_SilhouettesHiddenByGravshipLanding>
+	<OdysseyPatch_AllowRemovingItemsFromOutfitStandAfterEquipping>Don't disable allowing removing items from outfit stands when ordering a pawn to equip the outfit</OdysseyPatch_AllowRemovingItemsFromOutfitStandAfterEquipping>
+	<OdysseyPatch_ShuttleFood>Pawns can grab food, medicine, and drugs from their parked shuttle just like they can from their pack animals</OdysseyPatch_ShuttleFood>
 	<OdysseyPatch_BugFix>Bug fix</OdysseyPatch_BugFix>
 	<OdysseyPatch_RestartRequired>(requires restart)</OdysseyPatch_RestartRequired>
 	<OdysseyPatch_BodyType>Body type: {0}</OdysseyPatch_BodyType>
@@ -21,4 +26,6 @@
 	<OdysseyPatch_Always>Always</OdysseyPatch_Always>
 	<OdysseyPatch_WhenSelected>When selected</OdysseyPatch_WhenSelected>
 	<OdysseyPatch_Never>Never</OdysseyPatch_Never>
+	<OdysseyPatch_AllowGrabbingSupplies>Allow grabbing supplies</OdysseyPatch_AllowGrabbingSupplies>
+	<OdysseyPatch_AllowGrabbingSuppliesDesc>When enabled, pawns can freely grab food, medicine, and drugs from this shuttle as needed.</OdysseyPatch_AllowGrabbingSuppliesDesc>
 </LanguageData>
