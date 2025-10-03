@@ -16,7 +16,14 @@ namespace OdysseyPatch.OutfitStandBodyType
         private static readonly Texture2D baseTexture = ContentFinder<Texture2D>.Get("Things/Building/OutfitStand/OutfitStand_Base_south");
         private static readonly Texture2D headTexture = ContentFinder<Texture2D>.Get("Things/Building/OutfitStand/OutfitStand_Head_south");
         private static readonly Texture2D maleIcon = ContentFinder<Texture2D>.Get("Things/Building/OutfitStand/OutfitStand_MenuIcon_south");
-        private static readonly List<BodyTypeDef> bodyTypes = DefDatabase<BodyTypeDef>.AllDefsListForReading.Where(b => b != BodyTypeDefOf.Child && b != BodyTypeDefOf.Baby).ToList();
+        private static readonly List<BodyTypeDef> bodyTypes = new List<BodyTypeDef>()
+        {
+            BodyTypeDefOf.Female,
+            BodyTypeDefOf.Male,
+            BodyTypeDefOf.Fat,
+            BodyTypeDefOf.Thin,
+            BodyTypeDefOf.Hulk
+        };
 
         static Comp_OutfitStandBodyType()
         {
