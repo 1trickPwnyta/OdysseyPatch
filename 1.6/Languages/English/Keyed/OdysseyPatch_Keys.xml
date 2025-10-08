@@ -16,6 +16,7 @@
 	<OdysseyPatch_AllowRemovingItemsFromOutfitStandAfterEquipping>Don't disable allowing removing items from outfit stands when ordering a pawn to equip the outfit</OdysseyPatch_AllowRemovingItemsFromOutfitStandAfterEquipping>
 	<OdysseyPatch_ShuttleFood>Pawns can grab food, medicine, and drugs from their parked shuttle just like they can from their pack animals</OdysseyPatch_ShuttleFood>
 	<OdysseyPatch_GravshipCutsceneOptions>Allow pressing Enter to skip gravship cutscenes</OdysseyPatch_GravshipCutsceneOptions>
+	<OdysseyPatch_FlickSwitchesAfterLanding>After landing a gravship, electrical buildings previously designated for flicking the power enter an erroneous state</OdysseyPatch_FlickSwitchesAfterLanding>
 	<OdysseyPatch_BugFix>Bug fix</OdysseyPatch_BugFix>
 	<OdysseyPatch_RestartRequired>(requires restart)</OdysseyPatch_RestartRequired>
 	<OdysseyPatch_BodyType>Body type: {0}</OdysseyPatch_BodyType>
