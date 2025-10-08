@@ -3,7 +3,7 @@
 	<name>1trickPwnyta's Odyssey Patch</name>
 	<author>1trickPwnyta</author>
 	<packageId>odysseypatch.1trickPwnyta</packageId>
-	<modVersion>1.0.3</modVersion>
+	<modVersion>1.1.0</modVersion>
 	<supportedVersions>
 		<li>1.6</li>
 	</supportedVersions>
@@ -11,10 +11,13 @@
 This mod makes a handful of small tweaks to the Odyssey DLC that are intended to make the game a bit more enjoyable without changing the gameplay too much. Each tweak can be toggled on or off in the mod settings.
 
 =Space Travel=
+- Gravship takeoff/landing cutscenes can be skipped by pressing Enter.
 - Pawns can grab food, medicine, and drugs from a parked shuttle, just as they can from a pack animal. This can be toggled via shuttle gizmo.
 - Gravship substructure can be set to shown always, never, or only while the grav engine is selected (setting to always makes planning easier). This can be set via grav engine or field extender gizmo.
 - Bug fix: When placing floors, it is erroneously possible to place them under gravship hulls, which has no benefit.
 - Bug fix: With pawn dot silhouettes enabled, they are erroneously shown during gravship cutscenes.
+- Bug fix: When landing a gravship, deathresting pawns pop out of their beds due to erroneous sunlight detection.
+- Bug fix: When landing a gravship and thus removing any map designators, buildings that were designated for flicking the power switch enter an erroneous state.
 
 =Fishing=
 - You can copy settings between fishing zones.
@@ -28,8 +31,10 @@ This mod makes a handful of small tweaks to the Odyssey DLC that are intended to
 
 =Miscellaneous=
 - Searches in the world view can now search all world tiles for map features instead of only occupied ones. This must be toggled specifically in each search box due to the performance impact.
+- Warnings when settling in orbit or in "dangerous" Odyssey biomes such as lava fields are disabled. Note that scarlands are always polluted and will therefore still warn about the pollution.
 
 === Updates ===
+10/08/2025: Add several new features under Space Travel and Miscellaneous
 10/08/2025: Add additional null check when scanning shuttles for supplies
 10/07/2025: Support modded shuttles for the shuttle supplies feature (as long as they use the Building_PassengerShuttle class)
 10/02/2025: Fix startup errors with modded BodyTypeDefs
