@@ -36,7 +36,7 @@ namespace OdysseyPatch.ShuttleFood
         {
             if (OdysseyPatchSettings.ShuttleFood && medicine == null)
             {
-                foreach (Building_PassengerShuttle shuttle in healer.Map.listerThings.GetThingsOfType<Building_PassengerShuttle>().Where(s => s.Faction.IsPlayer && s.GetGrabbableSupplies().enabled))
+                foreach (Building_PassengerShuttle shuttle in healer.Map.GetShuttlesWithGrabbingEnabled())
                 {
                     Thing thing = BestMedInInventory(obj, shuttle.TransporterComp.innerContainer);
                     if (thing != null && (medicine == null || PriorityOf(medicine) < PriorityOf(thing)) && !shuttle.IsForbidden(healer) && healer.CanReach(shuttle, PathEndMode.InteractionCell, Danger.Some))

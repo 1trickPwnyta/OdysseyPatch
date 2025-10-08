@@ -3,7 +3,7 @@
 	<name>1trickPwnyta's Odyssey Patch</name>
 	<author>1trickPwnyta</author>
 	<packageId>odysseypatch.1trickPwnyta</packageId>
-	<modVersion>1.0.2</modVersion>
+	<modVersion>1.0.3</modVersion>
 	<supportedVersions>
 		<li>1.6</li>
 	</supportedVersions>
@@ -30,6 +30,7 @@ This mod makes a handful of small tweaks to the Odyssey DLC that are intended to
 - Searches in the world view can now search all world tiles for map features instead of only occupied ones. This must be toggled specifically in each search box due to the performance impact.
 
 === Updates ===
+10/08/2025: Add additional null check when scanning shuttles for supplies
 10/07/2025: Support modded shuttles for the shuttle supplies feature (as long as they use the Building_PassengerShuttle class)
 10/02/2025: Fix startup errors with modded BodyTypeDefs
 

@@ -17,18 +17,21 @@ namespace OdysseyPatch.ShuttleFood
             }
             if (OdysseyPatchSettings.ShuttleFood)
             {
-                yield return new Command_Toggle()
+                Comp_GrabbableSupplies comp = __instance.GetGrabbableSupplies();
+                if (comp != null)
                 {
-                    defaultLabel = "OdysseyPatch_AllowGrabbingSupplies".Translate(),
-                    defaultDesc = "OdysseyPatch_AllowGrabbingSuppliesDesc".Translate(),
-                    icon = TexCommand.ForbidOff,
-                    isActive = () => __instance.GetGrabbableSupplies().enabled,
-                    toggleAction = () =>
+                    yield return new Command_Toggle()
                     {
-                        Comp_GrabbableSupplies comp = __instance.GetGrabbableSupplies();
-                        comp.enabled = !comp.enabled;
-                    }
-                };
+                        defaultLabel = "OdysseyPatch_AllowGrabbingSupplies".Translate(),
+                        defaultDesc = "OdysseyPatch_AllowGrabbingSuppliesDesc".Translate(),
+                        icon = TexCommand.ForbidOff,
+                        isActive = () => comp.enabled,
+                        toggleAction = () =>
+                        {
+                            comp.enabled = !comp.enabled;
+                        }
+                    };
+                }
             }
         }
     }

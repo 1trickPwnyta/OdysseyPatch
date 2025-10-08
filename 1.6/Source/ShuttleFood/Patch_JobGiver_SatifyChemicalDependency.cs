@@ -60,7 +60,7 @@ namespace OdysseyPatch.ShuttleFood
             {
                 if (pawn.IsColonist && pawn.Map != null)
                 {
-                    foreach (Building_PassengerShuttle shuttle in pawn.Map.listerThings.GetThingsOfType<Building_PassengerShuttle>().Where(s => s.Faction.IsPlayer && s.GetGrabbableSupplies().enabled))
+                    foreach (Building_PassengerShuttle shuttle in pawn.Map.GetShuttlesWithGrabbingEnabled())
                     {
                         if (!shuttle.IsForbidden(pawn) && pawn.CanReach(shuttle, PathEndMode.InteractionCell, Danger.Some))
                         {

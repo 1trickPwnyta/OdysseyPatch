@@ -38,7 +38,7 @@ namespace OdysseyPatch.ShuttleFood
             if (OdysseyPatchSettings.ShuttleFood && food == null)
             {
                 Building_PassengerShuttle bestShuttle = null;
-                foreach (Building_PassengerShuttle shuttle in getter.Map.listerThings.GetThingsOfType<Building_PassengerShuttle>().Where(s => s.Faction.IsPlayer && s.GetGrabbableSupplies().enabled))
+                foreach (Building_PassengerShuttle shuttle in getter.Map.GetShuttlesWithGrabbingEnabled())
                 {
                     Thing thing = BestFoodInContainer(shuttle.TransporterComp.innerContainer, eater, getter, foodPref, allowVenerated);
                     if (thing != null && (bestShuttle == null || (getter.Position - bestShuttle.Position).LengthManhattan > (getter.Position - shuttle.Position).LengthManhattan) && !shuttle.IsForbidden(getter) && getter.CanReach(shuttle, PathEndMode.InteractionCell, Danger.Some))

@@ -1,4 +1,6 @@
 ﻿using RimWorld;
+using System.Collections.Generic;
+using System.Linq;
 using Verse;
 
 namespace OdysseyPatch.ShuttleFood
@@ -16,5 +18,7 @@ namespace OdysseyPatch.ShuttleFood
     public static class GrabbableSuppliesUtility
     {
         public static Comp_GrabbableSupplies GetGrabbableSupplies(this Building_PassengerShuttle shuttle) => shuttle.GetComp<Comp_GrabbableSupplies>();
+
+        public static IEnumerable<Building_PassengerShuttle> GetShuttlesWithGrabbingEnabled(this Map map) => map.listerThings.GetThingsOfType<Building_PassengerShuttle>().Where(s => s.Faction.IsPlayer && s.GetGrabbableSupplies()?.enabled == true);
     }
 }
