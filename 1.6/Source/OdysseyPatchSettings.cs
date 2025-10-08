@@ -17,6 +17,7 @@ namespace OdysseyPatch
         public static bool SilhouettesHiddenByGravshipLanding = true;
         public static bool AllowRemovingItemsFromOutfitStandAfterEquipping = true;
         public static bool ShuttleFood = true;
+        public static bool GravshipCutsceneOptions = true;
 
         private static Vector2 scrollPosition;
         private static float y;
@@ -30,6 +31,7 @@ namespace OdysseyPatch
             listing.Begin(viewRect);
 
             DoHeader(listing, "OdysseyPatch_SpaceTravel");
+            DoSetting(listing, "OdysseyPatch_GravshipCutsceneOptions", ref GravshipCutsceneOptions);
             DoSetting(listing, "OdysseyPatch_ShuttleFood", ref ShuttleFood);
             DoSetting(listing, "OdysseyPatch_SubstructureOverlayOptions", ref SubstructureOverlayOptions);
             DoSetting(listing, "OdysseyPatch_FloorsBlockedByHulls", ref FloorsBlockedByHulls, bugFix: true);
@@ -87,6 +89,7 @@ namespace OdysseyPatch
             Scribe_Values.Look(ref SilhouettesHiddenByGravshipLanding, "SilhouettesHiddenByGravshipLanding", true);
             Scribe_Values.Look(ref AllowRemovingItemsFromOutfitStandAfterEquipping, "AllowRemovingItemsFromOutfitStandAfterEquipping", true);
             Scribe_Values.Look(ref ShuttleFood, "ShuttleFood", true);
+            Scribe_Values.Look(ref GravshipCutsceneOptions, "GravshipCutsceneOptions", true);
         }
     }
 }

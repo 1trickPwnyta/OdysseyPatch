@@ -76,6 +76,7 @@
     <Compile Include="FishingInterruptions\Patch_JobDriver_Fish.cs" />
     <Compile Include="FishingZoneCopy\Patch_Zone_Fishing.cs" />
     <Compile Include="FloorsBlockedByHulls\Patch_GenConstruct.cs" />
+    <Compile Include="GravshipCutsceneOptions\Patch_WorldComponent_GravshipController.cs" />
     <Compile Include="OdysseyPatchSettings.cs" />
     <Compile Include="OutfitStandBodyType\CompProperties_OutfitStandBodyType.cs" />
     <Compile Include="OutfitStandBodyType\Comp_OutfitStandBodyType.cs" />
