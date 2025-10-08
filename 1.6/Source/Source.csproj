@@ -72,6 +72,8 @@
     <Compile Include="AllowRemovingItemsFromOutfitStandAfterEquipping\Patch_Building_OutfitStand.cs" />
     <Compile Include="AllowRemovingItemsFromOutfitStandAfterEquipping\Patch_JobDriver_UseOutfitStand.cs" />
     <Compile Include="AllowRemovingItemsFromOutfitStand\Patch_Building_OutfitStand.cs" />
+    <Compile Include="BiomeDangerWarningSuppressed\Patch_SettlementProximityGoodwillUtility.cs" />
+    <Compile Include="DeathrestingPawnsTuckedInAfterLanding\Patch_GravshipPlacementUtility.cs" />
     <Compile Include="Debug.cs" />
     <Compile Include="FishingInterruptions\Patch_JobDriver_Fish.cs" />
     <Compile Include="FishingZoneCopy\Patch_Zone_Fishing.cs" />

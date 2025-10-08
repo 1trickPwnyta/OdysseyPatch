@@ -19,6 +19,8 @@ namespace OdysseyPatch
         public static bool ShuttleFood = true;
         public static bool GravshipCutsceneOptions = true;
         public static bool FlickSwitchesAfterLanding = true;
+        public static bool DeathrestingPawnsTuckedInAfterLanding = true;
+        public static bool BiomeDangerWarningSuppressed = true;
 
         private static Vector2 scrollPosition;
         private static float y;
@@ -37,6 +39,7 @@ namespace OdysseyPatch
             DoSetting(listing, "OdysseyPatch_SubstructureOverlayOptions", ref SubstructureOverlayOptions);
             DoSetting(listing, "OdysseyPatch_FloorsBlockedByHulls", ref FloorsBlockedByHulls, bugFix: true);
             DoSetting(listing, "OdysseyPatch_SilhouettesHiddenByGravshipLanding", ref SilhouettesHiddenByGravshipLanding, bugFix: true);
+            if (ModsConfig.BiotechActive) DoSetting(listing, "OdysseyPatch_DeathrestingPawnsTuckedInAfterLanding", ref DeathrestingPawnsTuckedInAfterLanding, bugFix: true);
             DoSetting(listing, "OdysseyPatch_FlickSwitchesAfterLanding", ref FlickSwitchesAfterLanding, bugFix: true);
             
             listing.Gap();
@@ -57,6 +60,7 @@ namespace OdysseyPatch
 
             DoHeader(listing, "OdysseyPatch_Misc");
             DoSetting(listing, "OdysseyPatch_WorldSearchEmptyTiles", ref WorldSearchEmptyTiles);
+            DoSetting(listing, "OdysseyPatch_BiomeDangerWarningSuppressed", ref BiomeDangerWarningSuppressed);
 
             y = listing.CurHeight;
             listing.End();
@@ -93,6 +97,7 @@ namespace OdysseyPatch
             Scribe_Values.Look(ref ShuttleFood, "ShuttleFood", true);
             Scribe_Values.Look(ref GravshipCutsceneOptions, "GravshipCutsceneOptions", true);
             Scribe_Values.Look(ref FlickSwitchesAfterLanding, "FlickSwitchesAfterLanding", true);
+            Scribe_Values.Look(ref DeathrestingPawnsTuckedInAfterLanding, "DeathrestingPawnsTuckedInAfterLanding", true);
         }
     }
 }
