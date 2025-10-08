@@ -18,6 +18,7 @@ namespace OdysseyPatch.FloorsBlockedByHulls
             int index = instructionsList.FirstIndexOf(i => i.opcode == OpCodes.Ldfld && i.operand is FieldInfo f && f == typeof(ThingDef).Field(nameof(ThingDef.category)));
             instructionsList.InsertRange(index - 2, new[]
             {
+                new CodeInstruction(OpCodes.Ldloc_S, 20),
                 new CodeInstruction(OpCodes.Ldloc_S, 21),
                 new CodeInstruction(OpCodes.Call, typeof(Patch_GenConstruct).Method(nameof(ShouldIgnoreForFoundation))),
                 new CodeInstruction(OpCodes.Brfalse_S, instructionsList[index - 3].operand)
@@ -25,6 +26,6 @@ namespace OdysseyPatch.FloorsBlockedByHulls
             return instructionsList;
         }
 
-        private static bool ShouldIgnoreForFoundation(TerrainDef terrain) => !OdysseyPatchSettings.FloorsBlockedByHulls || terrain.isFoundation;
+        private static bool ShouldIgnoreForFoundation(Building building, TerrainDef terrain) => !OdysseyPatchSettings.FloorsBlockedByHulls || terrain.isFoundation || building == null || !building.def.coversFloor;
     }
 }
