@@ -63,15 +63,12 @@ namespace OdysseyPatch.ShuttleFood
                     Hediff_Addiction addictionHediff = need.AddictionHediff;
                     foreach (Building_PassengerShuttle shuttle in pawn.Map.GetShuttlesWithGrabbingEnabled())
                     {
-                        if (!shuttle.IsForbidden(pawn) && pawn.CanReach(shuttle, PathEndMode.InteractionCell, Danger.Some))
+                        foreach (Thing thing in shuttle.TransporterComp.innerContainer)
                         {
-                            foreach (Thing thing in shuttle.TransporterComp.innerContainer)
+                            if (DrugValidator(pawn, addictionHediff, thing) && !shuttle.IsForbidden(pawn) && pawn.CanReach(shuttle, PathEndMode.InteractionCell, Danger.Some))
                             {
-                                if (DrugValidator(pawn, addictionHediff, thing))
-                                {
-                                    __result = thing;
-                                    return;
-                                }
+                                __result = thing;
+                                return;
                             }
                         }
                     }

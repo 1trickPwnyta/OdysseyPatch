@@ -19,6 +19,6 @@ namespace OdysseyPatch.ShuttleFood
     {
         public static Comp_GrabbableSupplies GetGrabbableSupplies(this Building_PassengerShuttle shuttle) => shuttle.GetComp<Comp_GrabbableSupplies>();
 
-        public static IEnumerable<Building_PassengerShuttle> GetShuttlesWithGrabbingEnabled(this Map map) => map.listerThings.GetThingsOfType<Building_PassengerShuttle>().Where(s => s.Faction.IsPlayer && s.GetGrabbableSupplies()?.enabled == true);
+        public static IEnumerable<Building_PassengerShuttle> GetShuttlesWithGrabbingEnabled(this Map map) => map.listerBuildings.AllBuildingsColonistOfClass<Building_PassengerShuttle>().Where(s => s.GetGrabbableSupplies()?.enabled == true);
     }
 }

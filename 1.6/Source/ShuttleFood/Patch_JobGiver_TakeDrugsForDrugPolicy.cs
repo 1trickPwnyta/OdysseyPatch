@@ -62,15 +62,12 @@ namespace OdysseyPatch.ShuttleFood
                 {
                     foreach (Building_PassengerShuttle shuttle in pawn.Map.GetShuttlesWithGrabbingEnabled())
                     {
-                        if (!shuttle.IsForbidden(pawn) && pawn.CanReach(shuttle, PathEndMode.InteractionCell, Danger.Some))
+                        foreach (Thing thing in shuttle.TransporterComp.innerContainer)
                         {
-                            foreach (Thing thing in shuttle.TransporterComp.innerContainer)
+                            if (thing.def == drugDef && DrugValidator(__instance, pawn, thing) && !shuttle.IsForbidden(pawn) && pawn.CanReach(shuttle, PathEndMode.InteractionCell, Danger.Some))
                             {
-                                if (thing.def == drugDef && DrugValidator(__instance, pawn, thing))
-                                {
-                                    __result = thing;
-                                    return;
-                                }
+                                __result = thing;
+                                return;
                             }
                         }
                     }
