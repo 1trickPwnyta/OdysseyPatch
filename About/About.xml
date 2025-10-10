@@ -55,4 +55,7 @@ Mod icon: twitter.com/mouse_draws
 			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
 		</li>
 	</modDependencies>
+	<loadBefore>
+		<li>kathanon.groupedmapsearch</li>
+	</loadBefore>
 </ModMetaData>
