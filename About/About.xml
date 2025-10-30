@@ -28,6 +28,7 @@ This mod makes a handful of small tweaks to the Odyssey DLC that are intended to
 - Grouped outfit stands can be the target of bills (you can look for ingredients only in such a group, or you can take product specifically to such a group).
 - Pawns are allowed to remove items from outfit stands by default. You don't need to toggle it each time.
 - Removing items from outfit stands is no longer automatically disabled when a pawn is ordered to equip the outfit.
+- Items stored on outfit stands can't decrease beauty, but they can still increase it.
 
 =Miscellaneous=
 - Searches in the world view can now search all world tiles for map features instead of only occupied ones. This must be toggled specifically in each search box due to the performance impact.

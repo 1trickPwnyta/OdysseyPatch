@@ -21,7 +21,9 @@ namespace OdysseyPatch
         public static bool FlickSwitchesAfterLanding = true;
         public static bool DeathrestingPawnsTuckedInAfterLanding = true;
         public static bool BiomeDangerWarningSuppressed = true;
-
+        public static bool OutfitStandsIgnoreStoredThingsBeauty = true;
+        public static bool FishingMishapsLessIntrusive = true;
+        
         private static Vector2 scrollPosition;
         private static float y;
         
@@ -29,7 +31,6 @@ namespace OdysseyPatch
         {
             Rect viewRect = new Rect(0f, 0f, inRect.width - 20f, y);
             Widgets.BeginScrollView(inRect, ref scrollPosition, viewRect);
-
             Listing_Standard listing = new Listing_Standard() { maxOneColumn = true };
             listing.Begin(viewRect);
 
@@ -47,6 +48,7 @@ namespace OdysseyPatch
             DoHeader(listing, "OdysseyPatch_Fishing");
             DoSetting(listing, "OdysseyPatch_FishingZoneCopy", ref FishingZoneCopy);
             DoSetting(listing, "OdysseyPatch_FishingInterruptions", ref FishingInterruptions);
+            DoSetting(listing, "OdysseyPatch_FishingMishapsLessIntrusive", ref FishingMishapsLessIntrusive);
 
             listing.Gap();
 
@@ -55,6 +57,7 @@ namespace OdysseyPatch
             DoSetting(listing, "OdysseyPatch_OutfitStandGroupsInBills", ref OutfitStandGroupsInBills, restartRequired: true);
             DoSetting(listing, "OdysseyPatch_AllowRemovingItemsFromOutfitStand", ref AllowRemovingItemsFromOutfitStand);
             DoSetting(listing, "OdysseyPatch_AllowRemovingItemsFromOutfitStandAfterEquipping", ref AllowRemovingItemsFromOutfitStandAfterEquipping);
+            DoSetting(listing, "OdysseyPatch_OutfitStandsIgnoreStoredThingsBeauty", ref OutfitStandsIgnoreStoredThingsBeauty);
 
             listing.Gap();
 
@@ -77,9 +80,13 @@ namespace OdysseyPatch
             listing.GapLine();
         }
 
-        private static void DoSetting(Listing_Standard listing, string key, ref bool setting, bool restartRequired = false, bool bugFix = false)
+        private static void DoSetting(Listing_Standard listing, string key, ref bool setting, bool restartRequired = false, bool bugFix = false, bool dependsOn = true, int indentLevel = 0)
         {
-            listing.CheckboxLabeled((bugFix ? "OdysseyPatch_BugFix".Translate() + ": " : TaggedString.Empty) + key.Translate() + (restartRequired ? " " + "OdysseyPatch_RestartRequired".Translate() : TaggedString.Empty), ref setting);
+            if (dependsOn)
+            {
+                string indent = new string(' ', indentLevel * 2);
+                listing.CheckboxLabeled(indent + (bugFix ? "OdysseyPatch_BugFix".Translate() + ": " : TaggedString.Empty) + key.Translate() + (restartRequired ? " " + "OdysseyPatch_RestartRequired".Translate() : TaggedString.Empty), ref setting);
+            }
         }
 
         public override void ExposeData()
@@ -98,6 +105,8 @@ namespace OdysseyPatch
             Scribe_Values.Look(ref GravshipCutsceneOptions, "GravshipCutsceneOptions", true);
             Scribe_Values.Look(ref FlickSwitchesAfterLanding, "FlickSwitchesAfterLanding", true);
             Scribe_Values.Look(ref DeathrestingPawnsTuckedInAfterLanding, "DeathrestingPawnsTuckedInAfterLanding", true);
+            Scribe_Values.Look(ref OutfitStandsIgnoreStoredThingsBeauty, "OutfitStandsIgnoreStoredThingsBeauty", true);
+            Scribe_Values.Look(ref FishingMishapsLessIntrusive, "FishingMishapsLessIntrusive", true);
         }
     }
 }

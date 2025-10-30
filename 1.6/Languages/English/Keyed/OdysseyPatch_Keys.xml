@@ -19,6 +19,8 @@
 	<OdysseyPatch_FlickSwitchesAfterLanding>After landing a gravship, electrical buildings previously designated for flicking the power enter an erroneous state</OdysseyPatch_FlickSwitchesAfterLanding>
 	<OdysseyPatch_DeathrestingPawnsTuckedInAfterLanding>After landing a gravship, deathresting pawns are erroneously popped out of bed</OdysseyPatch_DeathrestingPawnsTuckedInAfterLanding>
 	<OdysseyPatch_BiomeDangerWarningSuppressed>Disable warnings when settling in orbit or in "dangerous" biomes</OdysseyPatch_BiomeDangerWarningSuppressed>
+	<OdysseyPatch_OutfitStandsIgnoreStoredThingsBeauty>Ignore ugliness of things stored on outfit stands (positive beauty still counts)</OdysseyPatch_OutfitStandsIgnoreStoredThingsBeauty>
+	<OdysseyPatch_FishingMishapsLessIntrusive>Negative fishing outcome notifications are less intrusive</OdysseyPatch_FishingMishapsLessIntrusive>
 	<OdysseyPatch_BugFix>Bug fix</OdysseyPatch_BugFix>
 	<OdysseyPatch_RestartRequired>(requires restart)</OdysseyPatch_RestartRequired>
 	<OdysseyPatch_BodyType>Body type: {0}</OdysseyPatch_BodyType>
