@@ -21,6 +21,9 @@
 	<OdysseyPatch_BiomeDangerWarningSuppressed>Disable warnings when settling in orbit or in "dangerous" biomes</OdysseyPatch_BiomeDangerWarningSuppressed>
 	<OdysseyPatch_OutfitStandsIgnoreStoredThingsBeauty>Ignore ugliness of things stored on outfit stands (positive beauty still counts)</OdysseyPatch_OutfitStandsIgnoreStoredThingsBeauty>
 	<OdysseyPatch_FishingMishapsLessIntrusive>Negative fishing outcome notifications are less intrusive</OdysseyPatch_FishingMishapsLessIntrusive>
+	<OdysseyPatch_ShuttleSavingError>Saving with a shuttle that hasn't been used yet causes an error</OdysseyPatch_ShuttleSavingError>
+	<OdysseyPatch_ShuttleBlockedByLess>You can park a shuttle anywhere you could also place a blueprint for a new shuttle</OdysseyPatch_ShuttleBlockedByLess>
+	<OdysseyPatch_StatuesDontHaveHeadgear>Allow hiding statue headgear</OdysseyPatch_StatuesDontHaveHeadgear>
 	<OdysseyPatch_BugFix>Bug fix</OdysseyPatch_BugFix>
 	<OdysseyPatch_RestartRequired>(requires restart)</OdysseyPatch_RestartRequired>
 	<OdysseyPatch_BodyType>Body type: {0}</OdysseyPatch_BodyType>
@@ -34,4 +37,5 @@
 	<OdysseyPatch_Never>Never</OdysseyPatch_Never>
 	<OdysseyPatch_AllowGrabbingSupplies>Allow grabbing supplies</OdysseyPatch_AllowGrabbingSupplies>
 	<OdysseyPatch_AllowGrabbingSuppliesDesc>When enabled, pawns can freely grab food, medicine, and drugs from this shuttle as needed.</OdysseyPatch_AllowGrabbingSuppliesDesc>
+	<OdysseyPatch_ShowHeadgear>Show headgear</OdysseyPatch_ShowHeadgear>
 </LanguageData>

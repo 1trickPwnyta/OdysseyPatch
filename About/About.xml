@@ -12,16 +12,19 @@ This mod makes a handful of small tweaks to the Odyssey DLC that are intended to
 
 =Space Travel=
 - Gravship takeoff/landing cutscenes can be skipped by pressing Enter.
-- Pawns can grab food, medicine, and drugs from a parked shuttle, just as they can from a pack animal. This can be toggled via shuttle gizmo.
 - Gravship substructure can be set to shown always, never, or only while the grav engine is selected (setting to always makes planning easier). This can be set via grav engine or field extender gizmo.
+- Pawns can grab food, medicine, and drugs from a parked shuttle, just as they can from a pack animal. This can be toggled via shuttle gizmo.
+- You can park a shuttle anywhere it is possible to place a shuttle blueprint, so landing shuttles aren't blocked by wall lights, floor coverings, etc.
 - Bug fix: When placing floors, it is erroneously possible to place them under gravship hulls, which has no benefit.
 - Bug fix: With pawn dot silhouettes enabled, they are erroneously shown during gravship cutscenes.
 - Bug fix: When landing a gravship, deathresting pawns pop out of their beds due to erroneous sunlight detection.
 - Bug fix: When landing a gravship and thus removing any map designators, buildings that were designated for flicking the power switch enter an erroneous state.
+- Bug fix: Saving the game with a shuttle that has been built but not yet interacted with causes an error.
 
 =Fishing=
 - You can copy settings between fishing zones.
 - Pawns can stop fishing if their basic needs are unmet instead of literally fishing until they catch something or collapse.
+- No letters for fishing misses - if a pawn is hurt, just a message at the top, and if not hurt, no notification at all.
 
 =Outfit Stands=
 - You can change the body type of outfit stands to other vanilla body types, such as female or hulk. This can be set via outfit stand gizmo.
@@ -32,6 +35,7 @@ This mod makes a handful of small tweaks to the Odyssey DLC that are intended to
 
 =Miscellaneous=
 - Searches in the world view can now search all world tiles for map features instead of only occupied ones. This must be toggled specifically in each search box due to the performance impact.
+- Allow hiding statues' headgear via gizmo. Default value is based on whether headgear is visible in the colonist bar.
 - Warnings when settling in orbit or in "dangerous" Odyssey biomes such as lava fields are disabled. Note that scarlands are always polluted and will therefore still warn about the pollution.
 
 === Updates ===

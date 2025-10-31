@@ -96,6 +96,8 @@
     <Compile Include="PatchOperationReplaceIf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="OdysseyPatchMod.cs" />
+    <Compile Include="ShuttleBlockedByLess\Patch_RoyalTitlePermitWorker_CallShuttle.cs" />
+    <Compile Include="ShuttleBlockedByLess\Patch_ShipJob_Unload.cs" />
     <Compile Include="ShuttleFood\CompProperties_GrabbableSupplies.cs" />
     <Compile Include="ShuttleFood\Comp_GrabbableSupplies.cs" />
     <Compile Include="ShuttleFood\JobDriver_TakeFromShuttle.cs" />
@@ -107,9 +109,12 @@
     <Compile Include="ShuttleFood\Patch_JobGiver_SatifyChemicalDependency.cs" />
     <Compile Include="ShuttleFood\Patch_JobGiver_SatisfyChemicalNeed.cs" />
     <Compile Include="ShuttleFood\Patch_JobGiver_TakeDrugsForDrugPolicy.cs" />
-    <Compile Include="ShuttleFood\Patch_Building_PassengerShuttle.cs" />
     <Compile Include="ShuttleFood\Toils_Shuttle.cs" />
+    <Compile Include="ShuttleSavingError\Patch_CompTransporter.cs" />
     <Compile Include="SilhouettesHiddenByGravshipLanding\Patch_SilhouetteUtility.cs" />
+    <Compile Include="StatuesDontHaveHeadgear\CompProperties_StatueHeadgear.cs" />
+    <Compile Include="StatuesDontHaveHeadgear\Comp_StatueHeadgear.cs" />
+    <Compile Include="StatuesDontHaveHeadgear\Patch_CompStatue.cs" />
     <Compile Include="SubstructureOverlayOptions\Command_Dropdown.cs" />
     <Compile Include="SubstructureOverlayOptions\Patch_CompSubstructureFootprint.cs" />
     <Compile Include="SubstructureOverlayOptions\Patch_GravshipUtility.cs" />
