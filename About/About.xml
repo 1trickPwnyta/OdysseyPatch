@@ -3,7 +3,7 @@
 	<name>1trickPwnyta's Odyssey Patch</name>
 	<author>1trickPwnyta</author>
 	<packageId>odysseypatch.1trickPwnyta</packageId>
-	<modVersion>1.1.0</modVersion>
+	<modVersion>1.2.0</modVersion>
 	<supportedVersions>
 		<li>1.6</li>
 	</supportedVersions>
@@ -26,19 +26,21 @@ This mod makes a handful of small tweaks to the Odyssey DLC that are intended to
 - Pawns can stop fishing if their basic needs are unmet instead of literally fishing until they catch something or collapse.
 - No letters for fishing misses - if a pawn is hurt, just a message at the top, and if not hurt, no notification at all.
 
-=Outfit Stands=
+=Outfit Stands and Statues=
 - You can change the body type of outfit stands to other vanilla body types, such as female or hulk. This can be set via outfit stand gizmo.
 - Grouped outfit stands can be the target of bills (you can look for ingredients only in such a group, or you can take product specifically to such a group).
 - Pawns are allowed to remove items from outfit stands by default. You don't need to toggle it each time.
 - Removing items from outfit stands is no longer automatically disabled when a pawn is ordered to equip the outfit.
 - Items stored on outfit stands can't decrease beauty, but they can still increase it.
+- Allow hiding statues' headgear via gizmo. Default value is based on whether headgear is visible in the colonist bar.
+- Bug fix: Statues can erroneously reload with different dominant genes. For example, when reloading a save file, a statue of a pawn with the Neanderthal xenotype may reload as a standard, hulk, or fat body type. This fix does not apply to statues created before installing this mod.
 
 =Miscellaneous=
 - Searches in the world view can now search all world tiles for map features instead of only occupied ones. This must be toggled specifically in each search box due to the performance impact.
-- Allow hiding statues' headgear via gizmo. Default value is based on whether headgear is visible in the colonist bar.
 - Warnings when settling in orbit or in "dangerous" Odyssey biomes such as lava fields are disabled. Note that scarlands are always polluted and will therefore still warn about the pollution.
 
 === Updates ===
+11/01/2025: Allow parking shuttle in more places, fix shuttle save bug, reduce letter spam when fishing, hide statue headgear, fix statue xenotype bug
 10/08/2025: Add several new features under Space Travel and Miscellaneous
 10/08/2025: Add additional null check when scanning shuttles for supplies
 10/07/2025: Support modded shuttles for the shuttle supplies feature (as long as they use the Building_PassengerShuttle class)

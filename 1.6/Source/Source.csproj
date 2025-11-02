@@ -112,6 +112,7 @@
     <Compile Include="ShuttleFood\Toils_Shuttle.cs" />
     <Compile Include="ShuttleSavingError\Patch_CompTransporter.cs" />
     <Compile Include="SilhouettesHiddenByGravshipLanding\Patch_SilhouetteUtility.cs" />
+    <Compile Include="StatueConsistency\Patch_CompStatue.cs" />
     <Compile Include="StatuesDontHaveHeadgear\CompProperties_StatueHeadgear.cs" />
     <Compile Include="StatuesDontHaveHeadgear\Comp_StatueHeadgear.cs" />
     <Compile Include="StatuesDontHaveHeadgear\Patch_CompStatue.cs" />

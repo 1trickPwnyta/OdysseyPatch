@@ -26,6 +26,7 @@ namespace OdysseyPatch
         public static bool ShuttleSavingError = true;
         public static bool ShuttleBlockedByLess = true;
         public static bool StatuesDontHaveHeadgear = true;
+        public static bool StatueConsistency = true;
         
         private static Vector2 scrollPosition;
         private static float y;
@@ -63,12 +64,13 @@ namespace OdysseyPatch
             DoSetting(listing, "OdysseyPatch_AllowRemovingItemsFromOutfitStand", ref AllowRemovingItemsFromOutfitStand);
             DoSetting(listing, "OdysseyPatch_AllowRemovingItemsFromOutfitStandAfterEquipping", ref AllowRemovingItemsFromOutfitStandAfterEquipping);
             DoSetting(listing, "OdysseyPatch_OutfitStandsIgnoreStoredThingsBeauty", ref OutfitStandsIgnoreStoredThingsBeauty);
+            DoSetting(listing, "OdysseyPatch_StatuesDontHaveHeadgear", ref StatuesDontHaveHeadgear);
+            DoSetting(listing, "OdysseyPatch_StatueConsistency", ref StatueConsistency, bugFix: true, dependsOn: ModsConfig.BiotechActive);
 
             listing.Gap();
 
             DoHeader(listing, "OdysseyPatch_Misc");
             DoSetting(listing, "OdysseyPatch_WorldSearchEmptyTiles", ref WorldSearchEmptyTiles);
-            DoSetting(listing, "OdysseyPatch_StatuesDontHaveHeadgear", ref StatuesDontHaveHeadgear);
             DoSetting(listing, "OdysseyPatch_BiomeDangerWarningSuppressed", ref BiomeDangerWarningSuppressed);
 
             y = listing.CurHeight;
@@ -116,6 +118,7 @@ namespace OdysseyPatch
             Scribe_Values.Look(ref ShuttleSavingError, "ShuttleSavingError", true);
             Scribe_Values.Look(ref ShuttleBlockedByLess, "ShuttleBlockedByLess", true);
             Scribe_Values.Look(ref StatuesDontHaveHeadgear, "StatuesDontHaveHeadgear", true);
+            Scribe_Values.Look(ref StatueConsistency, "StatueConsistency", true);
         }
     }
 }

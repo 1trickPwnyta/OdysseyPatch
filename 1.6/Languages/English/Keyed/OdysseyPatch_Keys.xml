@@ -2,7 +2,7 @@
 <LanguageData>
 	<OdysseyPatch_SpaceTravel>Space Travel</OdysseyPatch_SpaceTravel>
 	<OdysseyPatch_Fishing>Fishing</OdysseyPatch_Fishing>
-	<OdysseyPatch_OutfitStands>Outfit Stands</OdysseyPatch_OutfitStands>
+	<OdysseyPatch_OutfitStands>Outfit Stands and Statues</OdysseyPatch_OutfitStands>
 	<OdysseyPatch_Misc>Miscellaneous</OdysseyPatch_Misc>
 	<OdysseyPatch_OutfitStandGroupsInBills>Allow looking in or hauling to groups of outfit stands in bills</OdysseyPatch_OutfitStandGroupsInBills>
 	<OdysseyPatch_OutfitStandBodyType>Outfit stand body type is configurable</OdysseyPatch_OutfitStandBodyType>
@@ -24,6 +24,7 @@
 	<OdysseyPatch_ShuttleSavingError>Saving with a shuttle that hasn't been used yet causes an error</OdysseyPatch_ShuttleSavingError>
 	<OdysseyPatch_ShuttleBlockedByLess>You can park a shuttle anywhere you could also place a blueprint for a new shuttle</OdysseyPatch_ShuttleBlockedByLess>
 	<OdysseyPatch_StatuesDontHaveHeadgear>Allow hiding statue headgear</OdysseyPatch_StatuesDontHaveHeadgear>
+	<OdysseyPatch_StatueConsistency>Statues can erroneously reload with different dominant genes</OdysseyPatch_StatueConsistency>
 	<OdysseyPatch_BugFix>Bug fix</OdysseyPatch_BugFix>
 	<OdysseyPatch_RestartRequired>(requires restart)</OdysseyPatch_RestartRequired>
 	<OdysseyPatch_BodyType>Body type: {0}</OdysseyPatch_BodyType>
