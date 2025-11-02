@@ -21,7 +21,13 @@ namespace OdysseyPatch
         public static bool FlickSwitchesAfterLanding = true;
         public static bool DeathrestingPawnsTuckedInAfterLanding = true;
         public static bool BiomeDangerWarningSuppressed = true;
-
+        public static bool OutfitStandsIgnoreStoredThingsBeauty = true;
+        public static bool FishingMishapsLessIntrusive = true;
+        public static bool ShuttleSavingError = true;
+        public static bool ShuttleBlockedByLess = true;
+        public static bool StatuesDontHaveHeadgear = true;
+        public static bool StatueConsistency = true;
+        
         private static Vector2 scrollPosition;
         private static float y;
         
@@ -29,24 +35,26 @@ namespace OdysseyPatch
         {
             Rect viewRect = new Rect(0f, 0f, inRect.width - 20f, y);
             Widgets.BeginScrollView(inRect, ref scrollPosition, viewRect);
-
             Listing_Standard listing = new Listing_Standard() { maxOneColumn = true };
             listing.Begin(viewRect);
 
             DoHeader(listing, "OdysseyPatch_SpaceTravel");
             DoSetting(listing, "OdysseyPatch_GravshipCutsceneOptions", ref GravshipCutsceneOptions);
-            DoSetting(listing, "OdysseyPatch_ShuttleFood", ref ShuttleFood);
             DoSetting(listing, "OdysseyPatch_SubstructureOverlayOptions", ref SubstructureOverlayOptions);
+            DoSetting(listing, "OdysseyPatch_ShuttleFood", ref ShuttleFood);
+            DoSetting(listing, "OdysseyPatch_ShuttleBlockedByLess", ref ShuttleBlockedByLess);
             DoSetting(listing, "OdysseyPatch_FloorsBlockedByHulls", ref FloorsBlockedByHulls, bugFix: true);
             DoSetting(listing, "OdysseyPatch_SilhouettesHiddenByGravshipLanding", ref SilhouettesHiddenByGravshipLanding, bugFix: true);
-            if (ModsConfig.BiotechActive) DoSetting(listing, "OdysseyPatch_DeathrestingPawnsTuckedInAfterLanding", ref DeathrestingPawnsTuckedInAfterLanding, bugFix: true);
+            DoSetting(listing, "OdysseyPatch_DeathrestingPawnsTuckedInAfterLanding", ref DeathrestingPawnsTuckedInAfterLanding, bugFix: true, dependsOn: ModsConfig.BiotechActive);
             DoSetting(listing, "OdysseyPatch_FlickSwitchesAfterLanding", ref FlickSwitchesAfterLanding, bugFix: true);
+            DoSetting(listing, "OdysseyPatch_ShuttleSavingError", ref ShuttleSavingError, bugFix: true);
             
             listing.Gap();
 
             DoHeader(listing, "OdysseyPatch_Fishing");
             DoSetting(listing, "OdysseyPatch_FishingZoneCopy", ref FishingZoneCopy);
             DoSetting(listing, "OdysseyPatch_FishingInterruptions", ref FishingInterruptions);
+            DoSetting(listing, "OdysseyPatch_FishingMishapsLessIntrusive", ref FishingMishapsLessIntrusive);
 
             listing.Gap();
 
@@ -55,6 +63,9 @@ namespace OdysseyPatch
             DoSetting(listing, "OdysseyPatch_OutfitStandGroupsInBills", ref OutfitStandGroupsInBills, restartRequired: true);
             DoSetting(listing, "OdysseyPatch_AllowRemovingItemsFromOutfitStand", ref AllowRemovingItemsFromOutfitStand);
             DoSetting(listing, "OdysseyPatch_AllowRemovingItemsFromOutfitStandAfterEquipping", ref AllowRemovingItemsFromOutfitStandAfterEquipping);
+            DoSetting(listing, "OdysseyPatch_OutfitStandsIgnoreStoredThingsBeauty", ref OutfitStandsIgnoreStoredThingsBeauty);
+            DoSetting(listing, "OdysseyPatch_StatuesDontHaveHeadgear", ref StatuesDontHaveHeadgear);
+            DoSetting(listing, "OdysseyPatch_StatueConsistency", ref StatueConsistency, bugFix: true, dependsOn: ModsConfig.BiotechActive);
 
             listing.Gap();
 
@@ -77,9 +88,13 @@ namespace OdysseyPatch
             listing.GapLine();
         }
 
-        private static void DoSetting(Listing_Standard listing, string key, ref bool setting, bool restartRequired = false, bool bugFix = false)
+        private static void DoSetting(Listing_Standard listing, string key, ref bool setting, bool restartRequired = false, bool bugFix = false, bool dependsOn = true, int indentLevel = 0)
         {
-            listing.CheckboxLabeled((bugFix ? "OdysseyPatch_BugFix".Translate() + ": " : TaggedString.Empty) + key.Translate() + (restartRequired ? " " + "OdysseyPatch_RestartRequired".Translate() : TaggedString.Empty), ref setting);
+            if (dependsOn)
+            {
+                string indent = new string(' ', indentLevel * 2);
+                listing.CheckboxLabeled(indent + (bugFix ? "OdysseyPatch_BugFix".Translate() + ": " : TaggedString.Empty) + key.Translate() + (restartRequired ? " " + "OdysseyPatch_RestartRequired".Translate() : TaggedString.Empty), ref setting);
+            }
         }
 
         public override void ExposeData()
@@ -98,6 +113,12 @@ namespace OdysseyPatch
             Scribe_Values.Look(ref GravshipCutsceneOptions, "GravshipCutsceneOptions", true);
             Scribe_Values.Look(ref FlickSwitchesAfterLanding, "FlickSwitchesAfterLanding", true);
             Scribe_Values.Look(ref DeathrestingPawnsTuckedInAfterLanding, "DeathrestingPawnsTuckedInAfterLanding", true);
+            Scribe_Values.Look(ref OutfitStandsIgnoreStoredThingsBeauty, "OutfitStandsIgnoreStoredThingsBeauty", true);
+            Scribe_Values.Look(ref FishingMishapsLessIntrusive, "FishingMishapsLessIntrusive", true);
+            Scribe_Values.Look(ref ShuttleSavingError, "ShuttleSavingError", true);
+            Scribe_Values.Look(ref ShuttleBlockedByLess, "ShuttleBlockedByLess", true);
+            Scribe_Values.Look(ref StatuesDontHaveHeadgear, "StatuesDontHaveHeadgear", true);
+            Scribe_Values.Look(ref StatueConsistency, "StatueConsistency", true);
         }
     }
 }

@@ -9,6 +9,24 @@ namespace OdysseyPatch.ShuttleFood
     {
         public bool enabled = true;
 
+        public override IEnumerable<Gizmo> CompGetGizmosExtra()
+        {
+            if (OdysseyPatchSettings.ShuttleFood)
+            {
+                yield return new Command_Toggle()
+                {
+                    defaultLabel = "OdysseyPatch_AllowGrabbingSupplies".Translate(),
+                    defaultDesc = "OdysseyPatch_AllowGrabbingSuppliesDesc".Translate(),
+                    icon = TexCommand.ForbidOff,
+                    isActive = () => enabled,
+                    toggleAction = () =>
+                    {
+                        enabled = !enabled;
+                    }
+                };
+            }
+        }
+
         public override void PostExposeData()
         {
             Scribe_Values.Look(ref enabled, "enabled", true);
