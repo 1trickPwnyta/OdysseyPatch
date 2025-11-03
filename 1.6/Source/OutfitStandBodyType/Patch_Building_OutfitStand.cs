@@ -58,7 +58,7 @@ namespace OdysseyPatch.OutfitStandBodyType
             if (OdysseyPatchSettings.OutfitStandBodyType)
             {
                 Comp_OutfitStandBodyType comp = stand.GetComp<Comp_OutfitStandBodyType>();
-                if (comp.bodyType != BodyTypeDefOf.Male)
+                if (comp != null && comp.bodyType != BodyTypeDefOf.Male)
                 {
                     return Comp_OutfitStandBodyType.GetGraphicForBodyType(comp.bodyType);
                 }

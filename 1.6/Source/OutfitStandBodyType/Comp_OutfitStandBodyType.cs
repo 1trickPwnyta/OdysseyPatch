@@ -56,9 +56,11 @@ namespace OdysseyPatch.OutfitStandBodyType
 
         public BodyTypeDef bodyType = BodyTypeDefOf.Male;
 
+        private bool IsKidOutfitStand => parent.def.building?.fixedStorageSettings?.filter != null && (typeof(ThingFilter).Field("specialFiltersToDisallow").GetValue(parent.def.building.fixedStorageSettings.filter) as List<string>).Contains("AllowAdultOnlyApparel");
+
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            if (!OdysseyPatchSettings.OutfitStandBodyType)
+            if (!OdysseyPatchSettings.OutfitStandBodyType || IsKidOutfitStand)
             {
                 yield break;
             }
