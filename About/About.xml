@@ -3,7 +3,7 @@
 	<name>1trickPwnyta's Odyssey Patch</name>
 	<author>1trickPwnyta</author>
 	<packageId>odysseypatch.1trickPwnyta</packageId>
-	<modVersion>1.2.0</modVersion>
+	<modVersion>1.3.0</modVersion>
 	<supportedVersions>
 		<li>1.6</li>
 	</supportedVersions>
@@ -20,6 +20,7 @@ This mod makes a handful of small tweaks to the Odyssey DLC that are intended to
 - Bug fix: When landing a gravship, deathresting pawns pop out of their beds due to erroneous sunlight detection.
 - Bug fix: When landing a gravship and thus removing any map designators, buildings that were designated for flicking the power switch enter an erroneous state.
 - Bug fix: Saving the game with a shuttle that has been built but not yet interacted with causes an error.
+- Bug fix: Floors on top of substructure erroneously use the filth rate of the substructure instead.
 
 =Fishing=
 - You can copy settings between fishing zones.
@@ -40,6 +41,7 @@ This mod makes a handful of small tweaks to the Odyssey DLC that are intended to
 - Warnings when settling in orbit or in "dangerous" Odyssey biomes such as lava fields are disabled. Note that scarlands are always polluted and will therefore still warn about the pollution.
 
 === Updates ===
+11/02/2025: Add support for changing body type of modded outfit stands, add fix for substructure filth rate bug
 11/01/2025: Allow parking shuttle in more places, fix shuttle save bug, reduce letter spam when fishing, hide statue headgear, fix statue xenotype bug
 10/09/2025: Fix performance issue with scanning shuttles for supplies, enforce correct load order with Improved Map Search mod
 10/08/2025: Add several new features under Space Travel and Miscellaneous
