@@ -75,6 +75,7 @@
     <Compile Include="BiomeDangerWarningSuppressed\Patch_SettlementProximityGoodwillUtility.cs" />
     <Compile Include="DeathrestingPawnsTuckedInAfterLanding\Patch_GravshipPlacementUtility.cs" />
     <Compile Include="Debug.cs" />
+    <Compile Include="FilthMultiplierFixForSubstructure\Patch_FilthMaker.cs" />
     <Compile Include="FishingInterruptions\Patch_JobDriver_Fish.cs" />
     <Compile Include="FishingMishapsLessIntrusive\Patch_JobDriver_Fish.cs" />
     <Compile Include="FishingZoneCopy\Patch_Zone_Fishing.cs" />

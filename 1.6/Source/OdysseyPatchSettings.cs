@@ -27,6 +27,7 @@ namespace OdysseyPatch
         public static bool ShuttleBlockedByLess = true;
         public static bool StatuesDontHaveHeadgear = true;
         public static bool StatueConsistency = true;
+        public static bool FilthMultiplierFixForSubstructure = true;
         
         private static Vector2 scrollPosition;
         private static float y;
@@ -48,6 +49,7 @@ namespace OdysseyPatch
             DoSetting(listing, "OdysseyPatch_DeathrestingPawnsTuckedInAfterLanding", ref DeathrestingPawnsTuckedInAfterLanding, bugFix: true, dependsOn: ModsConfig.BiotechActive);
             DoSetting(listing, "OdysseyPatch_FlickSwitchesAfterLanding", ref FlickSwitchesAfterLanding, bugFix: true);
             DoSetting(listing, "OdysseyPatch_ShuttleSavingError", ref ShuttleSavingError, bugFix: true);
+            DoSetting(listing, "OdysseyPatch_FilthMultiplierFixForSubstructure", ref FilthMultiplierFixForSubstructure, bugFix: true);
             
             listing.Gap();
 
@@ -119,6 +121,7 @@ namespace OdysseyPatch
             Scribe_Values.Look(ref ShuttleBlockedByLess, "ShuttleBlockedByLess", true);
             Scribe_Values.Look(ref StatuesDontHaveHeadgear, "StatuesDontHaveHeadgear", true);
             Scribe_Values.Look(ref StatueConsistency, "StatueConsistency", true);
+            Scribe_Values.Look(ref FilthMultiplierFixForSubstructure, "FilthMultiplierFixForSubstructure", true);
         }
     }
 }
