@@ -35,6 +35,13 @@ namespace OdysseyPatch.ShuttleFood
                     yield return toil;
                 }
             }
+            else
+            {
+                foreach (Toil toil in toils)
+                {
+                    yield return toil;
+                }
+            }
         }
     }
 }

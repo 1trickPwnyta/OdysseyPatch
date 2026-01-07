@@ -3,44 +3,46 @@
 	<name>1trickPwnyta's Odyssey Patch</name>
 	<author>1trickPwnyta</author>
 	<packageId>odysseypatch.1trickPwnyta</packageId>
-	<modVersion>1.3.0</modVersion>
+	<modVersion>1.3.1</modVersion>
 	<supportedVersions>
 		<li>1.6</li>
 	</supportedVersions>
-	<description>
-This mod makes a handful of small tweaks to the Odyssey DLC that are intended to make the game a bit more enjoyable without changing the gameplay too much. Each tweak can be toggled on or off in the mod settings.
+	<description><![CDATA[This mod makes a handful of small tweaks to the Odyssey DLC that are intended to make the game a bit more enjoyable without changing the gameplay too much. Each tweak can be toggled on or off in the mod settings.
 
-=Space Travel=
-- Gravship takeoff/landing cutscenes can be skipped by pressing Enter.
-- Gravship substructure can be set to shown always, never, or only while the grav engine is selected (setting to always makes planning easier). This can be set via grav engine or field extender gizmo.
-- Pawns can grab food, medicine, and drugs from a parked shuttle, just as they can from a pack animal. This can be toggled via shuttle gizmo.
-- You can park a shuttle anywhere it is possible to place a shuttle blueprint, so landing shuttles aren't blocked by wall lights, floor coverings, etc.
-- Bug fix: When placing floors, it is erroneously possible to place them under gravship hulls, which has no benefit.
-- Bug fix: With pawn dot silhouettes enabled, they are erroneously shown during gravship cutscenes.
-- Bug fix: When landing a gravship, deathresting pawns pop out of their beds due to erroneous sunlight detection.
-- Bug fix: When landing a gravship and thus removing any map designators, buildings that were designated for flicking the power switch enter an erroneous state.
-- Bug fix: Saving the game with a shuttle that has been built but not yet interacted with causes an error.
-- Bug fix: Floors on top of substructure erroneously use the filth rate of the substructure instead.
+<size=18px><color=#5aa9d6>Space travel</color></size>
+  &#8226; Gravship takeoff/landing cutscenes can be skipped by pressing Enter.
+  &#8226; Gravship substructure can be set to shown always, never, or only while the grav engine is selected (setting to always makes planning easier). This can be set via grav engine or field extender gizmo.
+  &#8226; Pawns can grab food, medicine, and drugs from a parked shuttle, just as they can from a pack animal. This can be toggled via shuttle gizmo.
+  &#8226; You can park a shuttle anywhere it is possible to place a shuttle blueprint, so landing shuttles aren't blocked by wall lights, floor coverings, etc.
+  &#8226; Bug fix: When placing floors, it is erroneously possible to place them under gravship hulls, which has no benefit.
+  &#8226; Bug fix: With pawn dot silhouettes enabled, they are erroneously shown during gravship cutscenes.
+  &#8226; Bug fix: When landing a gravship, deathresting pawns pop out of their beds due to erroneous sunlight detection.
+  &#8226; Bug fix: When landing a gravship and thus removing any map designators, buildings that were designated for flicking the power switch enter an erroneous state.
+  &#8226; Bug fix: Saving the game with a shuttle that has been built but not yet interacted with causes an error.
+  &#8226; Bug fix: Floors on top of substructure erroneously use the filth rate of the substructure instead.
 
-=Fishing=
-- You can copy settings between fishing zones.
-- Pawns can stop fishing if their basic needs are unmet instead of literally fishing until they catch something or collapse.
-- No letters for fishing misses - if a pawn is hurt, just a message at the top, and if not hurt, no notification at all.
+<size=18px><color=#5aa9d6>Fishing</color></size>
+  &#8226; You can copy settings between fishing zones.
+  &#8226; Pawns can stop fishing if their basic needs are unmet instead of literally fishing until they catch something or collapse.
+  &#8226; No letters for fishing misses - if a pawn is hurt, just a message at the top, and if not hurt, no notification at all.
 
-=Outfit Stands and Statues=
-- You can change the body type of outfit stands to other vanilla body types, such as female or hulk. This can be set via outfit stand gizmo.
-- Grouped outfit stands can be the target of bills (you can look for ingredients only in such a group, or you can take product specifically to such a group).
-- Pawns are allowed to remove items from outfit stands by default. You don't need to toggle it each time.
-- Removing items from outfit stands is no longer automatically disabled when a pawn is ordered to equip the outfit.
-- Items stored on outfit stands can't decrease beauty, but they can still increase it.
-- Allow hiding statues' headgear via gizmo. Default value is based on whether headgear is visible in the colonist bar.
-- Bug fix: Statues can erroneously reload with different dominant genes. For example, when reloading a save file, a statue of a pawn with the Neanderthal xenotype may reload as a standard, hulk, or fat body type. This fix does not apply to statues created before installing this mod.
+<size=18px><color=#5aa9d6>Outfit Stands and Statues</color></size>
+  &#8226; You can change the body type of outfit stands to other vanilla body types, such as female or hulk. This can be set via outfit stand gizmo.
+  &#8226; Grouped outfit stands can be the target of bills (you can look for ingredients only in such a group, or you can take product specifically to such a group).
+  &#8226; Pawns are allowed to remove items from outfit stands by default. You don't need to toggle it each time.
+  &#8226; Removing items from outfit stands is no longer automatically disabled when a pawn is ordered to equip the outfit.
+  &#8226; Items stored on outfit stands can't decrease beauty, but they can still increase it.
+  &#8226; Allow hiding statues' headgear via gizmo. Default value is based on whether headgear is visible in the colonist bar.
+  &#8226; Bug fix: Statues can erroneously reload with different dominant genes. For example, when reloading a save file, a statue of a pawn with the Neanderthal xenotype may reload as a standard, hulk, or fat body type. This fix does not apply to statues created before installing this mod.
 
-=Miscellaneous=
-- Searches in the world view can now search all world tiles for map features instead of only occupied ones. This must be toggled specifically in each search box due to the performance impact.
-- Warnings when settling in orbit or in "dangerous" Odyssey biomes such as lava fields are disabled. Note that scarlands are always polluted and will therefore still warn about the pollution.
+<size=18px><color=#5aa9d6>Miscellaneous</color></size>
+  &#8226; Searches in the world view can now search all world tiles for map features instead of only occupied ones. This must be toggled specifically in each search box due to the performance impact.
+  &#8226; Warnings when settling in orbit or in "dangerous" Odyssey biomes such as lava fields are disabled. Note that scarlands are always polluted and will therefore still warn about the pollution.
 
-=== Updates ===
+________________________________________________
+
+<size=18px><color=#5aa9d6>Updates</color></size>
+01/07/2026: Fix bug with shuttle food feature being disabled preventing pawns from feeding patients
 11/02/2025: Add support for changing body type of modded outfit stands, add fix for substructure filth rate bug
 11/01/2025: Allow parking shuttle in more places, fix shuttle save bug, reduce letter spam when fishing, hide statue headgear, fix statue xenotype bug
 10/09/2025: Fix performance issue with scanning shuttles for supplies, enforce correct load order with Improved Map Search mod
@@ -49,9 +51,9 @@ This mod makes a handful of small tweaks to the Odyssey DLC that are intended to
 10/07/2025: Support modded shuttles for the shuttle supplies feature (as long as they use the Building_PassengerShuttle class)
 10/02/2025: Fix startup errors with modded BodyTypeDefs
 
-=== Credits ===
-Mod icon: twitter.com/mouse_draws
-	</description>
+<size=18px><color=#5aa9d6>Credits</color></size>
+  &#8226; Mod icon: twitter.com/mouse_draws
+	]]></description>
 	<url>https://github.com/1trickPwnyta/OdysseyPatch</url>
 	<modDependencies>
 		<li>
