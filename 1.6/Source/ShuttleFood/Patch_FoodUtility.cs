@@ -35,7 +35,7 @@ namespace OdysseyPatch.ShuttleFood
 
         private static void TryFindShuttleFood(ref Thing food, Pawn eater, Pawn getter, FoodPreferability foodPref, bool allowVenerated)
         {
-            if (OdysseyPatchSettings.ShuttleFood && food == null)
+            if (OdysseyPatchSettings.ShuttleFood && food == null && eater.IsColonist && getter.IsColonist && getter.RaceProps.ToolUser && getter.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation))
             {
                 Building_PassengerShuttle bestShuttle = null;
                 foreach (Building_PassengerShuttle shuttle in getter.Map.GetShuttlesWithGrabbingEnabled())
