@@ -9,7 +9,7 @@ using Verse;
 namespace OdysseyPatch.FloorsBlockedByHulls
 {
     [HarmonyPatch(typeof(GenConstruct))]
-    [HarmonyPatch(nameof(GenConstruct.CanPlaceBlueprintAt))]
+    [HarmonyPatch(nameof(GenConstruct.CanPlaceBlueprintAt_NewTemp))]
     public static class Patch_GenConstruct
     {
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)

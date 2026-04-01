@@ -72,7 +72,7 @@ namespace OdysseyPatch
             listing.Gap();
 
             DoHeader(listing, "OdysseyPatch_Misc");
-            DoSetting(listing, "OdysseyPatch_WorldSearchEmptyTiles", ref WorldSearchEmptyTiles);
+            DoSetting(listing, "OdysseyPatch_WorldSearchEmptyTiles", ref WorldSearchEmptyTiles, restartRequired: true);
             DoSetting(listing, "OdysseyPatch_BiomeDangerWarningSuppressed", ref BiomeDangerWarningSuppressed);
 
             y = listing.CurHeight;
