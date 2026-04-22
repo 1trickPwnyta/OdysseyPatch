@@ -21,7 +21,7 @@ namespace OdysseyPatch.FishingInterruptions
                 toil.tickAction = (Action)Delegate.Combine(toil.tickAction, (Action)(() =>
                 {
                     Pawn pawn = toil.GetActor();
-                    if (pawn.needs.food.CurLevelPercentage <= 0.02f || pawn.needs.rest.CurLevelPercentage <= 0.02f)
+                    if (pawn.needs.food?.CurLevelPercentage <= 0.02f || pawn.needs.rest?.CurLevelPercentage <= 0.02f)
                     {
                         pawn.jobs.CheckForJobOverride(8f);
                     }
