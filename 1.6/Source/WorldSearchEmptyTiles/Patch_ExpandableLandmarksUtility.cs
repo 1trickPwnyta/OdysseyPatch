@@ -39,14 +39,19 @@ namespace OdysseyPatch.WorldSearchEmptyTiles
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             List<CodeInstruction> instructionsList = instructions.ToList();
-            int index = instructionsList.FindIndex(i => i.opcode == OpCodes.Call && i.operand is MethodInfo m && m == typeof(Color).PropertyGetter(nameof(Color.white)));
-            Label label = instructionsList[index].labels[0];
-            instructionsList.RemoveAt(index);
-            instructionsList.InsertRange(index, new[]
+
+            if (OdysseyPatchSettings.WorldSearchEmptyTiles)
             {
-                new CodeInstruction(OpCodes.Ldloc_1) { labels = new List<Label>() { label } },
-                new CodeInstruction(OpCodes.Call, typeof(Patch_ExpandableLandmarksUtility_ExpandableLandmarksOnGUI).Method(nameof(GetLandmarkColor)))
-            });
+                int index = instructionsList.FindIndex(i => i.opcode == OpCodes.Call && i.operand is MethodInfo m && m == typeof(Color).PropertyGetter(nameof(Color.white)));
+                Label label = instructionsList[index].labels[0];
+                instructionsList.RemoveAt(index);
+                instructionsList.InsertRange(index, new[]
+                {
+                    new CodeInstruction(OpCodes.Ldloc_1) { labels = new List<Label>() { label } },
+                    new CodeInstruction(OpCodes.Call, typeof(Patch_ExpandableLandmarksUtility_ExpandableLandmarksOnGUI).Method(nameof(GetLandmarkColor)))
+                });
+            }
+
             return instructionsList;
         }
 

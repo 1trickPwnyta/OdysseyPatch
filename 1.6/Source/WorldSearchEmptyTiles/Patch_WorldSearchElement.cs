@@ -17,26 +17,28 @@ namespace OdysseyPatch.WorldSearchEmptyTiles
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             List<CodeInstruction> instructionsList = instructions.ToList();
-
-            int zeroIndex = instructionsList.FindIndex(i => i.opcode == OpCodes.Ldc_I4_0);
-            instructionsList.RemoveAt(zeroIndex);
-            instructionsList.InsertRange(zeroIndex, new[]
+            if (OdysseyPatchSettings.WorldSearchEmptyTiles)
             {
-                new CodeInstruction(OpCodes.Ldarg_0),
-                new CodeInstruction(OpCodes.Ldfld, typeof(WorldSearchElement).Field(nameof(WorldSearchElement.tile))),
-                new CodeInstruction(OpCodes.Ldarg_0),
-                new CodeInstruction(OpCodes.Ldfld, typeof(WorldSearchElement).Field(nameof(WorldSearchElement.mutators))),
-                new CodeInstruction(OpCodes.Call, typeof(Patch_WorldSearchElement).Method(nameof(GetMatchingFeatureIndex)))
-            });
+                int zeroIndex = instructionsList.FindIndex(i => i.opcode == OpCodes.Ldc_I4_0);
+                instructionsList.RemoveAt(zeroIndex);
+                instructionsList.InsertRange(zeroIndex, new[]
+                {
+                    new CodeInstruction(OpCodes.Ldarg_0),
+                    new CodeInstruction(OpCodes.Ldfld, typeof(WorldSearchElement).Field(nameof(WorldSearchElement.tile))),
+                    new CodeInstruction(OpCodes.Ldarg_0),
+                    new CodeInstruction(OpCodes.Ldfld, typeof(WorldSearchElement).Field(nameof(WorldSearchElement.mutators))),
+                    new CodeInstruction(OpCodes.Call, typeof(Patch_WorldSearchElement).Method(nameof(GetMatchingFeatureIndex)))
+                });
 
-            int labelIndex = instructionsList.FindIndex(i => i.opcode == OpCodes.Ldfld && i.operand is FieldInfo f && f == typeof(Def).Field(nameof(Def.label)));
-            instructionsList.RemoveAt(labelIndex);
-            instructionsList.InsertRange(labelIndex, new[]
-            {
-                new CodeInstruction(OpCodes.Ldarg_0),
-                new CodeInstruction(OpCodes.Ldfld, typeof(WorldSearchElement).Field(nameof(WorldSearchElement.tile))),
-                new CodeInstruction(OpCodes.Call, typeof(TileMutatorDef).Method(nameof(TileMutatorDef.Label)))
-            });
+                int labelIndex = instructionsList.FindIndex(i => i.opcode == OpCodes.Ldfld && i.operand is FieldInfo f && f == typeof(Def).Field(nameof(Def.label)));
+                instructionsList.RemoveAt(labelIndex);
+                instructionsList.InsertRange(labelIndex, new[]
+                {
+                    new CodeInstruction(OpCodes.Ldarg_0),
+                    new CodeInstruction(OpCodes.Ldfld, typeof(WorldSearchElement).Field(nameof(WorldSearchElement.tile))),
+                    new CodeInstruction(OpCodes.Call, typeof(TileMutatorDef).Method(nameof(TileMutatorDef.Label)))
+                });
+            }
 
             return instructionsList;
         }
