@@ -16,7 +16,7 @@ namespace OdysseyPatch
             Settings = GetSettings<OdysseyPatchSettings>();
             
             var harmony = new Harmony(PACKAGE_ID);
-            harmony.PatchAll();
+            harmony.PatchAllUncategorized();
             
             Log.Message($"[{PACKAGE_NAME}] Loaded.");
         }

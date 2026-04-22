@@ -6,6 +6,7 @@ namespace OdysseyPatch.OutfitStandGroupsInBills
 {
     [HarmonyPatch(typeof(StoreUtility))]
     [HarmonyPatch("TryFindBestBetterStoreCellForWorker")]
+    [HarmonyPatchSetting("OutfitStandGroupsInBills")]
     public static class Patch_StoreUtility
     {
         public static bool Prefix(Thing t, ISlotGroup slotGroup)
