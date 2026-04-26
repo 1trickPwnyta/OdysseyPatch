@@ -30,6 +30,7 @@ namespace OdysseyPatch
         public static bool FilthMultiplierFixForSubstructure = true;
         public static bool ShowRemainingSubstructureCapacity = true;
         public static bool GravshipShieldGeneratorRadiusDisplay = true;
+        public static bool VacuumIntensityRoomStat = true;
         
         private static Vector2 scrollPosition;
         private static float y;
@@ -48,6 +49,7 @@ namespace OdysseyPatch
             DoSetting(listing, "OdysseyPatch_GravshipShieldGeneratorRadiusDisplay", ref GravshipShieldGeneratorRadiusDisplay);
             DoSetting(listing, "OdysseyPatch_ShuttleFood", ref ShuttleFood);
             DoSetting(listing, "OdysseyPatch_ShuttleBlockedByLess", ref ShuttleBlockedByLess);
+            DoSetting(listing, "OdysseyPatch_VacuumIntensityRoomStat", ref VacuumIntensityRoomStat);
             DoSetting(listing, "OdysseyPatch_FloorsBlockedByHulls", ref FloorsBlockedByHulls, bugFix: true);
             DoSetting(listing, "OdysseyPatch_SilhouettesHiddenByGravshipLanding", ref SilhouettesHiddenByGravshipLanding, bugFix: true);
             DoSetting(listing, "OdysseyPatch_DeathrestingPawnsTuckedInAfterLanding", ref DeathrestingPawnsTuckedInAfterLanding, bugFix: true, dependsOn: ModsConfig.BiotechActive);
@@ -128,6 +130,7 @@ namespace OdysseyPatch
             Scribe_Values.Look(ref FilthMultiplierFixForSubstructure, "FilthMultiplierFixForSubstructure", true);
             Scribe_Values.Look(ref ShowRemainingSubstructureCapacity, "ShowRemainingSubstructureCapacity", true);
             Scribe_Values.Look(ref GravshipShieldGeneratorRadiusDisplay, "GravshipShieldGeneratorRadiusDisplay", true);
+            Scribe_Values.Look(ref VacuumIntensityRoomStat, "VacuumIntensityRoomStat", true);
         }
     }
 }

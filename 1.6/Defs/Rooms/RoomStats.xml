@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RoomStatDef>
+    <defName>VacuumIntensity</defName>
+    <label>vacuum intensity</label>
+    <workerClass>OdysseyPatch.VacuumIntensityRoomStat.RoomStatWorker_VacuumIntensity</workerClass>
+    <updatePriority>0</updatePriority>
+    <isHidden>false</isHidden>
+	<scoreStages>
+      <li>
+        <label>none</label>
+      </li>
+      <li>
+        <minScore>0.01</minScore>
+        <label>some</label>
+      </li>
+      <li>
+        <minScore>0.5</minScore>
+        <label>significant</label>
+      </li>
+      <li>
+        <minScore>1</minScore>
+        <label>full</label>
+      </li>
+    </scoreStages>
+  </RoomStatDef>
+</Defs>
