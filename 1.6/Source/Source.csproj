@@ -82,6 +82,7 @@
     <Compile Include="FlickSwitchesAfterLanding\Patch_CompFlickable.cs" />
     <Compile Include="FloorsBlockedByHulls\Patch_GenConstruct.cs" />
     <Compile Include="GravshipCutsceneOptions\Patch_WorldComponent_GravshipController.cs" />
+    <Compile Include="GravshipShieldGeneratorRadiusDisplay\Patch_Designator_Place.cs" />
     <Compile Include="HarmonyPatchSetting.cs" />
     <Compile Include="OdysseyPatchSettings.cs" />
     <Compile Include="OutfitStandBodyType\CompProperties_OutfitStandBodyType.cs" />

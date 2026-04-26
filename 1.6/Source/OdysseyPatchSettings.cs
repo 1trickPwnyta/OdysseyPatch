@@ -29,6 +29,7 @@ namespace OdysseyPatch
         public static bool StatueConsistency = true;
         public static bool FilthMultiplierFixForSubstructure = true;
         public static bool ShowRemainingSubstructureCapacity = true;
+        public static bool GravshipShieldGeneratorRadiusDisplay = true;
         
         private static Vector2 scrollPosition;
         private static float y;
@@ -44,6 +45,7 @@ namespace OdysseyPatch
             DoSetting(listing, "OdysseyPatch_GravshipCutsceneOptions", ref GravshipCutsceneOptions);
             DoSetting(listing, "OdysseyPatch_SubstructureOverlayOptions", ref SubstructureOverlayOptions);
             DoSetting(listing, "OdysseyPatch_ShowRemainingSubstructureCapacity", ref ShowRemainingSubstructureCapacity);
+            DoSetting(listing, "OdysseyPatch_GravshipShieldGeneratorRadiusDisplay", ref GravshipShieldGeneratorRadiusDisplay);
             DoSetting(listing, "OdysseyPatch_ShuttleFood", ref ShuttleFood);
             DoSetting(listing, "OdysseyPatch_ShuttleBlockedByLess", ref ShuttleBlockedByLess);
             DoSetting(listing, "OdysseyPatch_FloorsBlockedByHulls", ref FloorsBlockedByHulls, bugFix: true);
@@ -125,6 +127,7 @@ namespace OdysseyPatch
             Scribe_Values.Look(ref StatueConsistency, "StatueConsistency", true);
             Scribe_Values.Look(ref FilthMultiplierFixForSubstructure, "FilthMultiplierFixForSubstructure", true);
             Scribe_Values.Look(ref ShowRemainingSubstructureCapacity, "ShowRemainingSubstructureCapacity", true);
+            Scribe_Values.Look(ref GravshipShieldGeneratorRadiusDisplay, "GravshipShieldGeneratorRadiusDisplay", true);
         }
     }
 }
