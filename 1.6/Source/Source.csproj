@@ -98,6 +98,7 @@
     <Compile Include="PatchOperationReplaceIf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="OdysseyPatchMod.cs" />
+    <Compile Include="ShowRemainingSubstructureCapacity\Patch_Building_GravEngine.cs" />
     <Compile Include="ShuttleBlockedByLess\Patch_RoyalTitlePermitWorker_CallShuttle.cs" />
     <Compile Include="ShuttleBlockedByLess\Patch_ShipJob_Unload.cs" />
     <Compile Include="ShuttleFood\CompProperties_GrabbableSupplies.cs" />

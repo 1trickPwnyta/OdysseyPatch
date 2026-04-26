@@ -26,6 +26,7 @@
 	<OdysseyPatch_StatuesDontHaveHeadgear>Allow hiding statue headgear</OdysseyPatch_StatuesDontHaveHeadgear>
 	<OdysseyPatch_StatueConsistency>Statues can erroneously reload with different dominant genes</OdysseyPatch_StatueConsistency>
 	<OdysseyPatch_FilthMultiplierFixForSubstructure>Substructure filth multiplier erroneously overrides filth multiplier of floor on top</OdysseyPatch_FilthMultiplierFixForSubstructure>
+	<OdysseyPatch_ShowRemainingSubstructureCapacity>Show remaining substructure capacity in inspect pane for grav engine</OdysseyPatch_ShowRemainingSubstructureCapacity>
 	<OdysseyPatch_BugFix>Bug fix</OdysseyPatch_BugFix>
 	<OdysseyPatch_RestartRequired>(requires restart)</OdysseyPatch_RestartRequired>
 	<OdysseyPatch_BodyType>Body type: {0}</OdysseyPatch_BodyType>
@@ -40,4 +41,5 @@
 	<OdysseyPatch_AllowGrabbingSupplies>Allow grabbing supplies</OdysseyPatch_AllowGrabbingSupplies>
 	<OdysseyPatch_AllowGrabbingSuppliesDesc>When enabled, pawns can freely grab food, medicine, and drugs from this shuttle as needed.</OdysseyPatch_AllowGrabbingSuppliesDesc>
 	<OdysseyPatch_ShowHeadgear>Show headgear</OdysseyPatch_ShowHeadgear>
+	<OdysseyPatch_Remaining>remaining</OdysseyPatch_Remaining>
 </LanguageData>
