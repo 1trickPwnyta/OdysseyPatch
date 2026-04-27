@@ -81,6 +81,7 @@
     <Compile Include="FishingZoneCopy\Patch_Zone_Fishing.cs" />
     <Compile Include="FlickSwitchesAfterLanding\Patch_CompFlickable.cs" />
     <Compile Include="FloorsBlockedByHulls\Patch_GenConstruct.cs" />
+    <Compile Include="GravshipBuildRadiusSeparate\Patch_SubstructureGrid.cs" />
     <Compile Include="GravshipCutsceneOptions\Patch_WorldComponent_GravshipController.cs" />
     <Compile Include="GravshipShieldGeneratorRadiusDisplay\Patch_Designator_Place.cs" />
     <Compile Include="HarmonyPatchSetting.cs" />
