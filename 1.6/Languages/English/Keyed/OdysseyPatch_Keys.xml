@@ -29,6 +29,7 @@
 	<OdysseyPatch_ShowRemainingSubstructureCapacity>Show remaining substructure capacity in inspect pane for grav engine</OdysseyPatch_ShowRemainingSubstructureCapacity>
 	<OdysseyPatch_GravshipShieldGeneratorRadiusDisplay>Show gravship shield generator radius when placing even in invalid positions</OdysseyPatch_GravshipShieldGeneratorRadiusDisplay>
 	<OdysseyPatch_VacuumIntensityRoomStat>Show vacuum intensity in room stat display</OdysseyPatch_VacuumIntensityRoomStat>
+	<OdysseyPatch_GravshipBuildRadiusSeparate>Highlight build radius of selected gravship component</OdysseyPatch_GravshipBuildRadiusSeparate>
 	<OdysseyPatch_BugFix>Bug fix</OdysseyPatch_BugFix>
 	<OdysseyPatch_RestartRequired>(requires restart)</OdysseyPatch_RestartRequired>
 	<OdysseyPatch_BodyType>Body type: {0}</OdysseyPatch_BodyType>

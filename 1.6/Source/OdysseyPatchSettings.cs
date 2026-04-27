@@ -31,6 +31,7 @@ namespace OdysseyPatch
         public static bool ShowRemainingSubstructureCapacity = true;
         public static bool GravshipShieldGeneratorRadiusDisplay = true;
         public static bool VacuumIntensityRoomStat = true;
+        public static bool GravshipBuildRadiusSeparate = true;
         
         private static Vector2 scrollPosition;
         private static float y;
@@ -45,6 +46,7 @@ namespace OdysseyPatch
             DoHeader(listing, "OdysseyPatch_SpaceTravel");
             DoSetting(listing, "OdysseyPatch_GravshipCutsceneOptions", ref GravshipCutsceneOptions);
             DoSetting(listing, "OdysseyPatch_SubstructureOverlayOptions", ref SubstructureOverlayOptions);
+            DoSetting(listing, "OdysseyPatch_GravshipBuildRadiusSeparate", ref GravshipBuildRadiusSeparate);
             DoSetting(listing, "OdysseyPatch_ShowRemainingSubstructureCapacity", ref ShowRemainingSubstructureCapacity);
             DoSetting(listing, "OdysseyPatch_GravshipShieldGeneratorRadiusDisplay", ref GravshipShieldGeneratorRadiusDisplay);
             DoSetting(listing, "OdysseyPatch_ShuttleFood", ref ShuttleFood);
@@ -131,6 +133,7 @@ namespace OdysseyPatch
             Scribe_Values.Look(ref ShowRemainingSubstructureCapacity, "ShowRemainingSubstructureCapacity", true);
             Scribe_Values.Look(ref GravshipShieldGeneratorRadiusDisplay, "GravshipShieldGeneratorRadiusDisplay", true);
             Scribe_Values.Look(ref VacuumIntensityRoomStat, "VacuumIntensityRoomStat", true);
+            Scribe_Values.Look(ref GravshipBuildRadiusSeparate, "GravshipBuildRadiusSeparate", true);
         }
     }
 }
