@@ -14,7 +14,7 @@
   &#8226; Gravship substructure can be set to shown always, never, or only while the grav engine is selected (setting to always makes planning easier). This can be set via grav engine or field extender gizmo.
   &#8226; While selected, build radii for gravship components is displayed separately instead of merged with other components.
   &#8226; In addition to substructure capacity used, inspect pane for grav engine now also shows how much capacity remains.
-  &#8226; The radius for gravship shield generators is shown while placing it, even when hovering over an invalid location.
+  &#8226; The radius for a gravship shield generator is shown while placing it, even when hovering over an invalid location.
   &#8226; Pawns can grab food, medicine, and drugs from a parked shuttle, just as they can from a pack animal. This can be toggled via shuttle gizmo.
   &#8226; You can park a shuttle anywhere it is possible to place a shuttle blueprint, so landing shuttles aren't blocked by wall lights, floor coverings, etc.
   &#8226; In space, vacuum intensity is shown in the room stat display and while holding the alt key.
@@ -46,6 +46,7 @@
 ________________________________________________
 
 <size=18px><color=#5aa9d6>Updates</color></size>
+04/26/2026: Add additional space travel options
 04/22/2026: Remove overhead for outfit stand groups when option is disabled, fix fishing bug with body mastery
 04/01/2026: Remove an accidental fix meant for the unstable branch
 04/01/2026: Make world search patch require restart to toggle for improved mod compatibility
