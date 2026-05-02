@@ -9,11 +9,20 @@ namespace OdysseyPatch
         public const string PACKAGE_ID = "odysseypatch.1trickPwnyta";
         public const string PACKAGE_NAME = "1trickPwnyta's Odyssey Patch";
 
-        public static OdysseyPatchSettings Settings;
+        public static bool specialSauce = AccessTools.TypeByName("SpecialSauce.SpecialSauceMod") != null;
+
+        public static ModSettings_DLCPatch_Odyssey settings;
 
         public OdysseyPatchMod(ModContentPack content) : base(content)
         {
-            Settings = GetSettings<OdysseyPatchSettings>();
+            if (specialSauce)
+            {
+                settings = GetSettings<ModSettings_DLCPatch_Odyssey>();
+            }
+            else
+            {
+                GetSettings<OdysseyPatchSettings>();
+            }
             
             var harmony = new Harmony(PACKAGE_ID);
             harmony.PatchAllUncategorized();
@@ -26,7 +35,14 @@ namespace OdysseyPatch
         public override void DoSettingsWindowContents(Rect inRect)
         {
             base.DoSettingsWindowContents(inRect);
-            OdysseyPatchSettings.DoSettingsWindowContents(inRect);
+            if (specialSauce)
+            {
+                settings.DrawModSettings(inRect);
+            }
+            else
+            {
+                OdysseyPatchSettings.DoSettingsWindowContents(inRect);
+            }
         }
     }
 }
