@@ -3,7 +3,7 @@
 	<name>1trickPwnyta's Odyssey Patch</name>
 	<author>1trickPwnyta</author>
 	<packageId>odysseypatch.1trickPwnyta</packageId>
-	<modVersion>1.4.0</modVersion>
+	<modVersion>1.4.1</modVersion>
 	<supportedVersions>
 		<li>1.6</li>
 	</supportedVersions>
@@ -46,6 +46,7 @@
 ________________________________________________
 
 <size=18px><color=#5aa9d6>Updates</color></size>
+05/01/2026: Fix bugs with placing floors and with room stats gizmo
 04/26/2026: Add additional space travel options
 04/22/2026: Remove overhead for outfit stand groups when option is disabled, fix fishing bug with body mastery
 04/01/2026: Remove an accidental fix meant for the unstable branch

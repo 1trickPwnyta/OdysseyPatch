@@ -127,6 +127,7 @@
     <Compile Include="SubstructureOverlayOptions\Patch_MemoryUtility.cs" />
     <Compile Include="VacuumIntensityRoomStat\Patch_CellInspectorDrawer.cs" />
     <Compile Include="VacuumIntensityRoomStat\Patch_EnvironmentStatsDrawer.cs" />
+    <Compile Include="VacuumIntensityRoomStat\Patch_Gizmo_RoomStats.cs" />
     <Compile Include="VacuumIntensityRoomStat\RoomStatWorker_VacuumIntensity.cs" />
     <Compile Include="VacuumIntensityRoomStat\VacuumUtility.cs" />
     <Compile Include="WorldSearchEmptyTiles\Patch_Dialog_Search.cs" />

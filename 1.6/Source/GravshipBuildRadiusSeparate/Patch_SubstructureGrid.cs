@@ -24,7 +24,7 @@ namespace OdysseyPatch.GravshipBuildRadiusSeparate
 
                 if (Find.DesignatorManager.SelectedDesignator is Designator_Place designator)
                 {
-                    CompProperties_SubstructureFootprint props = (designator.PlacingDef as ThingDef).comps.OfType<CompProperties_SubstructureFootprint>().FirstOrDefault();
+                    CompProperties_SubstructureFootprint props = (designator.PlacingDef as ThingDef)?.comps?.OfType<CompProperties_SubstructureFootprint>().FirstOrDefault();
                     if (props != null)
                     {
                         GenDraw.DrawFieldEdges(GenRadial.RadialCellsAround(UI.MouseCell(), props.radius, true).ToList(), Color.white);
