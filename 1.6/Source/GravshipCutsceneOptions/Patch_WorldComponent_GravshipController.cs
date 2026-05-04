@@ -11,7 +11,7 @@ namespace OdysseyPatch.GravshipCutsceneOptions
     {
         public static void Postfix(WorldComponent_GravshipController __instance, bool ___isTakeoff, GravshipCapturer ___gravshipCapturer, bool ___cutsceneInProgress, Gravship ___gravship, GravshipAudio ___gravshipAudio)
         {
-            if (OdysseyPatchSettings.GravshipCutsceneOptions && KeyBindingDefOf.Accept.IsDown && ___gravshipCapturer.IsCaptureComplete && ___cutsceneInProgress && ___gravship != null)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.GRAVSHIP_CUTSCENE_OPTIONS) && KeyBindingDefOf.Accept.IsDown && ___gravshipCapturer.IsCaptureComplete && ___cutsceneInProgress && ___gravship != null)
             {
                 __instance.GetType().Method(___isTakeoff ? "TakeoffEnded" : "LandingEnded").Invoke(__instance, new object[] { });
                 ___gravshipAudio.EndTakeoff();

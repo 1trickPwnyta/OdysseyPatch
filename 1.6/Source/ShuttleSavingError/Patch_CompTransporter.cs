@@ -10,7 +10,7 @@ namespace OdysseyPatch.ShuttleSavingError
     {
         public static void Prefix(ref List<TransferableOneWay> ___leftToLoad)
         {
-            if (OdysseyPatchSettings.ShuttleSavingError && ___leftToLoad == null)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.SHUTTLE_SAVING_ERROR) && ___leftToLoad == null)
             {
                 ___leftToLoad = new List<TransferableOneWay>();
             }

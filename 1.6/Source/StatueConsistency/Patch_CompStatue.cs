@@ -36,7 +36,7 @@ namespace OdysseyPatch.StatueConsistency
     {
         public static void Postfix(Pawn fakePawn, Dictionary<string, object> additionalSavedPawnDataForMods)
         {
-            if (ModsConfig.BiotechActive && fakePawn.genes != null && OdysseyPatchSettings.StatueConsistency)
+            if (ModsConfig.BiotechActive && fakePawn.genes != null && Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.STATUE_CONSISTENCY))
             {
                 List<GeneDef> overridenGenes = (additionalSavedPawnDataForMods.TryGetValue("OdysseyPatch.StatueConsistency.overridenGenes") as OverriddenGenes)?.list;
                 if (overridenGenes != null)

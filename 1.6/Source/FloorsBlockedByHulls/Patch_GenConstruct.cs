@@ -9,7 +9,7 @@ using Verse;
 namespace OdysseyPatch.FloorsBlockedByHulls
 {
     [HarmonyPatch(typeof(GenConstruct))]
-    [HarmonyPatch(nameof(GenConstruct.CanPlaceBlueprintAt))]
+    [HarmonyPatch(nameof(GenConstruct.CanPlaceBlueprintAt_NewTemp))]
     public static class Patch_GenConstruct
     {
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
@@ -26,6 +26,6 @@ namespace OdysseyPatch.FloorsBlockedByHulls
             return instructionsList;
         }
 
-        private static bool ShouldIgnoreForFoundation(Building building, TerrainDef terrain) => !OdysseyPatchSettings.FloorsBlockedByHulls || terrain.isFoundation || building == null || !building.def.coversFloor;
+        private static bool ShouldIgnoreForFoundation(Building building, TerrainDef terrain) => !Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.FLOORS_BLOCKED_BY_HULLS) || terrain.isFoundation || building == null || !building.def.coversFloor;
     }
 }

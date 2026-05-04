@@ -26,7 +26,7 @@ namespace OdysseyPatch.FishingMishapsLessIntrusive
         private static void DoNotification(LetterStack letterStack, LookTargets lookTargets, NegativeFishingOutcomeDef outcome)
         {
             Pawn pawn = lookTargets.PrimaryTarget.Pawn;
-            if (OdysseyPatchSettings.FishingMishapsLessIntrusive)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.FISHING_MISHAPS_LESS_INTRUSIVE))
             {
                 if (outcome.damageDef != null || outcome.addsHediff != null)
                 {

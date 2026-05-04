@@ -14,7 +14,7 @@ namespace OdysseyPatch.GravshipBuildRadiusSeparate
 
         public static void Postfix()
         {
-            if (OdysseyPatchSettings.GravshipBuildRadiusSeparate)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.GRAVSHIP_BUILD_RADIUS_SEPARATE))
             {
                 if (Time.frameCount == lastUpdateFrame)
                 {

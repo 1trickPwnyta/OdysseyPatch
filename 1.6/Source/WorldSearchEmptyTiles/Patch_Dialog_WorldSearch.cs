@@ -23,7 +23,7 @@ namespace OdysseyPatch.WorldSearchEmptyTiles
     {
         public static void Postfix(Dialog_WorldSearch __instance, List<WorldSearchElement> ___searchSet)
         {
-            if (OdysseyPatchSettings.WorldSearchEmptyTiles)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.WORLD_SEARCH_EMPTY_TILES))
             {
                 if (Patch_Dialog_Search.fullSearch)
                 {

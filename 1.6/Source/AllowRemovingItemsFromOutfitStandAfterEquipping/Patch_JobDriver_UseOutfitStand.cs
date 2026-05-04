@@ -24,6 +24,6 @@ namespace OdysseyPatch.AllowRemovingItemsFromOutfitStandAfterEquipping
             return instructionsList;
         }
 
-        private static bool ShouldWearApparel(bool wasRemoved) => wasRemoved || !OdysseyPatchSettings.AllowRemovingItemsFromOutfitStandAfterEquipping;
+        private static bool ShouldWearApparel(bool wasRemoved) => wasRemoved || !Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.ALLOW_REMOVING_ITEMS_FROM_OUTFIT_STAND_AFTER_EQUIPPING);
     }
 }

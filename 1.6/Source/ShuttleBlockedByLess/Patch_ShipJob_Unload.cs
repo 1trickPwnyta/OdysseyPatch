@@ -10,7 +10,7 @@ namespace OdysseyPatch.ShuttleBlockedByLess
     {
         public static void Postfix(Thing thingToDrop)
         {
-            if (OdysseyPatchSettings.ShuttleBlockedByLess && thingToDrop.Spawned && thingToDrop is Pawn pawn)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.SHUTTLE_BLOCKED_BY_LESS) && thingToDrop.Spawned && thingToDrop is Pawn pawn)
             {
                 Building_Door door = pawn.Position.GetDoor(pawn.Map);
                 if (door != null)

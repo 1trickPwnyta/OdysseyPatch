@@ -14,7 +14,7 @@ namespace OdysseyPatch.StatuesDontHaveHeadgear
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            if (OdysseyPatchSettings.StatuesDontHaveHeadgear)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.STATUES_DONT_HAVE_HEADGEAR))
             {
                 if (headgear == null)
                 {

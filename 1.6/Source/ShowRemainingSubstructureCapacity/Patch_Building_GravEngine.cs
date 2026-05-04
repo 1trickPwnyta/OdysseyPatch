@@ -37,7 +37,7 @@ namespace OdysseyPatch.ShowRemainingSubstructureCapacity
 
         private static string GetNewInspectString(string oldInspectString, HashSet<IntVec3> allConnectedSubstructure, Building_GravEngine engine)
         {
-            if (OdysseyPatchSettings.ShowRemainingSubstructureCapacity)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.SHOW_REMAINING_SUBSTRUCTURE_CAPACITY))
             {
                 return oldInspectString + $" ({(int)engine.GetStatValue(StatDefOf.SubstructureSupport) - allConnectedSubstructure.Count} {"OdysseyPatch_Remaining".Translate()})";
             }

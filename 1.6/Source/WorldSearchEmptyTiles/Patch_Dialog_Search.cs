@@ -13,7 +13,7 @@ namespace OdysseyPatch.WorldSearchEmptyTiles
 
         public static void Postfix(Dialog_Search<WorldSearchElement> __instance, Rect inRect)
         {
-            if (OdysseyPatchSettings.WorldSearchEmptyTiles && __instance is Dialog_WorldSearch)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.WORLD_SEARCH_EMPTY_TILES) && __instance is Dialog_WorldSearch)
             {
                 bool previousFullSearch = fullSearch;
                 float height = Text.CalcHeight("OdysseyPatch_FullSearch".Translate(), inRect.width);

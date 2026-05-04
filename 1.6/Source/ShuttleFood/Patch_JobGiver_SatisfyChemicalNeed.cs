@@ -56,7 +56,7 @@ namespace OdysseyPatch.ShuttleFood
     {
         public static void Postfix(Pawn pawn, Need_Chemical need, ref Thing __result)
         {
-            if (OdysseyPatchSettings.ShuttleFood && __result == null)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.SHUTTLE_FOOD) && __result == null)
             {
                 if (pawn.IsColonist && pawn.Map != null)
                 {

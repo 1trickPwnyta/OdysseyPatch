@@ -17,7 +17,7 @@ namespace OdysseyPatch.WorldSearchEmptyTiles
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             List<CodeInstruction> instructionsList = instructions.ToList();
-            if (OdysseyPatchSettings.WorldSearchEmptyTiles)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.WORLD_SEARCH_EMPTY_TILES))
             {
                 int zeroIndex = instructionsList.FindIndex(i => i.opcode == OpCodes.Ldc_I4_0);
                 instructionsList.RemoveAt(zeroIndex);
@@ -45,7 +45,7 @@ namespace OdysseyPatch.WorldSearchEmptyTiles
 
         private static int GetMatchingFeatureIndex(PlanetTile tile, List<TileMutatorDef> mutators)
         {
-            if (OdysseyPatchSettings.WorldSearchEmptyTiles && Find.WindowStack.TryGetWindow(out Dialog_WorldSearch dialog))
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.WORLD_SEARCH_EMPTY_TILES) && Find.WindowStack.TryGetWindow(out Dialog_WorldSearch dialog))
             {
                 for (int i = 0; i < mutators.Count; i++)
                 {

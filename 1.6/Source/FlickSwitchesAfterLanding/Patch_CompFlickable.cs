@@ -1,6 +1,5 @@
 ﻿using HarmonyLib;
 using RimWorld;
-using Verse;
 
 namespace OdysseyPatch.FlickSwitchesAfterLanding
 {
@@ -10,7 +9,7 @@ namespace OdysseyPatch.FlickSwitchesAfterLanding
     {
         public static void Prefix(CompFlickable __instance, bool ___switchOnInt, ref bool ___wantSwitchOn)
         {
-            if (OdysseyPatchSettings.FlickSwitchesAfterLanding && __instance.parent.Faction == Faction.OfPlayer)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.FLICK_SWITCHES_AFTER_LANDING) && __instance.parent.Faction == Faction.OfPlayer)
             {
                 if (__instance.parent.Map.designationManager.DesignationOn(__instance.parent, DesignationDefOf.Flick) == null)
                 {

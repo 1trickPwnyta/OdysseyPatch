@@ -27,8 +27,8 @@ namespace OdysseyPatch.BiomeDangerWarningSuppressed
             return instructionsList;
         }
 
-        private static bool ShouldSkipBiomeWarning(string settleWarning) => OdysseyPatchSettings.BiomeDangerWarningSuppressed || settleWarning.NullOrEmpty();
+        private static bool ShouldSkipBiomeWarning(string settleWarning) => Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.BIOME_DANGER_WARNING_SUPPRESSED) || settleWarning.NullOrEmpty();
 
-        private static bool ShouldShowOrbitalWarning() => !OdysseyPatchSettings.BiomeDangerWarningSuppressed;
+        private static bool ShouldShowOrbitalWarning() => !Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.BIOME_DANGER_WARNING_SUPPRESSED);
     }
 }

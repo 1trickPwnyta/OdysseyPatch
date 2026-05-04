@@ -18,7 +18,7 @@ namespace OdysseyPatch.StatuesDontHaveHeadgear
             return instructionsList;
         }
 
-        private static bool ShouldIncludeHeadgear() => OdysseyPatchSettings.StatuesDontHaveHeadgear || Rand.Bool;
+        private static bool ShouldIncludeHeadgear() => Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.STATUES_DONT_HAVE_HEADGEAR) || Rand.Bool;
     }
 
     [HarmonyPatch(typeof(CompStatue))]
@@ -27,7 +27,7 @@ namespace OdysseyPatch.StatuesDontHaveHeadgear
     {
         public static void Postfix(CompStatue __instance, Pawn fakePawn)
         {
-            if (OdysseyPatchSettings.StatuesDontHaveHeadgear)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.STATUES_DONT_HAVE_HEADGEAR))
             {
                 Comp_StatueHeadgear comp = __instance.parent.GetComp<Comp_StatueHeadgear>();
                 if (comp != null && !comp.showHeadgear)

@@ -34,7 +34,7 @@ namespace OdysseyPatch.ShuttleFood
 
         private static void TryFindShuttleMedicine(ref Thing medicine, Pawn healer, object obj)
         {
-            if (OdysseyPatchSettings.ShuttleFood && medicine == null)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.SHUTTLE_FOOD) && medicine == null)
             {
                 foreach (Building_PassengerShuttle shuttle in healer.Map.GetShuttlesWithGrabbingEnabled())
                 {

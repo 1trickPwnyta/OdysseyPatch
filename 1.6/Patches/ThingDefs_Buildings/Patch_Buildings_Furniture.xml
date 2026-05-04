@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
-	<Operation Class="OdysseyPatch.PatchOperationReplaceIf">
+	<Operation Class="SpecialSauce.Patching.PatchOperationReplaceIfSettingEnabled">
 		<xpath>/Defs/ThingDef[thingClass="Building_OutfitStand"]/thingClass</xpath>
 		<value>
 			<thingClass>OdysseyPatch.OutfitStandGroupsInBills.SlotGroupParent_OutfitStand</thingClass>
 		</value>
-		<setting>OutfitStandGroupsInBills</setting>
+		<modId>1trickPwnyta.odysseypatch</modId>
+		<settingKey>OdysseyPatch_OutfitStandGroupsInBills</settingKey>
 	</Operation>
-	<Operation Class="OdysseyPatch.PatchOperationReplaceIf">
+	<Operation Class="SpecialSauce.Patching.PatchOperationReplaceIfSettingEnabled">
 		<xpath>/Defs/ThingDef[thingClass="Building_KidOutfitStand"]/thingClass</xpath>
 		<value>
 			<thingClass>OdysseyPatch.OutfitStandGroupsInBills.SlotGroupParent_KidOutfitStand</thingClass>
 		</value>
-		<setting>OutfitStandGroupsInBills</setting>
+		<modId>1trickPwnyta.odysseypatch</modId>
+		<settingKey>OdysseyPatch_OutfitStandGroupsInBills</settingKey>
 	</Operation>
 	
 	<Operation Class="PatchOperationSequence">

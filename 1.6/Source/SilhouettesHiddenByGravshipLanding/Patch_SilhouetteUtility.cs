@@ -9,7 +9,7 @@ namespace OdysseyPatch.SilhouettesHiddenByGravshipLanding
     {
         public static void Postfix(Thing thing, ref bool __result)
         {
-            if (OdysseyPatchSettings.SilhouettesHiddenByGravshipLanding)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.SILHOUETTES_HIDDEN_BY_GRAVSHIP_LANDING))
             {
                 if (WorldComponent_GravshipController.GravshipRenderInProgess || Find.ScreenshotModeHandler.Active)
                 {

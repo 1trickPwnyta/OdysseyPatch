@@ -16,7 +16,7 @@ namespace OdysseyPatch.WorldSearchEmptyTiles
     {
         public static List<PlanetTile> Postfix(List<PlanetTile> tiles)
         {
-            if (OdysseyPatchSettings.WorldSearchEmptyTiles && Patch_Dialog_Search.fullSearch && Find.WindowStack.TryGetWindow(out Dialog_WorldSearch dialog))
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.WORLD_SEARCH_EMPTY_TILES) && Patch_Dialog_Search.fullSearch && Find.WindowStack.TryGetWindow(out Dialog_WorldSearch dialog))
             {
                 tiles = tiles.ListFullCopy();
                 HashSet<PlanetTile> listedTiles = typeof(Dialog_WorldSearch).Field("listedTiles").GetValue(dialog) as HashSet<PlanetTile>;
@@ -40,7 +40,7 @@ namespace OdysseyPatch.WorldSearchEmptyTiles
         {
             List<CodeInstruction> instructionsList = instructions.ToList();
 
-            if (OdysseyPatchSettings.WorldSearchEmptyTiles)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.WORLD_SEARCH_EMPTY_TILES))
             {
                 int index = instructionsList.FindIndex(i => i.opcode == OpCodes.Call && i.operand is MethodInfo m && m == typeof(Color).PropertyGetter(nameof(Color.white)));
                 Label label = instructionsList[index].labels[0];
@@ -57,7 +57,7 @@ namespace OdysseyPatch.WorldSearchEmptyTiles
 
         private static Color GetLandmarkColor(PlanetTile tile)
         {
-            if (OdysseyPatchSettings.WorldSearchEmptyTiles && Patch_Dialog_Search.fullSearch)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.WORLD_SEARCH_EMPTY_TILES) && Patch_Dialog_Search.fullSearch)
             {
                 List<PlanetTile> cachedLandmarks = typeof(ExpandableLandmarksUtility).Field("cachedLandmarksToShow").GetValue(null) as List<PlanetTile>;
                 if (!cachedLandmarks.Contains(tile))

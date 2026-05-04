@@ -37,7 +37,7 @@ namespace OdysseyPatch.AllowRemovingItemsFromOutfitStandAfterEquipping
 
         private static void SetAllowHauling(Building_OutfitStand stand, bool allow)
         {
-            if (!OdysseyPatchSettings.AllowRemovingItemsFromOutfitStandAfterEquipping)
+            if (!Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.ALLOW_REMOVING_ITEMS_FROM_OUTFIT_STAND_AFTER_EQUIPPING))
             {
                 typeof(Building_OutfitStand).Method("SetAllowHauling").Invoke(stand, new object[] { allow });
             }

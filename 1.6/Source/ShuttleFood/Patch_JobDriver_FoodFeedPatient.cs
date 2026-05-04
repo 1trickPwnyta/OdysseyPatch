@@ -13,7 +13,7 @@ namespace OdysseyPatch.ShuttleFood
     {
         public static IEnumerable<Toil> Postfix(IEnumerable<Toil> toils, Pawn ___pawn, Job ___job)
         {
-            if (OdysseyPatchSettings.ShuttleFood)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.SHUTTLE_FOOD))
             {
                 Toil goToShuttle = Toils_Shuttle.GotoShuttle(TargetIndex.C, ___job, ___pawn);
 

@@ -14,7 +14,7 @@ namespace OdysseyPatch.FishingInterruptions
     {
         public static void Postfix(ref IEnumerable<Toil> __result)
         {
-            if (OdysseyPatchSettings.FishingInterruptions)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.FISHING_INTERRUPTIONS))
             {
                 List<Toil> list = __result.ToList();
                 Toil toil = list[1];

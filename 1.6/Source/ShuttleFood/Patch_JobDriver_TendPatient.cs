@@ -12,7 +12,7 @@ namespace OdysseyPatch.ShuttleFood
     {
         public static void Postfix(Pawn doctor, Job job, Pawn patient, Toil gotoToil, List<Toil> __result)
         {
-            if (OdysseyPatchSettings.ShuttleFood)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.SHUTTLE_FOOD))
             {
                 Toil goToShuttle = Toils_Shuttle.GotoShuttle(TargetIndex.C, job, doctor);
                 __result.InsertRange(7, new[]

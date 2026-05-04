@@ -26,7 +26,7 @@ namespace OdysseyPatch.GravshipShieldGeneratorRadiusDisplay
 
         private static bool IsTrueOrGravshipShieldGenerator(bool accepted, BuildableDef placingDef)
         {
-            if (OdysseyPatchSettings.GravshipShieldGeneratorRadiusDisplay)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.GRAVSHIP_SHIELD_GENERATOR_RADIUS_DISPLAY))
             {
                 return accepted || placingDef == PatchHelper_Designator_Place.gravshipShieldGeneratorDef;
             }

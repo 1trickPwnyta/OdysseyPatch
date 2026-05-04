@@ -10,7 +10,7 @@ namespace OdysseyPatch.ShuttleBlockedByLess
     {
         public static bool Prefix(LocalTargetInfo target, Map map, ThingDef shuttleDef, Rot4? rot, ref AcceptanceReport __result)
         {
-            if (OdysseyPatchSettings.ShuttleBlockedByLess && shuttleDef == ThingDefOf.PassengerShuttle)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.SHUTTLE_BLOCKED_BY_LESS) && shuttleDef == ThingDefOf.PassengerShuttle)
             {
                 if (GenConstruct.CanPlaceBlueprintAt(shuttleDef, target.Cell, rot ?? shuttleDef.defaultPlacingRot, map))
                 {

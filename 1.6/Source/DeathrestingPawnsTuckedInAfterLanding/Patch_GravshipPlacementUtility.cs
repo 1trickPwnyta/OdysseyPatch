@@ -15,7 +15,7 @@ namespace OdysseyPatch.DeathrestingPawnsTuckedInAfterLanding
     {
         public static void Postfix(Gravship gravship, Map map)
         {
-            if (OdysseyPatchSettings.DeathrestingPawnsTuckedInAfterLanding)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.DEATHRESTING_PAWNS_TUCKED_IN_AFTER_LANDING))
             {
                 foreach (Pawn pawn in gravship.Pawns.Where(p => p.Deathresting))
                 {
@@ -44,7 +44,7 @@ namespace OdysseyPatch.DeathrestingPawnsTuckedInAfterLanding
 
         private static bool ShouldTuckIn(Pawn pawn)
         {
-            if (OdysseyPatchSettings.DeathrestingPawnsTuckedInAfterLanding)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.DEATHRESTING_PAWNS_TUCKED_IN_AFTER_LANDING))
             {
                 return pawn.Downed && !pawn.Deathresting;
             }

@@ -15,7 +15,7 @@ namespace OdysseyPatch.SubstructureOverlayOptions
 
         public static void Postfix(CompSubstructureFootprint __instance, ref IEnumerable<Gizmo> __result)
         {
-            if (OdysseyPatchSettings.SubstructureOverlayOptions)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.SUBSTRUCTURE_OVERLAY_OPTIONS))
             {
                 List<Gizmo> list = __result.ToList();
                 Gizmo gizmo = list.FirstOrDefault(g => g is Command_Toggle c && c.defaultLabel.Equals("CommandShowSubstructureOverlay".Translate()));
@@ -58,7 +58,7 @@ namespace OdysseyPatch.SubstructureOverlayOptions
     {
         public static void Postfix(CompSubstructureFootprint __instance)
         {
-            if (OdysseyPatchSettings.SubstructureOverlayOptions)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.SUBSTRUCTURE_OVERLAY_OPTIONS))
             {
                 bool alwaysEnabled = Patch_CompSubstructureFootprint_CompGetGizmosExtra.alwaysEnabled.Contains(__instance);
                 Scribe_Values.Look(ref alwaysEnabled, "alwaysEnabled", false);

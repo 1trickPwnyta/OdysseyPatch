@@ -60,7 +60,7 @@ namespace OdysseyPatch.OutfitStandBodyType
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            if (!OdysseyPatchSettings.OutfitStandBodyType || IsKidOutfitStand)
+            if (!Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.OUTFIT_STAND_BODY_TYPE) || IsKidOutfitStand)
             {
                 yield break;
             }
@@ -92,7 +92,7 @@ namespace OdysseyPatch.OutfitStandBodyType
 
         public override void PostExposeData()
         {
-            if (OdysseyPatchSettings.OutfitStandBodyType)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.OUTFIT_STAND_BODY_TYPE))
             {
                 Scribe_Defs.Look(ref bodyType, "bodyType");
                 if (Scribe.mode == LoadSaveMode.PostLoadInit && bodyType == null)

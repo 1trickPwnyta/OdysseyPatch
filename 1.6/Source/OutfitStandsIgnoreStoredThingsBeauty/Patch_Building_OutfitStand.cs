@@ -29,7 +29,7 @@ namespace OdysseyPatch.OutfitStandsIgnoreStoredThingsBeauty
         private static float GetBeauty(Thing thing, bool outside)
         {
             float beauty = thing.GetBeauty(outside);
-            return OdysseyPatchSettings.OutfitStandsIgnoreStoredThingsBeauty ? Mathf.Max(0f, beauty) : beauty;
+            return Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.OUTFIT_STANDS_IGNORE_STORED_THINGS_BEAUTY) ? Mathf.Max(0f, beauty) : beauty;
         }
     }
 }

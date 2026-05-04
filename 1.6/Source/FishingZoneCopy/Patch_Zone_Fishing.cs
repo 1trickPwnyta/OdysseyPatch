@@ -20,7 +20,7 @@ namespace OdysseyPatch.FishingZoneCopy
                 yield return gizmo;
             }
 
-            if (OdysseyPatchSettings.FishingZoneCopy)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.FISHING_ZONE_COPY))
             {
                 Command_Action copyAction = new Command_Action();
                 copyAction.icon = ContentFinder<Texture2D>.Get("UI/Commands/CopySettings");

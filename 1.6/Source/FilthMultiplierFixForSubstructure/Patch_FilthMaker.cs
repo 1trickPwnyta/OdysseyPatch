@@ -18,6 +18,6 @@ namespace OdysseyPatch.FilthMultiplierFixForSubstructure
             return instructionsList;
         }
 
-        private static TerrainDef TerrainAt(TerrainGrid grid, IntVec3 c) => OdysseyPatchSettings.FilthMultiplierFixForSubstructure ? grid.TerrainAt(c) : grid.FoundationAt(c);
+        private static TerrainDef TerrainAt(TerrainGrid grid, IntVec3 c) => Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.FILTH_MULTIPLIER_FIX_FOR_SUBSTRUCTURE) ? grid.TerrainAt(c) : grid.FoundationAt(c);
     }
 }

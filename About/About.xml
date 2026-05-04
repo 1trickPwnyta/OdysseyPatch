@@ -2,7 +2,7 @@
 <ModMetaData>
 	<name>1trickPwnyta's Odyssey Patch</name>
 	<author>1trickPwnyta</author>
-	<packageId>odysseypatch.1trickPwnyta</packageId>
+	<packageId>1trickPwnyta.odysseypatch</packageId>
 	<modVersion>1.4.1</modVersion>
 	<supportedVersions>
 		<li>1.6</li>
@@ -76,8 +76,16 @@ ________________________________________________
 			<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
 			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
 		</li>
+		<li>
+			<packageId>1trickPwnyta.specialsauce</packageId>
+			<displayName>1trickPwnyta's Special Sauce</displayName>
+			<downloadUrl>https://github.com/1trickPwnyta/SpecialSauce</downloadUrl>
+		</li>
 	</modDependencies>
 	<loadBefore>
 		<li>kathanon.groupedmapsearch</li>
 	</loadBefore>
+	<loadAfter>
+		<li>1trickPwnyta.specialsauce</li>
+	</loadAfter>
 </ModMetaData>

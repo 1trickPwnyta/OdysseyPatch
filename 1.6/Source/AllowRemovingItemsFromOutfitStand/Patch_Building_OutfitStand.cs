@@ -9,7 +9,7 @@ namespace OdysseyPatch.AllowRemovingItemsFromOutfitStand
     {
         public static void Postfix(ref bool ___allowRemovingItems)
         {
-            if (OdysseyPatchSettings.AllowRemovingItemsFromOutfitStand)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.ALLOW_REMOVING_ITEMS_FROM_OUTFIT_STAND))
             {
                 ___allowRemovingItems = true;
             }

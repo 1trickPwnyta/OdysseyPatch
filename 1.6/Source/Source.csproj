@@ -39,6 +39,10 @@
       <HintPath>..\..\..\..\..\RimWorld\RimWorld Code 1.6\1.6.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="SpecialSauce">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\SpecialSauce\1.6\Assemblies\SpecialSauce.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -74,7 +78,7 @@
     <Compile Include="AllowRemovingItemsFromOutfitStand\Patch_Building_OutfitStand.cs" />
     <Compile Include="BiomeDangerWarningSuppressed\Patch_SettlementProximityGoodwillUtility.cs" />
     <Compile Include="DeathrestingPawnsTuckedInAfterLanding\Patch_GravshipPlacementUtility.cs" />
-    <Compile Include="Debug.cs" />
+    <Compile Include="Log.cs" />
     <Compile Include="FilthMultiplierFixForSubstructure\Patch_FilthMaker.cs" />
     <Compile Include="FishingInterruptions\Patch_JobDriver_Fish.cs" />
     <Compile Include="FishingMishapsLessIntrusive\Patch_JobDriver_Fish.cs" />
@@ -84,8 +88,7 @@
     <Compile Include="GravshipBuildRadiusSeparate\Patch_SubstructureGrid.cs" />
     <Compile Include="GravshipCutsceneOptions\Patch_WorldComponent_GravshipController.cs" />
     <Compile Include="GravshipShieldGeneratorRadiusDisplay\Patch_Designator_Place.cs" />
-    <Compile Include="HarmonyPatchSetting.cs" />
-    <Compile Include="OdysseyPatchSettings.cs" />
+    <Compile Include="ModSettings_DLCPatch_Odyssey.cs" />
     <Compile Include="OutfitStandBodyType\CompProperties_OutfitStandBodyType.cs" />
     <Compile Include="OutfitStandBodyType\Comp_OutfitStandBodyType.cs" />
     <Compile Include="OutfitStandBodyType\Patch_Building_OutfitStand.cs" />
@@ -97,9 +100,8 @@
     <Compile Include="OutfitStandGroupsInBills\SlotGroupParent_KidOutfitStand.cs" />
     <Compile Include="OutfitStandGroupsInBills\SlotGroupParent_OutfitStand.cs" />
     <Compile Include="OutfitStandsIgnoreStoredThingsBeauty\Patch_Building_OutfitStand.cs" />
-    <Compile Include="PatchOperationReplaceIf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="OdysseyPatchMod.cs" />
+    <Compile Include="Mod_OdysseyPatch.cs" />
     <Compile Include="ShowRemainingSubstructureCapacity\Patch_Building_GravEngine.cs" />
     <Compile Include="ShuttleBlockedByLess\Patch_RoyalTitlePermitWorker_CallShuttle.cs" />
     <Compile Include="ShuttleBlockedByLess\Patch_ShipJob_Unload.cs" />
@@ -125,6 +127,7 @@
     <Compile Include="SubstructureOverlayOptions\Patch_CompSubstructureFootprint.cs" />
     <Compile Include="SubstructureOverlayOptions\Patch_GravshipUtility.cs" />
     <Compile Include="SubstructureOverlayOptions\Patch_MemoryUtility.cs" />
+    <Compile Include="Utility.cs" />
     <Compile Include="VacuumIntensityRoomStat\Patch_CellInspectorDrawer.cs" />
     <Compile Include="VacuumIntensityRoomStat\Patch_EnvironmentStatsDrawer.cs" />
     <Compile Include="VacuumIntensityRoomStat\Patch_Gizmo_RoomStats.cs" />

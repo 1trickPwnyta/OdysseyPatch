@@ -16,7 +16,7 @@ namespace OdysseyPatch.OutfitStandBodyType
     {
         public static void Postfix(Building_OutfitStand __instance, ref BodyTypeDef __result)
         {
-            if (OdysseyPatchSettings.OutfitStandBodyType)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.OUTFIT_STAND_BODY_TYPE))
             {
                 Comp_OutfitStandBodyType comp = __instance.TryGetComp<Comp_OutfitStandBodyType>();
                 if (comp != null)
@@ -55,7 +55,7 @@ namespace OdysseyPatch.OutfitStandBodyType
 
         private static Graphic_Multi GetOutfitStandGraphic(Building_OutfitStand stand)
         {
-            if (OdysseyPatchSettings.OutfitStandBodyType)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.OUTFIT_STAND_BODY_TYPE))
             {
                 Comp_OutfitStandBodyType comp = stand.GetComp<Comp_OutfitStandBodyType>();
                 if (comp != null && comp.bodyType != BodyTypeDefOf.Male)
@@ -68,7 +68,7 @@ namespace OdysseyPatch.OutfitStandBodyType
 
         private static Vector3 GetItemScale(Vector3 scale, Building_OutfitStand stand)
         {
-            if (OdysseyPatchSettings.OutfitStandBodyType)
+            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.OUTFIT_STAND_BODY_TYPE))
             {
                 scale /= 1.2f;
                 Comp_OutfitStandBodyType comp = stand.GetComp<Comp_OutfitStandBodyType>();
