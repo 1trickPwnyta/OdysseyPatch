@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -7,6 +8,7 @@ using System.Reflection.Emit;
 
 namespace OdysseyPatch.AllowRemovingItemsFromOutfitStandAfterEquipping
 {
+    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.ALLOW_REMOVING_ITEMS_FROM_OUTFIT_STAND_AFTER_EQUIPPING)]
     [HarmonyPatch(typeof(JobDriver_UseOutfitStand))]
     [HarmonyPatch("DoTransfer")]
     public static class Patch_JobDriver_UseOutfitStand

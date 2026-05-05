@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -7,6 +8,7 @@ using Verse.AI;
 
 namespace OdysseyPatch.ShuttleFood
 {
+    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.SHUTTLE_FOOD)]
     [HarmonyPatch(typeof(JobDriver_FoodFeedPatient))]
     [HarmonyPatch("MakeNewToils")]
     public static class Patch_JobDriver_FoodFeedPatient

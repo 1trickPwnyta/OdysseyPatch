@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
@@ -7,6 +8,7 @@ using Verse;
 
 namespace OdysseyPatch.GravshipShieldGeneratorRadiusDisplay
 {
+    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.GRAVSHIP_SHIELD_GENERATOR_RADIUS_DISPLAY)]
     [HarmonyPatch(typeof(Designator_Place))]
     [HarmonyPatch(nameof(Designator_Place.SelectedUpdate))]
     public static class Patch_Designator_Place

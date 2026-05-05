@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -9,7 +10,7 @@ using Verse;
 
 namespace OdysseyPatch.OutfitStandsIgnoreStoredThingsBeauty
 {
-    [HarmonyPatch]
+    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.OUTFIT_STANDS_IGNORE_STORED_THINGS_BEAUTY)]
     public static class Patch_Building_OutfitStand
     {
         public static IEnumerable<MethodBase> TargetMethods()

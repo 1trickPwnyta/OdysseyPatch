@@ -1,8 +1,10 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
 
 namespace OdysseyPatch.FlickSwitchesAfterLanding
 {
+    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.FLICK_SWITCHES_AFTER_LANDING)]
     [HarmonyPatch(typeof(CompFlickable))]
     [HarmonyPatch(nameof(CompFlickable.CompGetGizmosExtra))]
     public static class Patch_CompFlickable

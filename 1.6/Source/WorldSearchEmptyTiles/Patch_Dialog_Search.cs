@@ -1,10 +1,12 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
 using UnityEngine;
 using Verse;
 
 namespace OdysseyPatch.WorldSearchEmptyTiles
 {
+    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.WORLD_SEARCH_EMPTY_TILES)]
     [HarmonyPatch(typeof(Dialog_Search<WorldSearchElement>))]
     [HarmonyPatch(nameof(Dialog_Search<WorldSearchElement>.DoWindowContents))]
     public static class Patch_Dialog_Search

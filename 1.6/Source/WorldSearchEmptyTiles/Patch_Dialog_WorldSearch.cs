@@ -1,12 +1,14 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
+using SpecialSauce.ModSettings;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
 
 namespace OdysseyPatch.WorldSearchEmptyTiles
 {
+    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.WORLD_SEARCH_EMPTY_TILES)]
     [HarmonyPatch(typeof(Dialog_WorldSearch))]
     [HarmonyPatch(MethodType.Constructor)]
     public static class Patch_Dialog_WorldSearch_ctor
@@ -17,6 +19,7 @@ namespace OdysseyPatch.WorldSearchEmptyTiles
         }
     }
 
+    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.WORLD_SEARCH_EMPTY_TILES)]
     [HarmonyPatch(typeof(Dialog_WorldSearch))]
     [HarmonyPatch("InitializeSearchSet")]
     public static class Patch_Dialog_WorldSearch_InitializeSearchSet

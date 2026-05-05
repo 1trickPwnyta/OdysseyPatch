@@ -1,13 +1,13 @@
 ﻿using HarmonyLib;
 using RimWorld;
-using SpecialSauce.Harmony;
+using SpecialSauce.ModSettings;
 using Verse;
 
 namespace OdysseyPatch.OutfitStandGroupsInBills
 {
+    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.OUTFIT_STAND_GROUPS_IN_BILLS)]
     [HarmonyPatch(typeof(StoreUtility))]
     [HarmonyPatch("TryFindBestBetterStoreCellForWorker")]
-    [HarmonyPatch_SettingEnabled(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.OUTFIT_STAND_GROUPS_IN_BILLS)]
     public static class Patch_StoreUtility
     {
         public static bool Prefix(Thing t, ISlotGroup slotGroup)

@@ -1,11 +1,13 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
 using System.Linq;
 using UnityEngine;
 using Verse;
 
 namespace OdysseyPatch.GravshipBuildRadiusSeparate
 {
+    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.GRAVSHIP_BUILD_RADIUS_SEPARATE)]
     [HarmonyPatch(typeof(SubstructureGrid))]
     [HarmonyPatch(nameof(SubstructureGrid.DrawSubstructureFootprint))]
     public static class Patch_SubstructureGrid

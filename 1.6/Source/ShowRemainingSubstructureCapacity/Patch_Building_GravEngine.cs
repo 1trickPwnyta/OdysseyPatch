@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
@@ -7,6 +8,7 @@ using Verse;
 
 namespace OdysseyPatch.ShowRemainingSubstructureCapacity
 {
+    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.SHOW_REMAINING_SUBSTRUCTURE_CAPACITY)]
     [HarmonyPatch(typeof(Building_GravEngine))]
     [HarmonyPatch(nameof(Building_GravEngine.GetInspectString))]
     public static class Patch_Building_GravEngine

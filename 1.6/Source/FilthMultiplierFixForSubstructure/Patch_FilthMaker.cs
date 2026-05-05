@@ -1,11 +1,13 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
 
 namespace OdysseyPatch.FilthMultiplierFixForSubstructure
 {
+    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.FILTH_MULTIPLIER_FIX_FOR_SUBSTRUCTURE)]
     [HarmonyPatch(typeof(FilthMaker))]
     [HarmonyPatch(nameof(FilthMaker.CanMakeFilth))]
     public static class Patch_FilthMaker

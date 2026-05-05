@@ -1,10 +1,12 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
 using System.Linq;
 using Verse;
 
 namespace OdysseyPatch.SubstructureOverlayOptions
 {
+    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.SUBSTRUCTURE_OVERLAY_OPTIONS)]
     [HarmonyPatch(typeof(GravshipUtility))]
     [HarmonyPatch(nameof(GravshipUtility.ShowConnectedSubstructure))]
     [HarmonyPatch(MethodType.Getter)]

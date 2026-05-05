@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -16,6 +17,7 @@ namespace OdysseyPatch.StatueConsistency
         }
     }
 
+    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.STATUE_CONSISTENCY)]
     [HarmonyPatch(typeof(CompStatue))]
     [HarmonyPatch("CreateSnapshotOfPawn")]
     public static class Patch_CompStatue_CreateSnapshotOfPawn
@@ -30,6 +32,7 @@ namespace OdysseyPatch.StatueConsistency
         }
     }
 
+    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.STATUE_CONSISTENCY)]
     [HarmonyPatch(typeof(CompStatue))]
     [HarmonyPatch("InitFakePawn_HookForMods")]
     public static class Patch_CompStatue_InitFakePawn_HookForMods

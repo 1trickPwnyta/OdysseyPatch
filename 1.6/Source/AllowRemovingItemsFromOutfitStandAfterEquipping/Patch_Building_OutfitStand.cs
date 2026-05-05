@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -9,6 +10,7 @@ namespace OdysseyPatch.AllowRemovingItemsFromOutfitStandAfterEquipping
 {
     public static class Patch_Building_OutfitStand
     {
+        [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.ALLOW_REMOVING_ITEMS_FROM_OUTFIT_STAND_AFTER_EQUIPPING)]
         [HarmonyPatch(typeof(Building_OutfitStand))]
         [HarmonyPatch("<GetGizmos>b__97_1")]
         public static class Patch_Building_OutfitStand_GetGizmos
@@ -16,7 +18,7 @@ namespace OdysseyPatch.AllowRemovingItemsFromOutfitStandAfterEquipping
             public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions) => CommonTranspiler(instructions);
         }
 
-        [HarmonyPatch]
+        [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.ALLOW_REMOVING_ITEMS_FROM_OUTFIT_STAND_AFTER_EQUIPPING)]
         public static class Patch_Building_OutfitStand_GetFloatMenuOptions
         {
             public static IEnumerable<MethodBase> TargetMethods()

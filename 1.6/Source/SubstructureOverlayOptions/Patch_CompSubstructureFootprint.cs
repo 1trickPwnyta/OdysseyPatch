@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -7,6 +8,7 @@ using Verse;
 
 namespace OdysseyPatch.SubstructureOverlayOptions
 {
+    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.SUBSTRUCTURE_OVERLAY_OPTIONS)]
     [HarmonyPatch(typeof(CompSubstructureFootprint))]
     [HarmonyPatch(nameof(CompSubstructureFootprint.CompGetGizmosExtra))]
     public static class Patch_CompSubstructureFootprint_CompGetGizmosExtra
@@ -52,6 +54,7 @@ namespace OdysseyPatch.SubstructureOverlayOptions
         }
     }
 
+    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.SUBSTRUCTURE_OVERLAY_OPTIONS)]
     [HarmonyPatch(typeof(CompSubstructureFootprint))]
     [HarmonyPatch(nameof(CompSubstructureFootprint.PostExposeData))]
     public static class Patch_CompSubstructureFootprint_PostExposeData

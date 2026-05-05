@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -9,6 +10,7 @@ using Verse;
 
 namespace OdysseyPatch.OutfitStandBodyType
 {
+    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.OUTFIT_STAND_BODY_TYPE)]
     [HarmonyPatch(typeof(Building_OutfitStand))]
     [HarmonyPatch("BodyTypeDefForRendering")]
     [HarmonyPatch(MethodType.Getter)]
@@ -27,6 +29,7 @@ namespace OdysseyPatch.OutfitStandBodyType
         }
     }
 
+    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.OUTFIT_STAND_BODY_TYPE)]
     [HarmonyPatch(typeof(Building_OutfitStand))]
     [HarmonyPatch("DrawAt")]
     public static class Patch_Building_OutfitStand_DrawAt

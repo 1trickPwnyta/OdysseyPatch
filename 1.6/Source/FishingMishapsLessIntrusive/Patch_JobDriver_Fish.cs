@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
@@ -7,6 +8,7 @@ using Verse;
 
 namespace OdysseyPatch.FishingMishapsLessIntrusive
 {
+    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.FISHING_MISHAPS_LESS_INTRUSIVE)]
     [HarmonyPatch(typeof(JobDriver_Fish))]
     [HarmonyPatch("<CompleteFishingToil>b__4_0")]
     public static class Patch_JobDriver_Fish

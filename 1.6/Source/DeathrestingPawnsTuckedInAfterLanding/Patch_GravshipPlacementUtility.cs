@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
+using SpecialSauce.ModSettings;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -9,6 +10,7 @@ using Verse;
 
 namespace OdysseyPatch.DeathrestingPawnsTuckedInAfterLanding
 {
+    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.DEATHRESTING_PAWNS_TUCKED_IN_AFTER_LANDING)]
     [HarmonyPatch(typeof(GravshipPlacementUtility))]
     [HarmonyPatch(nameof(GravshipPlacementUtility.PlaceGravshipInMap))]
     public static class Patch_GravshipPlacementUtility_PlaceGravshipInMap
@@ -29,6 +31,7 @@ namespace OdysseyPatch.DeathrestingPawnsTuckedInAfterLanding
         }
     }
 
+    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.DEATHRESTING_PAWNS_TUCKED_IN_AFTER_LANDING)]
     [HarmonyPatch(typeof(GravshipPlacementUtility))]
     [HarmonyPatch("SpawnPawns")]
     public static class Patch_GravshipPlacementUtility_SpawnPawns
