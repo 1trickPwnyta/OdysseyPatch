@@ -1,14 +1,13 @@
 ﻿using HarmonyLib;
 using RimWorld;
-using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection.Emit;
 using Verse;
 
 namespace OdysseyPatch.ShowRemainingSubstructureCapacity
 {
-    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.SHOW_REMAINING_SUBSTRUCTURE_CAPACITY)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.ShowRemainingSubstructureCapacity)]
     [HarmonyPatch(typeof(Building_GravEngine))]
     [HarmonyPatch(nameof(Building_GravEngine.GetInspectString))]
     public static class Patch_Building_GravEngine
@@ -39,7 +38,7 @@ namespace OdysseyPatch.ShowRemainingSubstructureCapacity
 
         private static string GetNewInspectString(string oldInspectString, HashSet<IntVec3> allConnectedSubstructure, Building_GravEngine engine)
         {
-            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.SHOW_REMAINING_SUBSTRUCTURE_CAPACITY))
+            if (Settings.ShowRemainingSubstructureCapacity.Enabled())
             {
                 return oldInspectString + $" ({(int)engine.GetStatValue(StatDefOf.SubstructureSupport) - allConnectedSubstructure.Count} {"OdysseyPatch_Remaining".Translate()})";
             }

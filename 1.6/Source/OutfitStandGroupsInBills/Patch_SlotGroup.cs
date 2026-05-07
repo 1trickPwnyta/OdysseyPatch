@@ -1,12 +1,12 @@
 ﻿using HarmonyLib;
 using RimWorld;
-using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using Verse;
 
 namespace OdysseyPatch.OutfitStandGroupsInBills
 {
-    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.OUTFIT_STAND_GROUPS_IN_BILLS)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.OutfitStandGroupsInBills)]
     [HarmonyPatch(typeof(SlotGroup))]
     [HarmonyPatch(MethodType.Getter)]
     [HarmonyPatch(nameof(SlotGroup.HeldThings))]
@@ -23,7 +23,7 @@ namespace OdysseyPatch.OutfitStandGroupsInBills
         }
     }
 
-    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.OUTFIT_STAND_GROUPS_IN_BILLS)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.OutfitStandGroupsInBills)]
     [HarmonyPatch(typeof(SlotGroup))]
     [HarmonyPatch(MethodType.Getter)]
     [HarmonyPatch(nameof(SlotGroup.HeldThingsCount))]

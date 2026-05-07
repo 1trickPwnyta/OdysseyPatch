@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
-using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -10,7 +10,7 @@ using Verse.AI;
 
 namespace OdysseyPatch.ShuttleFood
 {
-    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.SHUTTLE_FOOD)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.SHUTTLE_FOOD)]
     [HarmonyPatch(typeof(JobGiver_GetFood))]
     [HarmonyPatch("TryGiveJob")]
     public static class Patch_JobGiver_GetFood

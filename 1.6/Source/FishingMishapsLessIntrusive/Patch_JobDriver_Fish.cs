@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
-using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
@@ -8,7 +8,7 @@ using Verse;
 
 namespace OdysseyPatch.FishingMishapsLessIntrusive
 {
-    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.FISHING_MISHAPS_LESS_INTRUSIVE)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.FishingMishapsLessIntrusive)]
     [HarmonyPatch(typeof(JobDriver_Fish))]
     [HarmonyPatch("<CompleteFishingToil>b__4_0")]
     public static class Patch_JobDriver_Fish
@@ -28,7 +28,7 @@ namespace OdysseyPatch.FishingMishapsLessIntrusive
         private static void DoNotification(LetterStack letterStack, LookTargets lookTargets, NegativeFishingOutcomeDef outcome)
         {
             Pawn pawn = lookTargets.PrimaryTarget.Pawn;
-            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.FISHING_MISHAPS_LESS_INTRUSIVE))
+            if (Settings.FishingMishapsLessIntrusive.Enabled())
             {
                 if (outcome.damageDef != null || outcome.addsHediff != null)
                 {

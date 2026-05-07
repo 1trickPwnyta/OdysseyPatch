@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
-using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -8,7 +8,7 @@ using System.Reflection.Emit;
 
 namespace OdysseyPatch.AllowRemovingItemsFromOutfitStandAfterEquipping
 {
-    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.ALLOW_REMOVING_ITEMS_FROM_OUTFIT_STAND_AFTER_EQUIPPING)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.AllowRemovingItemsFromOutfitStandAfterEquipping)]
     [HarmonyPatch(typeof(JobDriver_UseOutfitStand))]
     [HarmonyPatch("DoTransfer")]
     public static class Patch_JobDriver_UseOutfitStand
@@ -26,6 +26,6 @@ namespace OdysseyPatch.AllowRemovingItemsFromOutfitStandAfterEquipping
             return instructionsList;
         }
 
-        private static bool ShouldWearApparel(bool wasRemoved) => wasRemoved || !Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.ALLOW_REMOVING_ITEMS_FROM_OUTFIT_STAND_AFTER_EQUIPPING);
+        private static bool ShouldWearApparel(bool wasRemoved) => wasRemoved || !Settings.AllowRemovingItemsFromOutfitStandAfterEquipping.Enabled();
     }
 }

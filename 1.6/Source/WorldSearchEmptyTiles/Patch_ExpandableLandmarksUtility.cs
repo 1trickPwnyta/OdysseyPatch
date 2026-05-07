@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
-using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -11,14 +11,14 @@ using Verse;
 
 namespace OdysseyPatch.WorldSearchEmptyTiles
 {
-    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.WORLD_SEARCH_EMPTY_TILES)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.WORLD_SEARCH_EMPTY_TILES)]
     [HarmonyPatch(typeof(ExpandableLandmarksUtility))]
     [HarmonyPatch("get_LandmarksToShow")]
     public static class Patch_ExpandableLandmarksUtility_LandmarksToShow
     {
         public static List<PlanetTile> Postfix(List<PlanetTile> tiles)
         {
-            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.WORLD_SEARCH_EMPTY_TILES) && Patch_Dialog_Search.fullSearch && Find.WindowStack.TryGetWindow(out Dialog_WorldSearch dialog))
+            if (Utility.CheckSetting(SpecialModSettings_Multipatch_Odyssey.WORLD_SEARCH_EMPTY_TILES) && Patch_Dialog_Search.fullSearch && Find.WindowStack.TryGetWindow(out Dialog_WorldSearch dialog))
             {
                 tiles = tiles.ListFullCopy();
                 HashSet<PlanetTile> listedTiles = typeof(Dialog_WorldSearch).Field("listedTiles").GetValue(dialog) as HashSet<PlanetTile>;
@@ -34,7 +34,7 @@ namespace OdysseyPatch.WorldSearchEmptyTiles
         }
     }
 
-    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.WORLD_SEARCH_EMPTY_TILES)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.WORLD_SEARCH_EMPTY_TILES)]
     [HarmonyPatch(typeof(ExpandableLandmarksUtility))]
     [HarmonyPatch(nameof(ExpandableLandmarksUtility.ExpandableLandmarksOnGUI))]
     public static class Patch_ExpandableLandmarksUtility_ExpandableLandmarksOnGUI
@@ -43,7 +43,7 @@ namespace OdysseyPatch.WorldSearchEmptyTiles
         {
             List<CodeInstruction> instructionsList = instructions.ToList();
 
-            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.WORLD_SEARCH_EMPTY_TILES))
+            if (Utility.CheckSetting(SpecialModSettings_Multipatch_Odyssey.WORLD_SEARCH_EMPTY_TILES))
             {
                 int index = instructionsList.FindIndex(i => i.opcode == OpCodes.Call && i.operand is MethodInfo m && m == typeof(Color).PropertyGetter(nameof(Color.white)));
                 Label label = instructionsList[index].labels[0];
@@ -60,7 +60,7 @@ namespace OdysseyPatch.WorldSearchEmptyTiles
 
         private static Color GetLandmarkColor(PlanetTile tile)
         {
-            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.WORLD_SEARCH_EMPTY_TILES) && Patch_Dialog_Search.fullSearch)
+            if (Utility.CheckSetting(SpecialModSettings_Multipatch_Odyssey.WORLD_SEARCH_EMPTY_TILES) && Patch_Dialog_Search.fullSearch)
             {
                 List<PlanetTile> cachedLandmarks = typeof(ExpandableLandmarksUtility).Field("cachedLandmarksToShow").GetValue(null) as List<PlanetTile>;
                 if (!cachedLandmarks.Contains(tile))

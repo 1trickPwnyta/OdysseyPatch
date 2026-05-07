@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
-using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -17,7 +17,7 @@ namespace OdysseyPatch.StatueConsistency
         }
     }
 
-    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.STATUE_CONSISTENCY)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.STATUE_CONSISTENCY)]
     [HarmonyPatch(typeof(CompStatue))]
     [HarmonyPatch("CreateSnapshotOfPawn")]
     public static class Patch_CompStatue_CreateSnapshotOfPawn
@@ -32,14 +32,14 @@ namespace OdysseyPatch.StatueConsistency
         }
     }
 
-    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.STATUE_CONSISTENCY)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.STATUE_CONSISTENCY)]
     [HarmonyPatch(typeof(CompStatue))]
     [HarmonyPatch("InitFakePawn_HookForMods")]
     public static class Patch_CompStatue_InitFakePawn_HookForMods
     {
         public static void Postfix(Pawn fakePawn, Dictionary<string, object> additionalSavedPawnDataForMods)
         {
-            if (ModsConfig.BiotechActive && fakePawn.genes != null && Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.STATUE_CONSISTENCY))
+            if (ModsConfig.BiotechActive && fakePawn.genes != null && Utility.CheckSetting(SpecialModSettings_Multipatch_Odyssey.STATUE_CONSISTENCY))
             {
                 List<GeneDef> overridenGenes = (additionalSavedPawnDataForMods.TryGetValue("OdysseyPatch.StatueConsistency.overridenGenes") as OverriddenGenes)?.list;
                 if (overridenGenes != null)

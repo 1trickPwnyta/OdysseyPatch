@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
-using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -10,7 +10,7 @@ using Verse;
 
 namespace OdysseyPatch.BiomeDangerWarningSuppressed
 {
-    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.BIOME_DANGER_WARNING_SUPPRESSED)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.BiomeDangerWarningSuppressed)]
     public static class Patch_SettlementProximityGoodwillUtility
     {
         public static IEnumerable<MethodBase> TargetMethods()
@@ -28,8 +28,8 @@ namespace OdysseyPatch.BiomeDangerWarningSuppressed
             return instructionsList;
         }
 
-        private static bool ShouldSkipBiomeWarning(string settleWarning) => Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.BIOME_DANGER_WARNING_SUPPRESSED) || settleWarning.NullOrEmpty();
+        private static bool ShouldSkipBiomeWarning(string settleWarning) => Settings.BiomeDangerWarningSuppressed.Enabled() || settleWarning.NullOrEmpty();
 
-        private static bool ShouldShowOrbitalWarning() => !Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.BIOME_DANGER_WARNING_SUPPRESSED);
+        private static bool ShouldShowOrbitalWarning() => !Settings.BiomeDangerWarningSuppressed.Enabled();
     }
 }

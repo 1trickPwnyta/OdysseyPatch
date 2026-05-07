@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
-using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -9,7 +9,7 @@ using Verse;
 
 namespace OdysseyPatch.FloorsBlockedByHulls
 {
-    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.FLOORS_BLOCKED_BY_HULLS)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.FloorsBlockedByHulls)]
     [HarmonyPatch(typeof(GenConstruct))]
     [HarmonyPatch(nameof(GenConstruct.CanPlaceBlueprintAt_NewTemp))]
     public static class Patch_GenConstruct
@@ -28,6 +28,6 @@ namespace OdysseyPatch.FloorsBlockedByHulls
             return instructionsList;
         }
 
-        private static bool ShouldIgnoreForFoundation(Building building, TerrainDef terrain) => !Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.FLOORS_BLOCKED_BY_HULLS) || terrain.isFoundation || building == null || !building.def.coversFloor;
+        private static bool ShouldIgnoreForFoundation(Building building, TerrainDef terrain) => !Settings.FloorsBlockedByHulls.Enabled() || terrain.isFoundation || building == null || !building.def.coversFloor;
     }
 }

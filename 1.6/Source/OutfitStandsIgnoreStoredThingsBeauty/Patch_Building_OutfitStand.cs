@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
-using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -10,7 +10,7 @@ using Verse;
 
 namespace OdysseyPatch.OutfitStandsIgnoreStoredThingsBeauty
 {
-    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.OUTFIT_STANDS_IGNORE_STORED_THINGS_BEAUTY)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.OutfitStandsIgnoreStoredThingsBeauty)]
     public static class Patch_Building_OutfitStand
     {
         public static IEnumerable<MethodBase> TargetMethods()
@@ -30,7 +30,7 @@ namespace OdysseyPatch.OutfitStandsIgnoreStoredThingsBeauty
         private static float GetBeauty(Thing thing, bool outside)
         {
             float beauty = thing.GetBeauty(outside);
-            return Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.OUTFIT_STANDS_IGNORE_STORED_THINGS_BEAUTY) ? Mathf.Max(0f, beauty) : beauty;
+            return Settings.OutfitStandsIgnoreStoredThingsBeauty.Enabled() ? Mathf.Max(0f, beauty) : beauty;
         }
     }
 }

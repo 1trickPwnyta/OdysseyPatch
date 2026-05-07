@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
-using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -10,7 +10,7 @@ using Verse;
 
 namespace OdysseyPatch.OutfitStandBodyType
 {
-    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.OUTFIT_STAND_BODY_TYPE)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.OutfitStandBodyType)]
     [HarmonyPatch(typeof(Building_OutfitStand))]
     [HarmonyPatch("BodyTypeDefForRendering")]
     [HarmonyPatch(MethodType.Getter)]
@@ -18,7 +18,7 @@ namespace OdysseyPatch.OutfitStandBodyType
     {
         public static void Postfix(Building_OutfitStand __instance, ref BodyTypeDef __result)
         {
-            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.OUTFIT_STAND_BODY_TYPE))
+            if (Settings.OutfitStandBodyType.Enabled())
             {
                 Comp_OutfitStandBodyType comp = __instance.TryGetComp<Comp_OutfitStandBodyType>();
                 if (comp != null)
@@ -29,7 +29,7 @@ namespace OdysseyPatch.OutfitStandBodyType
         }
     }
 
-    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.OUTFIT_STAND_BODY_TYPE)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.OutfitStandBodyType)]
     [HarmonyPatch(typeof(Building_OutfitStand))]
     [HarmonyPatch("DrawAt")]
     public static class Patch_Building_OutfitStand_DrawAt
@@ -58,7 +58,7 @@ namespace OdysseyPatch.OutfitStandBodyType
 
         private static Graphic_Multi GetOutfitStandGraphic(Building_OutfitStand stand)
         {
-            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.OUTFIT_STAND_BODY_TYPE))
+            if (Settings.OutfitStandBodyType.Enabled())
             {
                 Comp_OutfitStandBodyType comp = stand.GetComp<Comp_OutfitStandBodyType>();
                 if (comp != null && comp.bodyType != BodyTypeDefOf.Male)
@@ -71,7 +71,7 @@ namespace OdysseyPatch.OutfitStandBodyType
 
         private static Vector3 GetItemScale(Vector3 scale, Building_OutfitStand stand)
         {
-            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.OUTFIT_STAND_BODY_TYPE))
+            if (Settings.OutfitStandBodyType.Enabled())
             {
                 scale /= 1.2f;
                 Comp_OutfitStandBodyType comp = stand.GetComp<Comp_OutfitStandBodyType>();

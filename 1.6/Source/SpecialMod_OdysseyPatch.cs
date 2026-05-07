@@ -1,15 +1,16 @@
 using HarmonyLib;
 using SpecialSauce.Mod;
+using SpecialSauce.Multipatch;
 using Verse;
 
 namespace OdysseyPatch
 {
-    public class Mod_OdysseyPatch : SpecialMod<ModSettings_DLCPatch_Odyssey>
+    public class SpecialMod_OdysseyPatch : SpecialMod<SpecialModSettings_Multipatch<Settings>>
     {
         public const string PACKAGE_NAME = "1trickPwnyta's Odyssey Patch";
-        public const string PACKAGE_ID = "1trickPwnyta.odysseypatch";
+        public const string PACKAGE_ID = "1trickpwnyta.odysseypatch";
 
-        public Mod_OdysseyPatch(ModContentPack content) : base(content)
+        public SpecialMod_OdysseyPatch(ModContentPack content) : base(content)
         {
         }
 
@@ -22,7 +23,7 @@ namespace OdysseyPatch
         protected override void OnInitialized()
         {
             var harmony = new Harmony(PackageId);
-            harmony.PatchAllUncategorized();
+            harmony.PatchCategory(HarmonyPatch_Compatibility.EnabledCategory);
             Log.Info("Ready.");
         }
     }

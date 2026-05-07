@@ -2,7 +2,7 @@
 <ModMetaData>
 	<name>1trickPwnyta's Odyssey Patch</name>
 	<author>1trickPwnyta</author>
-	<packageId>1trickPwnyta.odysseypatch</packageId>
+	<packageId>1trickpwnyta.odysseypatch</packageId>
 	<modVersion>1.4.1</modVersion>
 	<supportedVersions>
 		<li>1.6</li>

@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
-using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -8,7 +8,7 @@ using Verse;
 
 namespace OdysseyPatch.SubstructureOverlayOptions
 {
-    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.SUBSTRUCTURE_OVERLAY_OPTIONS)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.SUBSTRUCTURE_OVERLAY_OPTIONS)]
     [HarmonyPatch(typeof(CompSubstructureFootprint))]
     [HarmonyPatch(nameof(CompSubstructureFootprint.CompGetGizmosExtra))]
     public static class Patch_CompSubstructureFootprint_CompGetGizmosExtra
@@ -17,7 +17,7 @@ namespace OdysseyPatch.SubstructureOverlayOptions
 
         public static void Postfix(CompSubstructureFootprint __instance, ref IEnumerable<Gizmo> __result)
         {
-            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.SUBSTRUCTURE_OVERLAY_OPTIONS))
+            if (Utility.CheckSetting(SpecialModSettings_Multipatch_Odyssey.SUBSTRUCTURE_OVERLAY_OPTIONS))
             {
                 List<Gizmo> list = __result.ToList();
                 Gizmo gizmo = list.FirstOrDefault(g => g is Command_Toggle c && c.defaultLabel.Equals("CommandShowSubstructureOverlay".Translate()));
@@ -54,14 +54,14 @@ namespace OdysseyPatch.SubstructureOverlayOptions
         }
     }
 
-    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.SUBSTRUCTURE_OVERLAY_OPTIONS)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.SUBSTRUCTURE_OVERLAY_OPTIONS)]
     [HarmonyPatch(typeof(CompSubstructureFootprint))]
     [HarmonyPatch(nameof(CompSubstructureFootprint.PostExposeData))]
     public static class Patch_CompSubstructureFootprint_PostExposeData
     {
         public static void Postfix(CompSubstructureFootprint __instance)
         {
-            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.SUBSTRUCTURE_OVERLAY_OPTIONS))
+            if (Utility.CheckSetting(SpecialModSettings_Multipatch_Odyssey.SUBSTRUCTURE_OVERLAY_OPTIONS))
             {
                 bool alwaysEnabled = Patch_CompSubstructureFootprint_CompGetGizmosExtra.alwaysEnabled.Contains(__instance);
                 Scribe_Values.Look(ref alwaysEnabled, "alwaysEnabled", false);

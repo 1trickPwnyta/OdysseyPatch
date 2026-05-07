@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
-using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -10,7 +10,7 @@ using Verse.AI;
 
 namespace OdysseyPatch.ShuttleFood
 {
-    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.SHUTTLE_FOOD)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.SHUTTLE_FOOD)]
     [HarmonyPatch(typeof(JobGiver_SatifyChemicalDependency))]
     [HarmonyPatch("TryGiveJob")]
     public static class Patch_JobGiver_SatifyChemicalDependency_TryGiveJob
@@ -52,14 +52,14 @@ namespace OdysseyPatch.ShuttleFood
         }
     }
 
-    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.SHUTTLE_FOOD)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.SHUTTLE_FOOD)]
     [HarmonyPatch(typeof(JobGiver_SatifyChemicalDependency))]
     [HarmonyPatch("FindDrugFor")]
     public static class Patch_JobGiver_SatifyChemicalDependency_FindDrugFor
     {
         public static void Postfix(Pawn pawn, Hediff_ChemicalDependency dependency, ref Thing __result)
         {
-            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.SHUTTLE_FOOD) && __result == null)
+            if (Utility.CheckSetting(SpecialModSettings_Multipatch_Odyssey.SHUTTLE_FOOD) && __result == null)
             {
                 if (pawn.IsColonist && pawn.Map != null)
                 {

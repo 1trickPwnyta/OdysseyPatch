@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
-using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using UnityEngine;
 using Verse;
@@ -8,7 +8,7 @@ using Verse.Sound;
 
 namespace OdysseyPatch.FishingZoneCopy
 {
-    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.FISHING_ZONE_COPY)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.FishingZoneCopy)]
     [HarmonyPatch(typeof(Zone_Fishing))]
     [HarmonyPatch(nameof(Zone_Fishing.GetGizmos))]
     public static class Patch_Zone_Fishing
@@ -22,7 +22,7 @@ namespace OdysseyPatch.FishingZoneCopy
                 yield return gizmo;
             }
 
-            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.FISHING_ZONE_COPY))
+            if (Settings.FishingZoneCopy.Enabled())
             {
                 Command_Action copyAction = new Command_Action();
                 copyAction.icon = ContentFinder<Texture2D>.Get("UI/Commands/CopySettings");

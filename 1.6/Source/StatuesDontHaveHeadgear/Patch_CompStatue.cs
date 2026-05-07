@@ -1,13 +1,13 @@
 ﻿using HarmonyLib;
 using RimWorld;
-using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
 
 namespace OdysseyPatch.StatuesDontHaveHeadgear
 {
-    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.STATUES_DONT_HAVE_HEADGEAR)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.STATUES_DONT_HAVE_HEADGEAR)]
     [HarmonyPatch(typeof(CompStatue))]
     [HarmonyPatch("CreateSnapshotOfPawn")]
     public static class Patch_CompStatue_CreateSnapshotOfPawn
@@ -20,17 +20,17 @@ namespace OdysseyPatch.StatuesDontHaveHeadgear
             return instructionsList;
         }
 
-        private static bool ShouldIncludeHeadgear() => Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.STATUES_DONT_HAVE_HEADGEAR) || Rand.Bool;
+        private static bool ShouldIncludeHeadgear() => Utility.CheckSetting(SpecialModSettings_Multipatch_Odyssey.STATUES_DONT_HAVE_HEADGEAR) || Rand.Bool;
     }
 
-    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.STATUES_DONT_HAVE_HEADGEAR)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.STATUES_DONT_HAVE_HEADGEAR)]
     [HarmonyPatch(typeof(CompStatue))]
     [HarmonyPatch("InitFakePawn_HookForMods")]
     public static class Patch_CompStatue_InitFakePawn_HookForMods
     {
         public static void Postfix(CompStatue __instance, Pawn fakePawn)
         {
-            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.STATUES_DONT_HAVE_HEADGEAR))
+            if (Utility.CheckSetting(SpecialModSettings_Multipatch_Odyssey.STATUES_DONT_HAVE_HEADGEAR))
             {
                 Comp_StatueHeadgear comp = __instance.parent.GetComp<Comp_StatueHeadgear>();
                 if (comp != null && !comp.showHeadgear)

@@ -1,20 +1,20 @@
 ﻿using HarmonyLib;
 using RimWorld;
-using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using Verse;
 using Verse.AI;
 
 namespace OdysseyPatch.ShuttleFood
 {
-    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.SHUTTLE_FOOD)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.SHUTTLE_FOOD)]
     [HarmonyPatch(typeof(JobDriver_TendPatient))]
     [HarmonyPatch(nameof(JobDriver_TendPatient.CollectMedicineToils))]
     public static class Patch_JobDriver_TendPatient
     {
         public static void Postfix(Pawn doctor, Job job, Pawn patient, Toil gotoToil, List<Toil> __result)
         {
-            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.SHUTTLE_FOOD))
+            if (Utility.CheckSetting(SpecialModSettings_Multipatch_Odyssey.SHUTTLE_FOOD))
             {
                 Toil goToShuttle = Toils_Shuttle.GotoShuttle(TargetIndex.C, job, doctor);
                 __result.InsertRange(7, new[]

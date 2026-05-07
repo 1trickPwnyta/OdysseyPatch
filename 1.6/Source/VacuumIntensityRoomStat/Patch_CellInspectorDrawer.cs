@@ -1,5 +1,5 @@
 ﻿using HarmonyLib;
-using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
@@ -7,7 +7,7 @@ using Verse;
 
 namespace OdysseyPatch.VacuumIntensityRoomStat
 {
-    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.VACUUM_INTENSITY_ROOM_STAT)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.VACUUM_INTENSITY_ROOM_STAT)]
     [HarmonyPatch(typeof(CellInspectorDrawer))]
     [HarmonyPatch("DrawMapInspector")]
     public static class Patch_CellInspectorDrawer

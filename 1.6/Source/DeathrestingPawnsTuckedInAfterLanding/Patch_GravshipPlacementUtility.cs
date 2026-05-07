@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
-using SpecialSauce.ModSettings;
+using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -10,14 +10,14 @@ using Verse;
 
 namespace OdysseyPatch.DeathrestingPawnsTuckedInAfterLanding
 {
-    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.DEATHRESTING_PAWNS_TUCKED_IN_AFTER_LANDING)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.DeathrestingPawnsTuckedInAfterLanding)]
     [HarmonyPatch(typeof(GravshipPlacementUtility))]
     [HarmonyPatch(nameof(GravshipPlacementUtility.PlaceGravshipInMap))]
     public static class Patch_GravshipPlacementUtility_PlaceGravshipInMap
     {
         public static void Postfix(Gravship gravship, Map map)
         {
-            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.DEATHRESTING_PAWNS_TUCKED_IN_AFTER_LANDING))
+            if (Settings.DeathrestingPawnsTuckedInAfterLanding.Enabled())
             {
                 foreach (Pawn pawn in gravship.Pawns.Where(p => p.Deathresting))
                 {
@@ -31,7 +31,7 @@ namespace OdysseyPatch.DeathrestingPawnsTuckedInAfterLanding
         }
     }
 
-    [ModSettings_DLCPatch.HarmonyPatch_Compatibility(Mod_OdysseyPatch.PACKAGE_ID, ModSettings_DLCPatch_Odyssey.DEATHRESTING_PAWNS_TUCKED_IN_AFTER_LANDING)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.DeathrestingPawnsTuckedInAfterLanding)]
     [HarmonyPatch(typeof(GravshipPlacementUtility))]
     [HarmonyPatch("SpawnPawns")]
     public static class Patch_GravshipPlacementUtility_SpawnPawns
@@ -47,7 +47,7 @@ namespace OdysseyPatch.DeathrestingPawnsTuckedInAfterLanding
 
         private static bool ShouldTuckIn(Pawn pawn)
         {
-            if (Utility.CheckSetting(ModSettings_DLCPatch_Odyssey.DEATHRESTING_PAWNS_TUCKED_IN_AFTER_LANDING))
+            if (Settings.DeathrestingPawnsTuckedInAfterLanding.Enabled())
             {
                 return pawn.Downed && !pawn.Deathresting;
             }
