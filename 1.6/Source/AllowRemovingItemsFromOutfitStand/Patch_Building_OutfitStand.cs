@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
 using SpecialSauce.Multipatch;
 
 namespace OdysseyPatch.AllowRemovingItemsFromOutfitStand

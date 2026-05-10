@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
+using SpecialSauce.ModSettings;
 using SpecialSauce.Multipatch;
 using Verse;
 

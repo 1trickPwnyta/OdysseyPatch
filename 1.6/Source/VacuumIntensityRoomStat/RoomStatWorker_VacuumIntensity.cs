@@ -1,4 +1,5 @@
-﻿using Verse;
+﻿using SpecialSauce.ModSettings;
+using Verse;
 
 namespace OdysseyPatch.VacuumIntensityRoomStat
 {

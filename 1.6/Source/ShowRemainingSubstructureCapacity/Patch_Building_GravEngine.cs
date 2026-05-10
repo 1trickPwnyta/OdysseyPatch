@@ -1,5 +1,6 @@
 ﻿using HarmonyLib;
 using RimWorld;
+using SpecialSauce.ModSettings;
 using SpecialSauce.Multipatch;
 using System.Collections.Generic;
 using System.Reflection.Emit;

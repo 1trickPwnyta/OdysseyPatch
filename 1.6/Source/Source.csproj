@@ -127,7 +127,6 @@
     <Compile Include="SubstructureOverlayOptions\Patch_CompSubstructureFootprint.cs" />
     <Compile Include="SubstructureOverlayOptions\Patch_GravshipUtility.cs" />
     <Compile Include="SubstructureOverlayOptions\Patch_MemoryUtility.cs" />
-    <Compile Include="Utility.cs" />
     <Compile Include="VacuumIntensityRoomStat\Patch_CellInspectorDrawer.cs" />
     <Compile Include="VacuumIntensityRoomStat\Patch_EnvironmentStatsDrawer.cs" />
     <Compile Include="VacuumIntensityRoomStat\Patch_Gizmo_RoomStats.cs" />

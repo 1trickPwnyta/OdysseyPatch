@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using SpecialSauce.ModSettings;
 using SpecialSauce.Multipatch;
 using Verse;
 
