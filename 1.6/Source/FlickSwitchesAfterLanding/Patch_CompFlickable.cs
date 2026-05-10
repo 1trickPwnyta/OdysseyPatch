@@ -4,7 +4,7 @@ using SpecialSauce.Multipatch;
 
 namespace OdysseyPatch.FlickSwitchesAfterLanding
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.FlickSwitchesAfterLanding)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.FlickSwitchesAfterLanding)]
     [HarmonyPatch(typeof(CompFlickable))]
     [HarmonyPatch(nameof(CompFlickable.CompGetGizmosExtra))]
     public static class Patch_CompFlickable

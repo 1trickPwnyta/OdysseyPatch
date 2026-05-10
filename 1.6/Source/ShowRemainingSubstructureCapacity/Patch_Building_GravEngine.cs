@@ -7,7 +7,7 @@ using Verse;
 
 namespace OdysseyPatch.ShowRemainingSubstructureCapacity
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.ShowRemainingSubstructureCapacity)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.ShowRemainingSubstructureCapacity)]
     [HarmonyPatch(typeof(Building_GravEngine))]
     [HarmonyPatch(nameof(Building_GravEngine.GetInspectString))]
     public static class Patch_Building_GravEngine

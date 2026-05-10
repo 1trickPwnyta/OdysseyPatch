@@ -10,7 +10,7 @@ namespace OdysseyPatch.AllowRemovingItemsFromOutfitStandAfterEquipping
 {
     public static class Patch_Building_OutfitStand
     {
-        [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.AllowRemovingItemsFromOutfitStandAfterEquipping)]
+        [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.AllowRemovingItemsFromOutfitStandAfterEquipping)]
         [HarmonyPatch(typeof(Building_OutfitStand))]
         [HarmonyPatch("<GetGizmos>b__97_1")]
         public static class Patch_Building_OutfitStand_GetGizmos
@@ -18,7 +18,7 @@ namespace OdysseyPatch.AllowRemovingItemsFromOutfitStandAfterEquipping
             public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions) => CommonTranspiler(instructions);
         }
 
-        [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.AllowRemovingItemsFromOutfitStandAfterEquipping)]
+        [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.AllowRemovingItemsFromOutfitStandAfterEquipping)]
         public static class Patch_Building_OutfitStand_GetFloatMenuOptions
         {
             public static IEnumerable<MethodBase> TargetMethods()

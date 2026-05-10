@@ -6,7 +6,7 @@ using Verse;
 
 namespace OdysseyPatch.SubstructureOverlayOptions
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.SubstructureOverlayOptions)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.SubstructureOverlayOptions)]
     [HarmonyPatch(typeof(GravshipUtility))]
     [HarmonyPatch(nameof(GravshipUtility.ShowConnectedSubstructure))]
     [HarmonyPatch(MethodType.Getter)]

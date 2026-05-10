@@ -2,7 +2,7 @@ namespace OdysseyPatch
 {
     internal static class Log
     {
-        private static string TagMessage(object message) => $"[{SpecialMod_OdysseyPatch.PACKAGE_NAME}] {message}";
+        private static string TagMessage(object message) => $"[{SpecialMod_Multipatch_Odyssey.PACKAGE_NAME}] {message}";
 
         public static void Debug(object message)
         {

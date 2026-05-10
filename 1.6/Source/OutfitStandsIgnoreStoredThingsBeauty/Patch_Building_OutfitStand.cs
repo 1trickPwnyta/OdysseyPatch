@@ -10,7 +10,7 @@ using Verse;
 
 namespace OdysseyPatch.OutfitStandsIgnoreStoredThingsBeauty
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.OutfitStandsIgnoreStoredThingsBeauty)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.OutfitStandsIgnoreStoredThingsBeauty)]
     public static class Patch_Building_OutfitStand
     {
         public static IEnumerable<MethodBase> TargetMethods()

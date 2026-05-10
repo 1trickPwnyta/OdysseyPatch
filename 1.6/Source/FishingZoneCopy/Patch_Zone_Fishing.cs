@@ -8,7 +8,7 @@ using Verse.Sound;
 
 namespace OdysseyPatch.FishingZoneCopy
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.FishingZoneCopy)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.FishingZoneCopy)]
     [HarmonyPatch(typeof(Zone_Fishing))]
     [HarmonyPatch(nameof(Zone_Fishing.GetGizmos))]
     public static class Patch_Zone_Fishing

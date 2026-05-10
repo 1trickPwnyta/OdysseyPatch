@@ -8,7 +8,7 @@ using Verse;
 
 namespace OdysseyPatch.GravshipShieldGeneratorRadiusDisplay
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.GravshipShieldGeneratorRadiusDisplay)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.GravshipShieldGeneratorRadiusDisplay)]
     [HarmonyPatch(typeof(Designator_Place))]
     [HarmonyPatch(nameof(Designator_Place.SelectedUpdate))]
     public static class Patch_Designator_Place

@@ -8,7 +8,7 @@ using System.Reflection.Emit;
 
 namespace OdysseyPatch.AllowRemovingItemsFromOutfitStandAfterEquipping
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.AllowRemovingItemsFromOutfitStandAfterEquipping)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.AllowRemovingItemsFromOutfitStandAfterEquipping)]
     [HarmonyPatch(typeof(JobDriver_UseOutfitStand))]
     [HarmonyPatch("DoTransfer")]
     public static class Patch_JobDriver_UseOutfitStand

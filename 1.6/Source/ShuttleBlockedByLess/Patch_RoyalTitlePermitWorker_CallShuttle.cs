@@ -5,7 +5,7 @@ using Verse;
 
 namespace OdysseyPatch.ShuttleBlockedByLess
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.ShuttleBlockedByLess)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.ShuttleBlockedByLess)]
     [HarmonyPatch(typeof(RoyalTitlePermitWorker_CallShuttle))]
     [HarmonyPatch(nameof(RoyalTitlePermitWorker_CallShuttle.ShuttleCanLandHere))]
     public static class Patch_RoyalTitlePermitWorker_CallShuttle

@@ -9,7 +9,7 @@ using Verse;
 
 namespace OdysseyPatch.FloorsBlockedByHulls
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.FloorsBlockedByHulls)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.FloorsBlockedByHulls)]
     [HarmonyPatch(typeof(GenConstruct))]
     [HarmonyPatch(nameof(GenConstruct.CanPlaceBlueprintAt_NewTemp))]
     public static class Patch_GenConstruct

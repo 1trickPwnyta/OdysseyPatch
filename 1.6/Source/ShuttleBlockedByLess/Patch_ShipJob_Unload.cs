@@ -5,7 +5,7 @@ using Verse;
 
 namespace OdysseyPatch.ShuttleBlockedByLess
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.ShuttleBlockedByLess)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.ShuttleBlockedByLess)]
     [HarmonyPatch(typeof(ShipJob_Unload))]
     [HarmonyPatch(nameof(ShipJob_Unload.UnloadThingFromShuttle))]
     public static class Patch_ShipJob_Unload

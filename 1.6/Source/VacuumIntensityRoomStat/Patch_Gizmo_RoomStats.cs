@@ -7,7 +7,7 @@ using Verse;
 
 namespace OdysseyPatch.VacuumIntensityRoomStat
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.VacuumIntensityRoomStat)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.VacuumIntensityRoomStat)]
     [HarmonyPatch(typeof(Gizmo_RoomStats))]
     [HarmonyPatch(nameof(Gizmo_RoomStats.GetRoomToShowStatsFor))]
     public static class Patch_Gizmo_RoomStats_GetRoomToShowStatsFor
@@ -18,7 +18,7 @@ namespace OdysseyPatch.VacuumIntensityRoomStat
         }
     }
 
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.VacuumIntensityRoomStat)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.VacuumIntensityRoomStat)]
     [HarmonyPatch(typeof(Gizmo_RoomStats))]
     [HarmonyPatch(nameof(Gizmo_RoomStats.GizmoOnGUI))]
     public static class Patch_Gizmo_RoomStats_GizmoOnGUI

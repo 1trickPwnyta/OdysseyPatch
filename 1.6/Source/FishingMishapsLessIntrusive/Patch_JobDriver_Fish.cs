@@ -8,7 +8,7 @@ using Verse;
 
 namespace OdysseyPatch.FishingMishapsLessIntrusive
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.FishingMishapsLessIntrusive)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.FishingMishapsLessIntrusive)]
     [HarmonyPatch(typeof(JobDriver_Fish))]
     [HarmonyPatch("<CompleteFishingToil>b__4_0")]
     public static class Patch_JobDriver_Fish

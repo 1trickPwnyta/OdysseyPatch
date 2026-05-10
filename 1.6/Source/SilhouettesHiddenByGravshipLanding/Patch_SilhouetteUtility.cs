@@ -4,7 +4,7 @@ using Verse;
 
 namespace OdysseyPatch.SilhouettesHiddenByGravshipLanding
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.SilhouettesHiddenByGravshipLanding)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.SilhouettesHiddenByGravshipLanding)]
     [HarmonyPatch(typeof(SilhouetteUtility))]
     [HarmonyPatch("ShouldDrawPawnDotSilhouette")]
     public static class Patch_SilhouetteUtility

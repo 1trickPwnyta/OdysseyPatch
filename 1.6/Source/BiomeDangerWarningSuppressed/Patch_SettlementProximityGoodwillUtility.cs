@@ -10,7 +10,7 @@ using Verse;
 
 namespace OdysseyPatch.BiomeDangerWarningSuppressed
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.BiomeDangerWarningSuppressed)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.BiomeDangerWarningSuppressed)]
     public static class Patch_SettlementProximityGoodwillUtility
     {
         public static IEnumerable<MethodBase> TargetMethods()

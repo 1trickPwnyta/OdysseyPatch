@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace OdysseyPatch.ShuttleSavingError
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.ShuttleSavingError)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.ShuttleSavingError)]
     [HarmonyPatch(typeof(CompTransporter))]
     [HarmonyPatch(nameof(CompTransporter.PostExposeData))]
     public static class Patch_CompTransporter

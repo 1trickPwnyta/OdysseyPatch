@@ -7,7 +7,7 @@ using Verse;
 
 namespace OdysseyPatch.GravshipBuildRadiusSeparate
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.GravshipBuildRadiusSeparate)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.GravshipBuildRadiusSeparate)]
     [HarmonyPatch(typeof(SubstructureGrid))]
     [HarmonyPatch(nameof(SubstructureGrid.DrawSubstructureFootprint))]
     public static class Patch_SubstructureGrid

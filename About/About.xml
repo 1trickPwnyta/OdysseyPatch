@@ -82,6 +82,9 @@ ________________________________________________
 			<downloadUrl>https://github.com/1trickPwnyta/SpecialSauce</downloadUrl>
 		</li>
 	</modDependencies>
+	<incompatibleWith>
+		<li>odysseypatch.1trickPwnyta</li>
+	</incompatibleWith>
 	<loadBefore>
 		<li>kathanon.groupedmapsearch</li>
 	</loadBefore>

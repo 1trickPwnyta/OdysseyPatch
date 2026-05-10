@@ -7,7 +7,7 @@ using Verse;
 
 namespace OdysseyPatch.VacuumIntensityRoomStat
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.VacuumIntensityRoomStat)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.VacuumIntensityRoomStat)]
     [HarmonyPatch(typeof(CellInspectorDrawer))]
     [HarmonyPatch("DrawMapInspector")]
     public static class Patch_CellInspectorDrawer

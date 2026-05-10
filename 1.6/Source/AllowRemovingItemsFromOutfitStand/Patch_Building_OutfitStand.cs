@@ -4,7 +4,7 @@ using SpecialSauce.Multipatch;
 
 namespace OdysseyPatch.AllowRemovingItemsFromOutfitStand
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.AllowRemovingItemsFromOutfitStand)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.AllowRemovingItemsFromOutfitStand)]
     [HarmonyPatch(typeof(Building_OutfitStand))]
     [HarmonyPatch(MethodType.Constructor)]
     public static class Patch_Building_OutfitStand

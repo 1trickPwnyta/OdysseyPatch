@@ -10,7 +10,7 @@ using Verse;
 
 namespace OdysseyPatch.DeathrestingPawnsTuckedInAfterLanding
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.DeathrestingPawnsTuckedInAfterLanding)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.DeathrestingPawnsTuckedInAfterLanding)]
     [HarmonyPatch(typeof(GravshipPlacementUtility))]
     [HarmonyPatch(nameof(GravshipPlacementUtility.PlaceGravshipInMap))]
     public static class Patch_GravshipPlacementUtility_PlaceGravshipInMap
@@ -31,7 +31,7 @@ namespace OdysseyPatch.DeathrestingPawnsTuckedInAfterLanding
         }
     }
 
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.DeathrestingPawnsTuckedInAfterLanding)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.DeathrestingPawnsTuckedInAfterLanding)]
     [HarmonyPatch(typeof(GravshipPlacementUtility))]
     [HarmonyPatch("SpawnPawns")]
     public static class Patch_GravshipPlacementUtility_SpawnPawns

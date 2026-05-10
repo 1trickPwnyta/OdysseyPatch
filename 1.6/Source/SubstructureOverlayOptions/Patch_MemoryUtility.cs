@@ -4,7 +4,7 @@ using Verse.Profile;
 
 namespace OdysseyPatch.SubstructureOverlayOptions
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.SubstructureOverlayOptions)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.SubstructureOverlayOptions)]
     [HarmonyPatch(typeof(MemoryUtility))]
     [HarmonyPatch(nameof(MemoryUtility.ClearAllMapsAndWorld))]
     public static class Patch_MemoryUtility

@@ -9,7 +9,7 @@ using Verse;
 
 namespace OdysseyPatch.OutfitStandGroupsInBills
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.OutfitStandGroupsInBills)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.OutfitStandGroupsInBills)]
     [HarmonyPatch(typeof(Dialog_BillConfig))]
     [HarmonyPatch("FillOutputDropdownOptions")]
     public static class Patch_Dialog_BillConfig

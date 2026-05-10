@@ -10,7 +10,7 @@ using Verse.AI;
 
 namespace OdysseyPatch.ShuttleFood
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.ShuttleFood)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.ShuttleFood)]
     [HarmonyPatch(typeof(JobGiver_SatifyChemicalDependency))]
     [HarmonyPatch("TryGiveJob")]
     public static class Patch_JobGiver_SatifyChemicalDependency_TryGiveJob
@@ -52,7 +52,7 @@ namespace OdysseyPatch.ShuttleFood
         }
     }
 
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.ShuttleFood)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.ShuttleFood)]
     [HarmonyPatch(typeof(JobGiver_SatifyChemicalDependency))]
     [HarmonyPatch("FindDrugFor")]
     public static class Patch_JobGiver_SatifyChemicalDependency_FindDrugFor

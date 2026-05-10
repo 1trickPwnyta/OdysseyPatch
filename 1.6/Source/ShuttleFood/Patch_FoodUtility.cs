@@ -9,7 +9,7 @@ using Verse.AI;
 
 namespace OdysseyPatch.ShuttleFood
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.ShuttleFood)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.ShuttleFood)]
     [HarmonyPatch(typeof(FoodUtility))]
     [HarmonyPatch("<TryFindBestFoodSourceFor>g__FirstFoodInClosestPackAnimalInventory|11_0")]
     public static class Patch_FoodUtility

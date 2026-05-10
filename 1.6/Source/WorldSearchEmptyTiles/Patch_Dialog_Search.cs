@@ -6,7 +6,7 @@ using Verse;
 
 namespace OdysseyPatch.WorldSearchEmptyTiles
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.WorldSearchEmptyTiles)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.WorldSearchEmptyTiles)]
     [HarmonyPatch(typeof(Dialog_Search<WorldSearchElement>))]
     [HarmonyPatch(nameof(Dialog_Search<WorldSearchElement>.DoWindowContents))]
     public static class Patch_Dialog_Search

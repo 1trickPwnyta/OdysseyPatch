@@ -8,7 +8,7 @@ using Verse;
 
 namespace OdysseyPatch.WorldSearchEmptyTiles
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.WorldSearchEmptyTiles)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.WorldSearchEmptyTiles)]
     [HarmonyPatch(typeof(Dialog_WorldSearch))]
     [HarmonyPatch(MethodType.Constructor)]
     public static class Patch_Dialog_WorldSearch_ctor
@@ -19,7 +19,7 @@ namespace OdysseyPatch.WorldSearchEmptyTiles
         }
     }
 
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.WorldSearchEmptyTiles)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.WorldSearchEmptyTiles)]
     [HarmonyPatch(typeof(Dialog_WorldSearch))]
     [HarmonyPatch("InitializeSearchSet")]
     public static class Patch_Dialog_WorldSearch_InitializeSearchSet

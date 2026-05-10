@@ -11,7 +11,7 @@ using Verse;
 
 namespace OdysseyPatch.WorldSearchEmptyTiles
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.WorldSearchEmptyTiles)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.WorldSearchEmptyTiles)]
     [HarmonyPatch(typeof(ExpandableLandmarksUtility))]
     [HarmonyPatch("get_LandmarksToShow")]
     public static class Patch_ExpandableLandmarksUtility_LandmarksToShow
@@ -34,7 +34,7 @@ namespace OdysseyPatch.WorldSearchEmptyTiles
         }
     }
 
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.WorldSearchEmptyTiles)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.WorldSearchEmptyTiles)]
     [HarmonyPatch(typeof(ExpandableLandmarksUtility))]
     [HarmonyPatch(nameof(ExpandableLandmarksUtility.ExpandableLandmarksOnGUI))]
     public static class Patch_ExpandableLandmarksUtility_ExpandableLandmarksOnGUI

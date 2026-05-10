@@ -7,7 +7,7 @@ using Verse;
 
 namespace OdysseyPatch.StatuesDontHaveHeadgear
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.StatuesDontHaveHeadgear)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.StatuesDontHaveHeadgear)]
     [HarmonyPatch(typeof(CompStatue))]
     [HarmonyPatch("CreateSnapshotOfPawn")]
     public static class Patch_CompStatue_CreateSnapshotOfPawn
@@ -23,7 +23,7 @@ namespace OdysseyPatch.StatuesDontHaveHeadgear
         private static bool ShouldIncludeHeadgear() => Settings.StatuesDontHaveHeadgear.Enabled() || Rand.Bool;
     }
 
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.StatuesDontHaveHeadgear)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.StatuesDontHaveHeadgear)]
     [HarmonyPatch(typeof(CompStatue))]
     [HarmonyPatch("InitFakePawn_HookForMods")]
     public static class Patch_CompStatue_InitFakePawn_HookForMods

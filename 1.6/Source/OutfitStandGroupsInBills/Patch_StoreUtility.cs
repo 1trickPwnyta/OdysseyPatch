@@ -5,7 +5,7 @@ using Verse;
 
 namespace OdysseyPatch.OutfitStandGroupsInBills
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.OutfitStandGroupsInBills)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.OutfitStandGroupsInBills)]
     [HarmonyPatch(typeof(StoreUtility))]
     [HarmonyPatch("TryFindBestBetterStoreCellForWorker")]
     public static class Patch_StoreUtility

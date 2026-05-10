@@ -7,7 +7,7 @@ using Verse;
 
 namespace OdysseyPatch.FilthMultiplierFixForSubstructure
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.FilthMultiplierFixForSubstructure)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.FilthMultiplierFixForSubstructure)]
     [HarmonyPatch(typeof(FilthMaker))]
     [HarmonyPatch(nameof(FilthMaker.CanMakeFilth))]
     public static class Patch_FilthMaker

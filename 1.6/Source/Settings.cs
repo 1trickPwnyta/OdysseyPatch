@@ -29,7 +29,7 @@ namespace OdysseyPatch
         [MultipatchSetting(Category.SpaceTravel)] VacuumIntensityRoomStat,
         [MultipatchSetting(Category.SpaceTravel, bugFix: true)] FloorsBlockedByHulls,
         [MultipatchSetting(Category.SpaceTravel, bugFix: true)] SilhouettesHiddenByGravshipLanding,
-        [MultipatchSetting(Category.SpaceTravel, enablerType: typeof(Enabler_Biotech), bugFix: true)] DeathrestingPawnsTuckedInAfterLanding,
+        [MultipatchSetting(Category.SpaceTravel, enablerType: typeof(SettingEnabler_Biotech), bugFix: true)] DeathrestingPawnsTuckedInAfterLanding,
         [MultipatchSetting(Category.SpaceTravel, bugFix: true)] FlickSwitchesAfterLanding,
         [MultipatchSetting(Category.SpaceTravel, bugFix: true)] ShuttleSavingError,
         [MultipatchSetting(Category.SpaceTravel, bugFix: true)] FilthMultiplierFixForSubstructure,
@@ -44,14 +44,9 @@ namespace OdysseyPatch
         [MultipatchSetting(Category.OutfitStands)] AllowRemovingItemsFromOutfitStandAfterEquipping,
         [MultipatchSetting(Category.OutfitStands)] OutfitStandsIgnoreStoredThingsBeauty,
         [MultipatchSetting(Category.OutfitStands)] StatuesDontHaveHeadgear,
-        [MultipatchSetting(Category.OutfitStands, enablerType: typeof(Enabler_Biotech), bugFix: true)] StatueConsistency,
+        [MultipatchSetting(Category.OutfitStands, enablerType: typeof(SettingEnabler_Biotech), bugFix: true)] StatueConsistency,
 
         [MultipatchSetting(Category.Misc, restartRequired: true)] WorldSearchEmptyTiles,
         [MultipatchSetting(Category.Misc)] BiomeDangerWarningSuppressed,
-    }
-
-    public class Enabler_Biotech : SettingAttribute.IEnabler
-    {
-        public bool Enabled() => ModsConfig.BiotechActive;
     }
 }

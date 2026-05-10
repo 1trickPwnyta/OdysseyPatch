@@ -10,7 +10,7 @@ using Verse;
 
 namespace OdysseyPatch.OutfitStandBodyType
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.OutfitStandBodyType)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.OutfitStandBodyType)]
     [HarmonyPatch(typeof(Building_OutfitStand))]
     [HarmonyPatch("BodyTypeDefForRendering")]
     [HarmonyPatch(MethodType.Getter)]
@@ -29,7 +29,7 @@ namespace OdysseyPatch.OutfitStandBodyType
         }
     }
 
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.OutfitStandBodyType)]
+    [HarmonyPatch_Compatibility(SpecialMod_Multipatch_Odyssey.PACKAGE_ID, Settings.OutfitStandBodyType)]
     [HarmonyPatch(typeof(Building_OutfitStand))]
     [HarmonyPatch("DrawAt")]
     public static class Patch_Building_OutfitStand_DrawAt
