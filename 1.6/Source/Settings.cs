@@ -4,6 +4,11 @@ using Verse;
 
 namespace OdysseyPatch
 {
+    public class SpecialModSettings_Multipatch_Odyssey : SpecialModSettings_Multipatch<Settings>
+    {
+        protected override string SettingKeyPrefix => "OdysseyPatch";
+    }
+
     public static class Category
     {
         public const string SpaceTravel = "OdysseyPatch_SpaceTravel";

@@ -6,7 +6,7 @@ using Verse;
 
 namespace OdysseyPatch.WorldSearchEmptyTiles
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.WORLD_SEARCH_EMPTY_TILES)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.WorldSearchEmptyTiles)]
     [HarmonyPatch(typeof(Dialog_Search<WorldSearchElement>))]
     [HarmonyPatch(nameof(Dialog_Search<WorldSearchElement>.DoWindowContents))]
     public static class Patch_Dialog_Search
@@ -15,7 +15,7 @@ namespace OdysseyPatch.WorldSearchEmptyTiles
 
         public static void Postfix(Dialog_Search<WorldSearchElement> __instance, Rect inRect)
         {
-            if (Utility.CheckSetting(SpecialModSettings_Multipatch_Odyssey.WORLD_SEARCH_EMPTY_TILES) && __instance is Dialog_WorldSearch)
+            if (Settings.WorldSearchEmptyTiles.Enabled() && __instance is Dialog_WorldSearch)
             {
                 bool previousFullSearch = fullSearch;
                 float height = Text.CalcHeight("OdysseyPatch_FullSearch".Translate(), inRect.width);

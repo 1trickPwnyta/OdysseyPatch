@@ -6,7 +6,7 @@
 			<thingClass>OdysseyPatch.OutfitStandGroupsInBills.SlotGroupParent_OutfitStand</thingClass>
 		</value>
 		<modId>1trickpwnyta.odysseypatch</modId>
-		<settingKey>OdysseyPatch_OutfitStandGroupsInBills</settingKey>
+		<settingKey>OutfitStandGroupsInBills</settingKey>
 	</Operation>
 	<Operation Class="SpecialSauce.Patching.PatchOperationReplaceIfSettingEnabled">
 		<xpath>/Defs/ThingDef[thingClass="Building_KidOutfitStand"]/thingClass</xpath>
@@ -14,12 +14,12 @@
 			<thingClass>OdysseyPatch.OutfitStandGroupsInBills.SlotGroupParent_KidOutfitStand</thingClass>
 		</value>
 		<modId>1trickpwnyta.odysseypatch</modId>
-		<settingKey>OdysseyPatch_OutfitStandGroupsInBills</settingKey>
+		<settingKey>OutfitStandGroupsInBills</settingKey>
 	</Operation>
 	
 	<Operation Class="SpecialSauce.Multipatch.PatchOperationSequence_Compatibility">
 		<modId>1trickpwnyta.odysseypatch</modId>
-		<settingKey>OdysseyPatch_OutfitStandBodyType</settingKey>
+		<settingKey>OutfitStandBodyType</settingKey>
 		<operations>
 			<li Class="PatchOperationConditional">
 				<xpath>/Defs/ThingDef[@Name="OutfitStandBase"]/comps</xpath>

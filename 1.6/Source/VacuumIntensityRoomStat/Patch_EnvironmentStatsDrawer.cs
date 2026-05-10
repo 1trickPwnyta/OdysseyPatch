@@ -7,7 +7,7 @@ using Verse;
 
 namespace OdysseyPatch.VacuumIntensityRoomStat
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.VACUUM_INTENSITY_ROOM_STAT)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.VacuumIntensityRoomStat)]
     [HarmonyPatch(typeof(EnvironmentStatsDrawer))]
     [HarmonyPatch(MethodType.Getter)]
     [HarmonyPatch("DisplayedRoomStatsCount")]
@@ -25,7 +25,7 @@ namespace OdysseyPatch.VacuumIntensityRoomStat
         private static bool IsHidden(RoomStatDef def) => VacuumUtility.HiddenOrHiddenVacuum(def.isHidden, def, VacuumUtility.statsRoom);
     }
 
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.VACUUM_INTENSITY_ROOM_STAT)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.VacuumIntensityRoomStat)]
     [HarmonyPatch(typeof(EnvironmentStatsDrawer))]
     [HarmonyPatch("DrawInfoWindow")]
     public static class Patch_EnvironmentStatsDrawer_DrawInfoWindow
@@ -36,7 +36,7 @@ namespace OdysseyPatch.VacuumIntensityRoomStat
         }
     }
 
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.VACUUM_INTENSITY_ROOM_STAT)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.VacuumIntensityRoomStat)]
     [HarmonyPatch(typeof(EnvironmentStatsDrawer))]
     [HarmonyPatch(nameof(EnvironmentStatsDrawer.DoRoomInfo))]
     public static class Patch_EnvironmentStatsDrawer_DoRoomInfo

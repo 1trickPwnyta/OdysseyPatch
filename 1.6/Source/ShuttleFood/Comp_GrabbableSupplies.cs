@@ -11,7 +11,7 @@ namespace OdysseyPatch.ShuttleFood
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            if (Utility.CheckSetting(SpecialModSettings_Multipatch_Odyssey.SHUTTLE_FOOD))
+            if (Settings.ShuttleFood.Enabled())
             {
                 yield return new Command_Toggle()
                 {

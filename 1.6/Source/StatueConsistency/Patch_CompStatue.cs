@@ -17,7 +17,7 @@ namespace OdysseyPatch.StatueConsistency
         }
     }
 
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.STATUE_CONSISTENCY)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.StatueConsistency)]
     [HarmonyPatch(typeof(CompStatue))]
     [HarmonyPatch("CreateSnapshotOfPawn")]
     public static class Patch_CompStatue_CreateSnapshotOfPawn
@@ -32,14 +32,14 @@ namespace OdysseyPatch.StatueConsistency
         }
     }
 
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.STATUE_CONSISTENCY)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.StatueConsistency)]
     [HarmonyPatch(typeof(CompStatue))]
     [HarmonyPatch("InitFakePawn_HookForMods")]
     public static class Patch_CompStatue_InitFakePawn_HookForMods
     {
         public static void Postfix(Pawn fakePawn, Dictionary<string, object> additionalSavedPawnDataForMods)
         {
-            if (ModsConfig.BiotechActive && fakePawn.genes != null && Utility.CheckSetting(SpecialModSettings_Multipatch_Odyssey.STATUE_CONSISTENCY))
+            if (ModsConfig.BiotechActive && fakePawn.genes != null && Settings.StatueConsistency.Enabled())
             {
                 List<GeneDef> overridenGenes = (additionalSavedPawnDataForMods.TryGetValue("OdysseyPatch.StatueConsistency.overridenGenes") as OverriddenGenes)?.list;
                 if (overridenGenes != null)

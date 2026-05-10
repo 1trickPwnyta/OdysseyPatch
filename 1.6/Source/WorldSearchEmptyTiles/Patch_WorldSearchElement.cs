@@ -10,7 +10,7 @@ using Verse;
 
 namespace OdysseyPatch.WorldSearchEmptyTiles
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.WORLD_SEARCH_EMPTY_TILES)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.WorldSearchEmptyTiles)]
     [HarmonyPatch(typeof(WorldSearchElement))]
     [HarmonyPatch(nameof(WorldSearchElement.DisplayLabel))]
     [HarmonyPatch(MethodType.Getter)]
@@ -19,7 +19,7 @@ namespace OdysseyPatch.WorldSearchEmptyTiles
         public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
         {
             List<CodeInstruction> instructionsList = instructions.ToList();
-            if (Utility.CheckSetting(SpecialModSettings_Multipatch_Odyssey.WORLD_SEARCH_EMPTY_TILES))
+            if (Settings.WorldSearchEmptyTiles.Enabled())
             {
                 int zeroIndex = instructionsList.FindIndex(i => i.opcode == OpCodes.Ldc_I4_0);
                 instructionsList.RemoveAt(zeroIndex);
@@ -47,7 +47,7 @@ namespace OdysseyPatch.WorldSearchEmptyTiles
 
         private static int GetMatchingFeatureIndex(PlanetTile tile, List<TileMutatorDef> mutators)
         {
-            if (Utility.CheckSetting(SpecialModSettings_Multipatch_Odyssey.WORLD_SEARCH_EMPTY_TILES) && Find.WindowStack.TryGetWindow(out Dialog_WorldSearch dialog))
+            if (Settings.WorldSearchEmptyTiles.Enabled() && Find.WindowStack.TryGetWindow(out Dialog_WorldSearch dialog))
             {
                 for (int i = 0; i < mutators.Count; i++)
                 {

@@ -7,14 +7,14 @@ using Verse.AI;
 
 namespace OdysseyPatch.ShuttleFood
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.SHUTTLE_FOOD)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.ShuttleFood)]
     [HarmonyPatch(typeof(JobDriver_TendPatient))]
     [HarmonyPatch(nameof(JobDriver_TendPatient.CollectMedicineToils))]
     public static class Patch_JobDriver_TendPatient
     {
         public static void Postfix(Pawn doctor, Job job, Pawn patient, Toil gotoToil, List<Toil> __result)
         {
-            if (Utility.CheckSetting(SpecialModSettings_Multipatch_Odyssey.SHUTTLE_FOOD))
+            if (Settings.ShuttleFood.Enabled())
             {
                 Toil goToShuttle = Toils_Shuttle.GotoShuttle(TargetIndex.C, job, doctor);
                 __result.InsertRange(7, new[]

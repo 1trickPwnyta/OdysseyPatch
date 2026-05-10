@@ -2,7 +2,7 @@
 <Patch>
 	<Operation Class="SpecialSauce.Multipatch.PatchOperationSequence_Compatibility">
 		<modId>1trickpwnyta.odysseypatch</modId>
-		<settingKey>OdysseyPatch_ShuttleFood</settingKey>
+		<settingKey>ShuttleFood</settingKey>
 		<operations>
 			<li Class="PatchOperationConditional">
 				<xpath>/Defs/ThingDef[thingClass="Building_PassengerShuttle"]/comps</xpath>

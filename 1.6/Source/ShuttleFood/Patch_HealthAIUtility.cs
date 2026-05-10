@@ -10,7 +10,7 @@ using Verse.AI;
 
 namespace OdysseyPatch.ShuttleFood
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.SHUTTLE_FOOD)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.ShuttleFood)]
     [HarmonyPatch(typeof(HealthAIUtility))]
     [HarmonyPatch(nameof(HealthAIUtility.FindBestMedicine))]
     public static class Patch_HealthAIUtility
@@ -36,7 +36,7 @@ namespace OdysseyPatch.ShuttleFood
 
         private static void TryFindShuttleMedicine(ref Thing medicine, Pawn healer, object obj)
         {
-            if (Utility.CheckSetting(SpecialModSettings_Multipatch_Odyssey.SHUTTLE_FOOD) && medicine == null)
+            if (Settings.ShuttleFood.Enabled() && medicine == null)
             {
                 foreach (Building_PassengerShuttle shuttle in healer.Map.GetShuttlesWithGrabbingEnabled())
                 {

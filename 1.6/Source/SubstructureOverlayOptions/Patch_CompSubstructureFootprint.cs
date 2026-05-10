@@ -8,7 +8,7 @@ using Verse;
 
 namespace OdysseyPatch.SubstructureOverlayOptions
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.SUBSTRUCTURE_OVERLAY_OPTIONS)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.SubstructureOverlayOptions)]
     [HarmonyPatch(typeof(CompSubstructureFootprint))]
     [HarmonyPatch(nameof(CompSubstructureFootprint.CompGetGizmosExtra))]
     public static class Patch_CompSubstructureFootprint_CompGetGizmosExtra
@@ -17,7 +17,7 @@ namespace OdysseyPatch.SubstructureOverlayOptions
 
         public static void Postfix(CompSubstructureFootprint __instance, ref IEnumerable<Gizmo> __result)
         {
-            if (Utility.CheckSetting(SpecialModSettings_Multipatch_Odyssey.SUBSTRUCTURE_OVERLAY_OPTIONS))
+            if (Settings.SubstructureOverlayOptions.Enabled())
             {
                 List<Gizmo> list = __result.ToList();
                 Gizmo gizmo = list.FirstOrDefault(g => g is Command_Toggle c && c.defaultLabel.Equals("CommandShowSubstructureOverlay".Translate()));
@@ -54,14 +54,14 @@ namespace OdysseyPatch.SubstructureOverlayOptions
         }
     }
 
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.SUBSTRUCTURE_OVERLAY_OPTIONS)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.SubstructureOverlayOptions)]
     [HarmonyPatch(typeof(CompSubstructureFootprint))]
     [HarmonyPatch(nameof(CompSubstructureFootprint.PostExposeData))]
     public static class Patch_CompSubstructureFootprint_PostExposeData
     {
         public static void Postfix(CompSubstructureFootprint __instance)
         {
-            if (Utility.CheckSetting(SpecialModSettings_Multipatch_Odyssey.SUBSTRUCTURE_OVERLAY_OPTIONS))
+            if (Settings.SubstructureOverlayOptions.Enabled())
             {
                 bool alwaysEnabled = Patch_CompSubstructureFootprint_CompGetGizmosExtra.alwaysEnabled.Contains(__instance);
                 Scribe_Values.Look(ref alwaysEnabled, "alwaysEnabled", false);

@@ -6,7 +6,7 @@ using Verse;
 
 namespace OdysseyPatch.SubstructureOverlayOptions
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.SUBSTRUCTURE_OVERLAY_OPTIONS)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.SubstructureOverlayOptions)]
     [HarmonyPatch(typeof(GravshipUtility))]
     [HarmonyPatch(nameof(GravshipUtility.ShowConnectedSubstructure))]
     [HarmonyPatch(MethodType.Getter)]
@@ -14,7 +14,7 @@ namespace OdysseyPatch.SubstructureOverlayOptions
     {
         public static void Postfix(ref bool __result)
         {
-            if (Utility.CheckSetting(SpecialModSettings_Multipatch_Odyssey.SUBSTRUCTURE_OVERLAY_OPTIONS) && Patch_CompSubstructureFootprint_CompGetGizmosExtra.alwaysEnabled.Any(c => c.parent.Map == Find.CurrentMap))
+            if (Settings.SubstructureOverlayOptions.Enabled() && Patch_CompSubstructureFootprint_CompGetGizmosExtra.alwaysEnabled.Any(c => c.parent.Map == Find.CurrentMap))
             {
                 __result = true;
             }

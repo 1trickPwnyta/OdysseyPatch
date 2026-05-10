@@ -10,7 +10,7 @@ using Verse.AI;
 
 namespace OdysseyPatch.ShuttleFood
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.SHUTTLE_FOOD)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.ShuttleFood)]
     [HarmonyPatch(typeof(JobGiver_SatifyChemicalDependency))]
     [HarmonyPatch("TryGiveJob")]
     public static class Patch_JobGiver_SatifyChemicalDependency_TryGiveJob
@@ -52,14 +52,14 @@ namespace OdysseyPatch.ShuttleFood
         }
     }
 
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.SHUTTLE_FOOD)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.ShuttleFood)]
     [HarmonyPatch(typeof(JobGiver_SatifyChemicalDependency))]
     [HarmonyPatch("FindDrugFor")]
     public static class Patch_JobGiver_SatifyChemicalDependency_FindDrugFor
     {
         public static void Postfix(Pawn pawn, Hediff_ChemicalDependency dependency, ref Thing __result)
         {
-            if (Utility.CheckSetting(SpecialModSettings_Multipatch_Odyssey.SHUTTLE_FOOD) && __result == null)
+            if (Settings.ShuttleFood.Enabled() && __result == null)
             {
                 if (pawn.IsColonist && pawn.Map != null)
                 {

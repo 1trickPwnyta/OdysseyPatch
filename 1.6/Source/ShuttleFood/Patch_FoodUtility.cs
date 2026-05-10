@@ -9,7 +9,7 @@ using Verse.AI;
 
 namespace OdysseyPatch.ShuttleFood
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.SHUTTLE_FOOD)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.ShuttleFood)]
     [HarmonyPatch(typeof(FoodUtility))]
     [HarmonyPatch("<TryFindBestFoodSourceFor>g__FirstFoodInClosestPackAnimalInventory|11_0")]
     public static class Patch_FoodUtility
@@ -37,7 +37,7 @@ namespace OdysseyPatch.ShuttleFood
 
         private static void TryFindShuttleFood(ref Thing food, Pawn eater, Pawn getter, FoodPreferability foodPref, bool allowVenerated)
         {
-            if (Utility.CheckSetting(SpecialModSettings_Multipatch_Odyssey.SHUTTLE_FOOD) && food == null && eater.IsColonist && getter.IsColonist && getter.RaceProps.ToolUser && getter.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation))
+            if (Settings.ShuttleFood.Enabled() && food == null && eater.IsColonist && getter.IsColonist && getter.RaceProps.ToolUser && getter.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation))
             {
                 Building_PassengerShuttle bestShuttle = null;
                 foreach (Building_PassengerShuttle shuttle in getter.Map.GetShuttlesWithGrabbingEnabled())

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<JobDef>
+	<JobDef RequiresSettingEnabled="ShuttleFood">
 		<defName>OdysseyPatch_TakeFromShuttle</defName>
 		<driverClass>OdysseyPatch.ShuttleFood.JobDriver_TakeFromShuttle</driverClass>
 		<reportString>grabbing TargetA from TargetB.</reportString>

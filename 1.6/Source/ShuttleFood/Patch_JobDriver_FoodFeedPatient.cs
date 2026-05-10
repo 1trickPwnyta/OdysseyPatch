@@ -8,14 +8,14 @@ using Verse.AI;
 
 namespace OdysseyPatch.ShuttleFood
 {
-    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, SpecialModSettings_Multipatch_Odyssey.SHUTTLE_FOOD)]
+    [HarmonyPatch_Compatibility(SpecialMod_OdysseyPatch.PACKAGE_ID, Settings.ShuttleFood)]
     [HarmonyPatch(typeof(JobDriver_FoodFeedPatient))]
     [HarmonyPatch("MakeNewToils")]
     public static class Patch_JobDriver_FoodFeedPatient
     {
         public static IEnumerable<Toil> Postfix(IEnumerable<Toil> toils, Pawn ___pawn, Job ___job)
         {
-            if (Utility.CheckSetting(SpecialModSettings_Multipatch_Odyssey.SHUTTLE_FOOD))
+            if (Settings.ShuttleFood.Enabled())
             {
                 Toil goToShuttle = Toils_Shuttle.GotoShuttle(TargetIndex.C, ___job, ___pawn);
 

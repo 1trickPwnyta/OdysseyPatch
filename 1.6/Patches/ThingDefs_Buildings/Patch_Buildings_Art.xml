@@ -2,7 +2,7 @@
 <Patch>
 	<Operation Class="SpecialSauce.Multipatch.PatchOperationSequence_Compatibility">
 		<modId>1trickpwnyta.odysseypatch</modId>
-		<settingKey>OdysseyPatch_StatuesDontHaveHeadgear</settingKey>
+		<settingKey>StatuesDontHaveHeadgear</settingKey>
 		<operations>
 			<li Class="PatchOperationConditional">
 				<xpath>/Defs/ThingDef[defName="Statue"]/comps</xpath>
